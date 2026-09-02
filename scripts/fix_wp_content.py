@@ -62,6 +62,29 @@ PRIORITY_SLUG = [
 SKIP_DRAFT = ("شحن", "shipping", "دولي", "international-shipping", "cargo")
 # Ranking page — never rewrite, retitle, reslug, or unpublish.
 LOCKED_POST_IDS = {2973}
+# City clones of the ranking leak URL — keep draft; never schedule/publish.
+LEAK_CLONE_IDS = {
+    11132, 11133, 11134, 11135, 11136, 11137, 11138, 11139,
+    12693, 12694, 12695, 12696, 12697, 12698, 12699, 12700,
+}
+
+
+def is_water_leak_clone(title: str, slug: str, pid: int = 0) -> bool:
+    if int(pid) in LOCKED_POST_IDS or int(pid) == 12866:
+        return False
+    slug = slug or ""
+    title = title or ""
+    if "qatar-en" in slug or "without breaking" in title.lower():
+        return False
+    blob = title + " " + slug
+    if any(x in blob for x in ("الغاز", "التكييف", "المسبح", "gas-leak", "ac-leak", "pool-leak")):
+        return False
+    return (
+        "كشف تسربات المياه في" in title
+        or "كشف تسريبات مواسير" in title
+        or slug.startswith("water-leak-detection-")
+        or slug.startswith("water-pipe-leak-detection-")
+    )
 
 EMOJI_RE = re.compile(
     "["
@@ -624,6 +647,8 @@ def main():
         title = unescape((p.get("title") or {}).get("raw") or (p.get("title") or {}).get("rendered") or "")
         slug = p.get("slug") or ""
         if any(k in title or k in slug for k in SKIP_DRAFT):
+            continue
+        if int(p["id"]) in LEAK_CLONE_IDS or is_water_leak_clone(title, slug, p["id"]):
             continue
         scored.append((score_draft(title, slug), p, title))
     scored.sort(key=lambda x: -x[0])
