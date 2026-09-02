@@ -7,5 +7,6 @@
 | [FIXES-APPLIED-ROUND2.md](FIXES-APPLIED-ROUND2.md) | استرجاع المقال المتصدر وحماية الترتيب + قطرنة الرئيسية |
 | [FIXES-APPLIED-ROUND3.md](FIXES-APPLIED-ROUND3.md) | إكمال الموقع دون لمس المقال المتصدر: روابط، مدن، أسعار، منع النسخ |
 | [INDEXING-QA-VS-OM.md](INDEXING-QA-VS-OM.md) | لماذا عُمان تُفهرس سريعاً وقطر لا: robots وخريطة الموقع |
+| [COVERAGE-ARCHITECTURE.md](COVERAGE-ARCHITECTURE.md) | تغطية كل الخدمات والمدن بدون قوالب متطابقة |
 
 التغييرات على ووردبريس عبر REST + مقتطف Code Snippets. المقال #2973 مقفول ولا يُعاد كتابته.
