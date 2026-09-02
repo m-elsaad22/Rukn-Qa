@@ -68,16 +68,22 @@ PILLARS = {
 def api(path, method="GET", data=None, timeout=90):
     url = path if path.startswith("http") else BASE + path
     body = None if data is None else json.dumps(data).encode()
-    req = urllib.request.Request(url, data=body, headers=HEADERS, method=method)
-    try:
-        with urllib.request.urlopen(req, context=CTX, timeout=timeout) as r:
-            return r.status, json.loads(r.read().decode() or "null"), {k.lower(): v for k, v in r.headers.items()}
-    except urllib.error.HTTPError as e:
-        raw = e.read().decode(errors="replace")
+    last_err = None
+    for attempt in range(5):
+        req = urllib.request.Request(url, data=body, headers=HEADERS, method=method)
         try:
-            return e.code, json.loads(raw), {}
-        except Exception:
-            return e.code, raw[:400], {}
+            with urllib.request.urlopen(req, context=CTX, timeout=timeout) as r:
+                return r.status, json.loads(r.read().decode() or "null"), {k.lower(): v for k, v in r.headers.items()}
+        except urllib.error.HTTPError as e:
+            raw = e.read().decode(errors="replace")
+            try:
+                return e.code, json.loads(raw), {}
+            except Exception:
+                return e.code, raw[:400], {}
+        except Exception as e:
+            last_err = e
+            time.sleep(2 * (attempt + 1))
+    raise last_err
 
 
 def note(msg):

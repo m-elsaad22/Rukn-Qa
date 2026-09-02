@@ -516,6 +516,44 @@ add_action('init', function () {
 }, 20);
 
 add_action('rest_api_init', function () {
+    register_rest_route('rukn-qa/v1', '/draft-city-templates', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function () {
+            global $wpdb;
+            $keep = [
+                'water-leak-detection-company-in-qatar',
+                'water-leak-detection-qatar-en',
+                'roof-insulation-qatar-en',
+                'ac-maintenance-qatar-en',
+                'gas-leak-detection-doha',
+                'ac-leak-detection-doha',
+                'sewerage-company-in-doha',
+            ];
+            $in = implode(',', array_fill(0, count($keep), '%s'));
+            $like = "
+                post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
+                OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
+                OR post_name LIKE %s
+            ";
+            $sql = $wpdb->prepare(
+                "UPDATE {$wpdb->posts} SET post_status = 'draft'
+                 WHERE post_type = 'post' AND ID <> 2973
+                 AND post_status IN ('publish','future')
+                 AND post_name NOT IN ($in)
+                 AND ($like)",
+                array_merge($keep, [
+                    '%-doha', '%-al-rayyan', '%-al-wakrah', '%-al-khor', '%-umm-salal',
+                    '%-al-daayen', '%-al-shamal', '%-al-shahaniya', '%-lusail',
+                ])
+            );
+            $n = $wpdb->query($sql);
+            if (function_exists('wp_cache_flush')) {
+                wp_cache_flush();
+            }
+            return ['updated' => $n];
+        },
+    ]);
     register_rest_route('rukn-qa/v1', '/robots-file', [
         'methods' => ['GET', 'POST'],
         'permission_callback' => function () { return current_user_can('manage_options'); },
