@@ -424,3 +424,46 @@ add_action('init', function () {
     }
     update_option('rukn_qa_options_patched_v5', '1');
 }, 20);
+
+add_action('rest_api_init', function () {
+    register_rest_route('rukn-qa/v1', '/robots-file', [
+        'methods' => ['GET', 'POST'],
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $path = rtrim(ABSPATH, '/\\') . '/robots.txt';
+            $desired = "User-Agent: *\nAllow: /\nAllow: /wp-admin/admin-ajax.php\nAllow: /wp-content/uploads/\nDisallow: /wp-admin/\nDisallow: /wp-includes/\nDisallow: /wp-content/plugins/\nDisallow: /trackback\nDisallow: /*.php$\nDisallow: /*.inc$\nDisallow: /*.gz$\n\n# We de-index the login page (unnecessary content)\nDisallow: /wp-login.php\n\nSitemap: https://www.rukn-eltatawer.com/qa/sitemap_index.xml\n";
+            $parent = dirname(rtrim(ABSPATH, '/\\')) . '/robots.txt';
+            $out = [
+                'abspath' => ABSPATH,
+                'path' => $path,
+                'exists' => file_exists($path),
+                'writable' => is_writable($path) || (!file_exists($path) && is_writable(dirname($path))),
+                'current' => file_exists($path) ? file_get_contents($path) : null,
+                'parent_path' => $parent,
+                'parent_writable' => is_writable($parent),
+                'parent_current' => file_exists($parent) ? file_get_contents($parent) : null,
+            ];
+            if ($req->get_method() === 'POST') {
+                $ok = @file_put_contents($path, $desired);
+                $out['wrote'] = $ok !== false;
+                $out['bytes'] = $ok;
+                $out['current'] = file_exists($path) ? file_get_contents($path) : null;
+                $qa_line = 'Sitemap: https://www.rukn-eltatawer.com/qa/sitemap_index.xml';
+                if (file_exists($parent) && is_writable($parent)) {
+                    $pc = (string) file_get_contents($parent);
+                    if (strpos($pc, 'rukn-eltatawer.com/qa/sitemap_index.xml') === false) {
+                        $out['parent_appended'] = (bool) @file_put_contents($parent, rtrim($pc) . "\n" . $qa_line . "\n");
+                    } else {
+                        $out['parent_appended'] = 'already';
+                    }
+                    $out['parent_current'] = file_get_contents($parent);
+                }
+                if (function_exists('do_action')) {
+                    do_action('litespeed_purge_url', home_url('/robots.txt'));
+                    do_action('litespeed_purge_all');
+                }
+            }
+            return $out;
+        },
+    ]);
+});
