@@ -650,6 +650,11 @@ def main():
             continue
         if int(p["id"]) in LEAK_CLONE_IDS or is_water_leak_clone(title, slug, p["id"]):
             continue
+        if slug.endswith((
+            "-doha", "-al-rayyan", "-al-wakrah", "-al-khor", "-umm-salal",
+            "-al-daayen", "-al-shamal", "-al-shahaniya", "-lusail",
+        )):
+            continue
         scored.append((score_draft(title, slug), p, title))
     scored.sort(key=lambda x: -x[0])
     note(f"drafts to schedule {len(scored)}")

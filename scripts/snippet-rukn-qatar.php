@@ -9,6 +9,62 @@ if (!defined('ABSPATH')) {
 const RUKN_QA_PHONE = '+97431110184';
 const RUKN_QA_WA = '97431110184';
 const RUKN_QA_GEO = '25.2854, 51.5310';
+const RUKN_QA_LEAK = '/water-leak-detection-company-in-qatar/';
+
+function rukn_allowed_city_slugs() {
+    return [
+        'sewerage-company-in-doha',
+        'gas-leak-detection-doha',
+        'ac-leak-detection-doha',
+    ];
+}
+
+function rukn_city_hub_path($suffix) {
+    $map = [
+        'doha' => '/services-in-doha-qatar/',
+        'al-rayyan' => '/services-in-al-rayyan-qatar/',
+        'al-wakrah' => '/services-in-al-wakrah-qatar/',
+        'al-khor' => '/services-in-al-khor-qatar/',
+        'umm-salal' => '/services-in-umm-salal-qatar/',
+        'al-daayen' => '/services-in-al-daayen-qatar/',
+        'al-shamal' => '/services-in-al-shamal-qatar/',
+        'al-shahaniya' => '/services-in-al-shahaniya-qatar/',
+        'lusail' => '/services-in-lusail-qatar/',
+    ];
+    return $map[$suffix] ?? null;
+}
+
+function rukn_city_suffix($slug) {
+    foreach (array_keys([
+        'al-shahaniya' => 1, 'al-daayen' => 1, 'umm-salal' => 1, 'al-wakrah' => 1,
+        'al-rayyan' => 1, 'al-shamal' => 1, 'al-khor' => 1, 'lusail' => 1, 'doha' => 1,
+    ]) as $s) {
+        if ($slug === $s || substr($slug, -strlen($s) - 1) === '-' . $s) {
+            return $s;
+        }
+    }
+    return null;
+}
+
+function rukn_is_city_template($title, $slug) {
+    $slug = (string) $slug;
+    $title = (string) $title;
+    if (in_array($slug, rukn_allowed_city_slugs(), true)) {
+        return false;
+    }
+    if ($slug === 'water-leak-detection-company-in-qatar' || $slug === 'water-leak-detection-qatar-en') {
+        return false;
+    }
+    if (rukn_city_suffix($slug)) {
+        return true;
+    }
+    foreach (['في الدوحة', 'في الريان', 'في الوكرة', 'في الخور', 'في أم صلال', 'في الظعاين', 'في الشمال', 'في الشحانية', 'في لوسيل'] as $city) {
+        if (strpos($title, $city) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
 
 add_action('init', function () {
     if (get_option('rukn_qa_options_patched_v3') === '1') {
@@ -201,6 +257,33 @@ add_filter('language_attributes', function ($out) {
 }, 99);
 
 add_action('template_redirect', function () {
+    if (is_admin() || wp_doing_ajax() || wp_is_json_request()) {
+        return;
+    }
+    $slug = '';
+    $id = 0;
+    if (is_singular('post')) {
+        $id = (int) get_queried_object_id();
+        $slug = (string) get_post_field('post_name', $id);
+    } elseif (is_404()) {
+        $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+        $path = preg_replace('#^qa/#', '', $path);
+        $slug = basename($path);
+    }
+    if ($id !== 2973 && $slug && $slug !== 'water-leak-detection-company-in-qatar' && $slug !== 'water-leak-detection-qatar-en') {
+        if (preg_match('/^(water-leak-detection|water-pipe-leak-detection)-/', $slug)) {
+            wp_safe_redirect(home_url(RUKN_QA_LEAK), 301);
+            exit;
+        }
+        if (!in_array($slug, rukn_allowed_city_slugs(), true)) {
+            $suf = rukn_city_suffix($slug);
+            $hub = $suf ? rukn_city_hub_path($suf) : null;
+            if ($hub) {
+                wp_safe_redirect(home_url($hub), 301);
+                exit;
+            }
+        }
+    }
     if (is_post_type_archive('pricing')) {
         wp_safe_redirect(home_url('/as3ar/'), 301);
         exit;
@@ -318,6 +401,13 @@ add_filter('wp_insert_post_data', function ($data, $postarr) {
             || strpos($blob, 'water-leak-detection-') !== false
             || strpos($blob, 'water-pipe-leak-detection-') !== false
         )
+    ) {
+        $data['post_status'] = 'draft';
+    }
+    if (
+        $type === 'post'
+        && in_array($status, ['publish', 'future'], true)
+        && rukn_is_city_template($data['post_title'] ?? '', $data['post_name'] ?? '')
     ) {
         $data['post_status'] = 'draft';
     }
