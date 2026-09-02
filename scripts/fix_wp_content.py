@@ -60,6 +60,8 @@ PRIORITY_SLUG = [
 ]
 
 SKIP_DRAFT = ("شحن", "shipping", "دولي", "international-shipping", "cargo")
+# Ranking page — never rewrite, retitle, reslug, or unpublish.
+LOCKED_POST_IDS = {2973}
 
 EMOJI_RE = re.compile(
     "["
@@ -110,6 +112,9 @@ def get_all_posts(status, fields="id,slug,status,title,date,link"):
 
 
 def rm_meta(post_id, title=None, description=None, keyword=None, robots=None, object_type="post"):
+    if int(post_id) in LOCKED_POST_IDS:
+        print(f"SKIP locked ranking SEO {post_id}", flush=True)
+        return
     meta = {}
     if title:
         meta["rank_math_title"] = title
@@ -379,6 +384,9 @@ def score_draft(title: str, slug: str) -> int:
 
 
 def update_post(pid, **kwargs):
+    if int(pid) in LOCKED_POST_IDS:
+        print(f"SKIP locked ranking post {pid}", flush=True)
+        return 0, {"skipped": True}, {}
     return api(f"/wp/v2/posts/{pid}", "POST", kwargs)
 
 
@@ -398,24 +406,7 @@ def main():
         code, data, _ = api("/wp/v2/cities", "POST", {"name": name, "slug": slug})
         note(f"city {name}: {code}")
 
-    # Flagship AR
-    leak_html = leak_article_ar()
-    code, data, _ = update_post(
-        2973,
-        content=leak_html,
-        excerpt=excerpt_from("كشف تسربات المياه في قطر بدون تكسير"),
-        comment_status="closed",
-        ping_status="closed",
-        featured_media=2471,
-    )
-    rm_meta(
-        2973,
-        title="كشف تسربات المياه في قطر بدون تكسير | ركن التطور",
-        description="كشف تسربات المياه في الدوحة وقطر بدون تكسير: كاميرا حرارية، تقرير قبل الإصلاح، وتغطية لوسيل والريان والوكرة. اتصل 3111 0184 974+.",
-        keyword="كشف تسربات المياه في قطر",
-        robots=["index", "follow"],
-    )
-    note(f"flagship leak {code}")
+    # Post 2973 (كشف تسربات المياه في قطر) is LOCKED — ranking page, do not rewrite.
 
     roof_html = roof_article_ar()
     code, data, _ = update_post(
