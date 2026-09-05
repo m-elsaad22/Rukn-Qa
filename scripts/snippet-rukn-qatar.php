@@ -254,6 +254,19 @@ add_action('wp_footer', function () {
     }
 }, 9999);
 
+add_filter('pre_get_document_title', function ($title) {
+    if (is_front_page() && !is_singular()) {
+        return 'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة';
+    }
+    return $title;
+}, 99);
+add_filter('rank_math/frontend/title', function ($title) {
+    if (is_front_page() && !is_singular()) {
+        return 'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة';
+    }
+    return $title;
+}, 99);
+
 add_filter('language_attributes', function ($out) {
     if (function_exists('pll_current_language') && pll_current_language() === 'en') {
         return 'lang="en-GB" dir="ltr"';
@@ -308,6 +321,9 @@ add_action('template_redirect', function () {
         $is_locked = is_singular() && (int) get_queried_object_id() === 2973;
         $html = preg_replace('#https://(?:wa\.me|api\.whatsapp\.com/send\?phone=)/?\+?(?:97431110184|97431553076|971586634710)#', 'https://wa.me/971586634710', $html);
         $html = preg_replace('#href="tel:[^"]*"#', 'href="#"', $html);
+        $html = str_replace('"wa_number":"97431110184"', '"wa_number":"971586634710"', $html);
+        $html = str_replace('"call_number":"+97431110184"', '"call_number":""', $html);
+        $html = str_replace('"call_show":true', '"call_show":false', $html);
         if ($is_locked) {
             return $html;
         }
@@ -348,6 +364,8 @@ add_action('template_redirect', function () {
         $html = str_replace('+97431110184', '', $html);
         $html = str_replace('97431110184', '', $html);
         $html = str_replace('3111 0184', '', $html);
+        $html = preg_replace('/<iframe[^>]+Mazid\+Mall[^>]*>/i', '', $html);
+        $html = str_replace('Mazid+Mall', 'Doha+Qatar', $html);
         $html = str_replace('Office 306, Tower A, Mazid Mall, Mohamed Bin Zayed City, Abu Dhabi, UAE', 'الدوحة، قطر', $html);
         $html = str_replace('شركة إماراتية متخصصة', 'شركة قطرية متخصصة', $html);
         $html = str_replace('داخل أبوظبي وبقية قطر', 'في الدوحة وبقية مدن قطر', $html);
@@ -363,6 +381,14 @@ add_action('template_redirect', function () {
         $html = str_replace('الإمارات', 'قطر', $html);
         $html = str_replace('المجموعه المتحده للخدمات المتكاملة', 'شركة ركن التطور', $html);
         $html = str_replace('https://www.rukn-eltatawer.com/qa/qa/', 'https://www.rukn-eltatawer.com/qa/', $html);
+        if (is_front_page()) {
+            $html = preg_replace(
+                '/<title>.*?<\/title>/is',
+                '<title>ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة</title>',
+                $html,
+                1
+            );
+        }
         $is_en = (function_exists('pll_current_language') && pll_current_language() === 'en')
             || (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/qa/en') !== false);
         if ($is_en) {
