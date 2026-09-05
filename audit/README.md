@@ -9,5 +9,6 @@
 | [INDEXING-QA-VS-OM.md](INDEXING-QA-VS-OM.md) | لماذا عُمان تُفهرس سريعاً وقطر لا: robots وخريطة الموقع |
 | [COVERAGE-ARCHITECTURE.md](COVERAGE-ARCHITECTURE.md) | تغطية كل الخدمات والمدن بدون قوالب متطابقة |
 | [FULL-SITE-AUDIT-AR.md](FULL-SITE-AUDIT-AR.md) | تدقيق شامل 5 سبتمبر 2026: مقالات، قالب، إعدادات، إضافات، بيانات فارغة |
+| [FIXES-APPLIED-ROUND4.md](FIXES-APPLIED-ROUND4.md) | إخفاء الاتصال، واتساب +971586634710، وإصلاحات آمنة دون لمس 2973 |
 
 التغييرات على ووردبريس عبر REST + مقتطف Code Snippets. المقال #2973 مقفول ولا يُعاد كتابته.
