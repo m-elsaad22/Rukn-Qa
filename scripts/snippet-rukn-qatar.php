@@ -367,6 +367,7 @@ add_action('template_redirect', function () {
         $html = preg_replace('/<iframe[^>]+Mazid\+Mall[^>]*>/i', '', $html);
         $html = str_replace('Mazid+Mall', 'Doha+Qatar', $html);
         $html = str_replace('Office 306, Tower A, Mazid Mall, Mohamed Bin Zayed City, Abu Dhabi, UAE', 'الدوحة، قطر', $html);
+        $html = str_replace('اتصال وواتساب', 'واتساب', $html);
         $html = str_replace('شركة إماراتية متخصصة', 'شركة قطرية متخصصة', $html);
         $html = str_replace('داخل أبوظبي وبقية قطر', 'في الدوحة وبقية مدن قطر', $html);
         $html = str_replace('أبوظبي', 'الدوحة', $html);
