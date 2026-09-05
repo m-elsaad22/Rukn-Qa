@@ -29,8 +29,8 @@ HEADERS = {
 }
 LOCKED = 2973
 LEAK = "https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/"
-PHONE = '<a href="tel:+97431110184"><span dir="ltr">+974 3111 0184</span></a>'
-WA = '<a href="https://wa.me/97431110184">واتساب</a>'
+PHONE = ''
+WA = '<a href="https://wa.me/971586634710">واتساب</a>'
 KEEP_SLUGS = {
     "water-leak-detection-company-in-qatar",
     "water-leak-detection-qatar-en",

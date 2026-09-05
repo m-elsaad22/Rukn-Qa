@@ -28,9 +28,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 CursorFix/1.0",
     "Content-Type": "application/json",
 }
-PHONE = "+97431110184"
-PHONE_HUMAN = "3111 0184 974+"
-WA = "97431110184"
+PHONE = ""
+PHONE_HUMAN = ""
+WA = "971586634710"
 IMG = "https://www.rukn-eltatawer.com/qa/wp-content/uploads/2024/05/leakage.webp"
 IMG_AC = "https://www.rukn-eltatawer.com/qa/wp-content/uploads/2020/07/ac-cleaning.webp"
 IMG_INTRO = "https://www.rukn-eltatawer.com/qa/wp-content/uploads/2026/04/intro-1.webp"
@@ -158,8 +158,7 @@ def rm_meta(post_id, title=None, description=None, keyword=None, robots=None, ob
 
 def cta():
     return (
-        f'<p><a href="tel:{PHONE}">اتصل الآن: {PHONE_HUMAN}</a> — '
-        f'<a href="https://wa.me/{WA}?text={urllib.parse.quote("مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر")}">'
+        f'<p><a href="https://wa.me/{WA}?text={urllib.parse.quote("مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر")}">'
         f"واتساب مباشر</a></p>"
     )
 
@@ -211,7 +210,7 @@ def sanitize_html(html: str, title: str, city: str | None = None) -> str:
     html = re.sub(r"https://img\.youtube\.com/vi/[^\"']+", IMG, html)
     if city and city_block(city, title) and city not in html[:800]:
         html = city_block(city, title) + html
-    if "tel:+97431110184" not in html and "wa.me/97431110184" not in html:
+    if "wa.me/971586634710" not in html:
         html += cta()
     return html
 
@@ -248,7 +247,7 @@ def detect_city(title: str, slug: str) -> str | None:
 def excerpt_from(title: str) -> str:
     return (
         f"{title} مع فريق ركن التطور في قطر: تشخيص قبل الإصلاح، تقرير واضح، "
-        f"وعرض سعر مكتوب. نغطي الدوحة ولوسيل والريان والوكرة وباقي مدن الدولة. اتصل على {PHONE_HUMAN}."
+        f"وعرض سعر مكتوب. نغطي الدوحة ولوسيل والريان والوكرة وباقي مدن الدولة."
     )[:160]
 
 
@@ -319,7 +318,7 @@ def roof_article_ar():
 def en_leak():
     return f"""
 <p>Hidden water leaks in Qatar villas and apartments often show up first as a jump on the <strong>Kahramaa</strong> bill, salt marks on tiles, or a damp smell on the ground floor — not as a visible puddle. Rukn El Tatawer locates the source with thermal and acoustic tools before any breaking, then repairs the spot after you see the report.</p>
-<p><a href="tel:{PHONE}">Call {PHONE_HUMAN}</a> — <a href="https://wa.me/{WA}">WhatsApp</a></p>
+<p><a href="https://wa.me/{WA}">WhatsApp</a></p>
 <h2>Leak signs in Doha, Lusail and Al Rayyan</h2>
 <ul>
 <li>Meter still running with every tap closed.</li>
@@ -499,7 +498,7 @@ def main():
         7461: (
             "اتصل بنا — ركن التطور قطر",
             f"""
-<p>للتواصل مع ركن التطور في قطر: اتصال أو واتساب على <strong>{PHONE_HUMAN}</strong>. المعاينة في الموقع، ثم تقرير وعرض سعر مكتوب. لا نثبت سعراً نهائياً عبر رسالة دون فهم الحالة.</p>
+<p>للتواصل مع ركن التطور في قطر استخدم واتساب من أزرار الموقع. المعاينة في الموقع، ثم تقرير وعرض سعر مكتوب. لا نثبت سعراً نهائياً عبر رسالة دون فهم الحالة.</p>
 <p>البريد: info@rukn-eltatawer.com</p>
 <p>نطاق العمل: الدوحة وجميع المدن التي نغطيها داخل قطر.</p>
 {cta()}
@@ -530,14 +529,14 @@ def main():
 <p>نعم، بالأجهزة أولاً ثم فتح موضعي بعد التقرير.</p>
 <h2>هل التسعير عبر الهاتف؟</h2>
 <p>لا نثبت سعر الحالة النهائية دون معاينة أو بيانات كافية عن الموقع.</p>
-<h2>ما رقم التواصل؟</h2>
-<p>{PHONE_HUMAN} أو واتساب على نفس الرقم.</p>
+<h2>كيف أتواصل؟</h2>
+<p>واتساب من الزر العائم أو من داخل الصفحات. زر الاتصال مخفي مؤقتاً.</p>
 """,
         ),
         8990: (
             "Contact Rukn El Tatawer in Qatar",
             f"""
-<p>Call or WhatsApp <strong>{PHONE}</strong> for leak detection, insulation, AC and general maintenance in Doha and across Qatar. Site visit first, then a written quote.</p>
+<p>Contact us on WhatsApp for leak detection, insulation, AC and general maintenance in Doha and across Qatar. Site visit first, then a written quote.</p>
 <p>Email: info@rukn-eltatawer.com</p>
 """,
         ),
@@ -574,14 +573,14 @@ def main():
         {
             "title": "Roof insulation in Qatar",
             "slug": "roof-insulation-qatar-en",
-            "content": f"<p>Roof waterproofing and heat insulation for Qatar villas and buildings: foam, membranes or reflective coating after checking slope and drainage — not a one-product pitch.</p><p><a href='tel:{PHONE}'>Call {PHONE}</a></p>",
+            "content": f"<p>Roof waterproofing and heat insulation for Qatar villas and buildings: foam, membranes or reflective coating after checking slope and drainage — not a one-product pitch.</p><p><a href='https://wa.me/{WA}'>WhatsApp</a></p>",
             "excerpt": "Roof insulation in Doha and Qatar after a site inspection. Heat and waterproofing are specified separately.",
             "keyword": "roof insulation Qatar",
         },
         {
             "title": "AC maintenance in Doha and Qatar",
             "slug": "ac-maintenance-qatar-en",
-            "content": f"<p>Split and packaged AC service before the Qatar summer: coil cleaning, refrigerant check and duct issues that raise Kahramaa bills. Based in Doha, covering Lusail, Al Rayyan and Al Wakrah.</p><p><a href='tel:{PHONE}'>Call {PHONE}</a></p>",
+            "content": f"<p>Split and packaged AC service before the Qatar summer: coil cleaning, refrigerant check and duct issues that raise Kahramaa bills. Based in Doha, covering Lusail, Al Rayyan and Al Wakrah.</p><p><a href='https://wa.me/{WA}'>WhatsApp</a></p>",
             "excerpt": "Air conditioning maintenance in Qatar before peak summer load. Inspection then a written quote.",
             "keyword": "AC maintenance Doha",
         },

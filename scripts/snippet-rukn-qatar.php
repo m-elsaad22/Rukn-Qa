@@ -6,10 +6,12 @@ if (!defined('ABSPATH')) {
     return;
 }
 
-const RUKN_QA_PHONE = '+97431110184';
-const RUKN_QA_WA = '97431110184';
+const RUKN_QA_PHONE = '';
+const RUKN_QA_WA = '971586634710';
+const RUKN_QA_WA_PLUS = '+971586634710';
 const RUKN_QA_GEO = '25.2854, 51.5310';
 const RUKN_QA_LEAK = '/water-leak-detection-company-in-qatar/';
+const RUKN_QA_HIDE_CALL = true;
 
 function rukn_allowed_city_slugs() {
     return [
@@ -87,9 +89,7 @@ add_action('init', function () {
         $titles['pt_price_title'] = '%title% %sep% ركن التطور قطر';
         $titles['pt_works_title'] = '%title% %sep% ركن التطور قطر';
         $titles['404_title'] = 'الصفحة غير موجودة %sep% ركن التطور قطر';
-        $titles['phone_numbers'] = [
-            ['type' => 'customer support', 'number' => RUKN_QA_PHONE],
-        ];
+        $titles['phone_numbers'] = [];
         $titles['local_address'] = [
             'streetAddress' => 'الدوحة',
             'addressLocality' => 'الدوحة',
@@ -105,8 +105,8 @@ add_action('init', function () {
     if (is_array($theme_mod)) {
         $encoded = wp_json_encode($theme_mod);
         $new = str_replace(
-            ['971586634710', '201151481000', '20 1151481000', 'الخيثة', 'المشحمية'],
-            [RUKN_QA_WA, RUKN_QA_WA, RUKN_QA_PHONE, 'الخيسة', 'الشحانية'],
+            ['201151481000', '20 1151481000', 'الخيثة', 'المشحمية'],
+            [RUKN_QA_WA, RUKN_QA_WA, 'الخيسة', 'الشحانية'],
             $encoded
         );
         if ($new !== $encoded) {
@@ -139,8 +139,8 @@ add_action('init', function () {
         $val = get_option($name);
         if (is_string($val)) {
             $nv = str_replace(
-                ['971586634710', '201151481000', 'الخيثة', 'المشحمية'],
-                [RUKN_QA_WA, RUKN_QA_WA, 'الخيسة', 'الشحانية'],
+                ['201151481000', 'الخيثة', 'المشحمية'],
+                [RUKN_QA_WA, 'الخيسة', 'الشحانية'],
                 $val
             );
             if ($nv !== $val) {
@@ -149,8 +149,8 @@ add_action('init', function () {
         } elseif (is_array($val)) {
             $encoded = wp_json_encode($val);
             $new = str_replace(
-                ['971586634710', '201151481000', 'الخيثة', 'المشحمية'],
-                [RUKN_QA_WA, RUKN_QA_WA, 'الخيسة', 'الشحانية'],
+                ['201151481000', 'الخيثة', 'المشحمية'],
+                [RUKN_QA_WA, 'الخيسة', 'الشحانية'],
                 $encoded
             );
             if ($new !== $encoded) {
@@ -182,7 +182,7 @@ add_filter('rank_math/json_ld', function ($data, $jsonld) {
             $node['hasMap'] = 'https://www.google.com/maps/search/?api=1&query=25.2854,51.5310';
         }
         if (isset($node['telephone'])) {
-            $node['telephone'] = RUKN_QA_PHONE;
+            unset($node['telephone']);
         }
         if (isset($node['address']['addressCountry'])) {
             $node['address']['addressCountry'] = 'QA';
@@ -226,16 +226,21 @@ add_filter('rank_math/sitemap/robots', function ($robots) {
     return ['Sitemap: https://www.rukn-eltatawer.com/qa/sitemap_index.xml'];
 });
 
+add_action('wp_head', function () {
+    echo '<style id="rukn-hide-call">.fab-call,a.fab-btn.fab-call,a[href^="tel:"],a[href="tel:"],a[href="tel: "],.--contact--button-call-link,.-callbutton--post-card,.post-card-buttons.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>';
+}, 1);
+
 add_action('wp_footer', function () {
-    $phone = RUKN_QA_PHONE;
     $wa = RUKN_QA_WA;
     $msg = rawurlencode('مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر');
     echo '<script id="rukn-qa-contact-fix">';
-    echo 'window.RuknCS=Object.assign(window.RuknCS||{},{call_show:true,wa_show:true,call_number:"' . esc_js($phone) . '",wa_number:"' . esc_js($wa) . '",wa_message:"مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر"});';
-    echo '(function(){var p="' . esc_js($phone) . '",w="' . esc_js($wa) . '",m="' . $msg . '";';
-    echo 'function apply(){document.querySelectorAll("a[href^=\'tel:\']").forEach(function(a){if(a.getAttribute("href")!=="tel:"+p){a.setAttribute("href","tel:"+p)}});';
-    echo 'document.querySelectorAll("a[href*=\'wa.me\'],a[href*=\'api.whatsapp\']").forEach(function(a){var u="https://wa.me/"+w+"?text="+m;if(a.getAttribute("href")!==u){a.setAttribute("href",u);}});}';
-    echo 'apply();document.addEventListener("DOMContentLoaded",apply);setTimeout(apply,500);setTimeout(apply,1500);})();';
+    echo 'window.RuknCS=Object.assign(window.RuknCS||{},{call_show:false,wa_show:true,call_number:"",wa_number:"' . esc_js($wa) . '",wa_message:"مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر"});';
+    echo '(function(){var w="' . esc_js($wa) . '",m="' . $msg . '";';
+    echo 'function hideCall(root){root=root||document;root.querySelectorAll(\'a[href^="tel:"],.fab-call,.--contact--button-call-link,.-callbutton--post-card,[data-call="Phone"],.btn-call\').forEach(function(a){a.style.setProperty("display","none","important");a.setAttribute("hidden","hidden");a.removeAttribute("href");});}';
+    echo 'function apply(){hideCall();document.querySelectorAll("a[href*=\'wa.me\'],a[href*=\'api.whatsapp\'],a[data-fn-wa],a.btn-wa,a.fab-wa").forEach(function(a){var u="https://wa.me/"+w+"?text="+m;a.setAttribute("href",u);if(a.hasAttribute("data-wa-number")){a.setAttribute("data-wa-number","+"+w);}});}';
+    echo 'apply();document.addEventListener("DOMContentLoaded",apply);setTimeout(apply,300);setTimeout(apply,1200);setTimeout(apply,3000);';
+    echo 'if(window.MutationObserver){new MutationObserver(function(){apply();}).observe(document.documentElement,{childList:true,subtree:true});}';
+    echo '})();';
     echo 'document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-count]").forEach(function(el){if((el.textContent||"").trim()==="0"){el.textContent=el.getAttribute("data-count")||"0";}});});';
     echo '</script>';
     if (is_front_page()) {
@@ -300,8 +305,10 @@ add_action('template_redirect', function () {
         if (!is_string($html)) {
             return $html;
         }
-        // Never alter the ranking leak article HTML.
-        if (is_singular() && (int) get_queried_object_id() === 2973) {
+        $is_locked = is_singular() && (int) get_queried_object_id() === 2973;
+        $html = preg_replace('#https://(?:wa\.me|api\.whatsapp\.com/send\?phone=)/?\+?(?:97431110184|97431553076|971586634710)#', 'https://wa.me/971586634710', $html);
+        $html = preg_replace('#href="tel:[^"]*"#', 'href="#"', $html);
+        if ($is_locked) {
             return $html;
         }
         $html = str_replace(
@@ -315,11 +322,36 @@ add_action('template_redirect', function () {
             ],
             $html
         );
+        $html = str_replace(
+            'href="https://www.rukn-eltatawer.com/qa/contact-us/" title="التكييف والأجهزة الكهربائية"',
+            'href="https://www.rukn-eltatawer.com/qa/central-air-conditioning-maintenance-in-qatar/" title="التكييف والأجهزة الكهربائية"',
+            $html
+        );
+        $html = str_replace(
+            'href="https://www.rukn-eltatawer.com/qa/contact-us/" title="أعمال السباكة"',
+            'href="https://www.rukn-eltatawer.com/qa/plumbing-maintenance-in-qatar/" title="أعمال السباكة"',
+            $html
+        );
+        $html = str_replace(
+            'href="https://www.rukn-eltatawer.com/qa/contact-us/" title="تسليك المجاري"',
+            'href="https://www.rukn-eltatawer.com/qa/shrkh-tslyk-mjary-fy-qtr/" title="تسليك المجاري"',
+            $html
+        );
+        $html = str_replace(
+            'href="https://www.rukn-eltatawer.com/qa/contact-us/" title="الصبغ والجبس بورد والديكورات"',
+            'href="https://www.rukn-eltatawer.com/qa/shrkh-dhanat-dakhlyh-fy-qtr/" title="الصبغ والجبس بورد والديكورات"',
+            $html
+        );
         $html = str_replace('الخيثة', 'الخيسة', $html);
         $html = str_replace('المشحمية', 'الشحانية', $html);
-        $html = str_replace('971586634710', '97431110184', $html);
-        $html = str_replace('201151481000', '97431110184', $html);
-        $html = str_replace('+971586634710', '+97431110184', $html);
+        $html = str_replace('+974 3111 0184', '', $html);
+        $html = str_replace('+97431110184', '', $html);
+        $html = str_replace('97431110184', '', $html);
+        $html = str_replace('3111 0184', '', $html);
+        $html = str_replace('Office 306, Tower A, Mazid Mall, Mohamed Bin Zayed City, Abu Dhabi, UAE', 'الدوحة، قطر', $html);
+        $html = str_replace('شركة إماراتية متخصصة', 'شركة قطرية متخصصة', $html);
+        $html = str_replace('داخل أبوظبي وبقية قطر', 'في الدوحة وبقية مدن قطر', $html);
+        $html = str_replace('أبوظبي', 'الدوحة', $html);
         $html = str_replace('تغطية جميع الإمارات', 'تغطية مدن قطر', $html);
         $html = str_replace('جميع إمارات الدولة', 'كل مدن قطر', $html);
         $html = str_replace('إمارات الدولة', 'مدن قطر', $html);
@@ -514,6 +546,49 @@ add_action('init', function () {
     }
     update_option('rukn_qa_options_patched_v5', '1');
 }, 20);
+
+add_action('init', function () {
+    if (get_option('rukn_qa_options_patched_v6') === '1') {
+        return;
+    }
+    update_option('rukn_hide_call_global', '1');
+    $titles = get_option('rank-math-options-titles');
+    if (is_array($titles)) {
+        $titles['phone_numbers'] = [];
+        $titles['pt_price_title'] = '%title% %sep% ركن التطور قطر';
+        $titles['pt_pricing_title'] = '%title% %sep% ركن التطور قطر';
+        $titles['breadcrumbs_archive_format'] = 'الأرشيف: %s';
+        $titles['breadcrumbs_search_format'] = 'نتائج البحث: %s';
+        $titles['breadcrumbs_404_title'] = 'الصفحة غير موجودة';
+        unset($titles['facebook_admin_id']);
+        update_option('rank-math-options-titles', $titles);
+    }
+    $gen = get_option('rank-math-options-general');
+    if (is_array($gen)) {
+        $gen['add_img_alt'] = 'on';
+        $gen['add_img_title'] = 'on';
+        if (isset($gen['content_ai_language'])) {
+            $gen['content_ai_language'] = 'ar';
+        }
+        if (isset($gen['content_ai_country'])) {
+            $gen['content_ai_country'] = 'QA';
+        }
+        update_option('rank-math-options-general', $gen);
+    }
+    update_option('page_for_posts', 2453);
+    $mods = get_option('theme_mods_kayan-theme');
+    if (is_array($mods)) {
+        if (!isset($mods['nav_menu_locations']) || !is_array($mods['nav_menu_locations'])) {
+            $mods['nav_menu_locations'] = [];
+        }
+        $mods['nav_menu_locations']['main-menu'] = 2372;
+        update_option('theme_mods_kayan-theme', $mods);
+    }
+    if (function_exists('do_action')) {
+        do_action('litespeed_purge_all');
+    }
+    update_option('rukn_qa_options_patched_v6', '1');
+}, 25);
 
 add_action('rest_api_init', function () {
     register_rest_route('rukn-qa/v1', '/draft-city-templates', [

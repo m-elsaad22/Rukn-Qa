@@ -25,9 +25,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 CursorFix/1.0",
     "Content-Type": "application/json",
 }
-PHONE = "+97431110184"
-PHONE_HUMAN = "3111 0184 974+"
-WA = "97431110184"
+PHONE = ""
+PHONE_HUMAN = ""
+WA = "971586634710"
 LEAK_URL = "https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/"
 LOCKED = 2973
 LEAK_CLONES = [
@@ -110,8 +110,7 @@ def rm_meta(post_id, **kwargs):
 
 def cta():
     return (
-        f'<p><a href="tel:{PHONE}">اتصل: {PHONE_HUMAN}</a> — '
-        f'<a href="https://wa.me/{WA}?text={urllib.parse.quote("مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر")}">واتساب</a></p>'
+        f'<p><a href="https://wa.me/{WA}?text={urllib.parse.quote("مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر")}">واتساب</a></p>'
     )
 
 
@@ -212,7 +211,7 @@ def pricing_html():
 <h2>العزل والصيانة وباقي الخدمات</h2>
 <p>عزل الأسطح والخزانات، صيانة التكييف، التسليك والتنظيف: المعاينة تحدد الخامة والمدة. لا نثبت «سعراً عبر الهاتف» للحالة النهائية.</p>
 <h2>التواصل</h2>
-<p>قطر فقط: {PHONE_HUMAN} أو واتساب على نفس الرقم. البريد: info@rukn-eltatawer.com</p>
+<p>التواصل عبر واتساب من أزرار الموقع. البريد: info@rukn-eltatawer.com</p>
 {cta()}
 """
 
