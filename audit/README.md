@@ -8,6 +8,7 @@
 | [FIXES-APPLIED-ROUND3.md](FIXES-APPLIED-ROUND3.md) | إكمال الموقع دون لمس المقال المتصدر: روابط، مدن، أسعار، منع النسخ |
 | [INDEXING-QA-VS-OM.md](INDEXING-QA-VS-OM.md) | لماذا عُمان تُفهرس سريعاً وقطر لا: robots وخريطة الموقع |
 | [INDEXING-WHY-ONLY-TWO.md](INDEXING-WHY-ONLY-TWO.md) | لماذا site:/qa يظهر مقالين فقط (8 سبتمبر 2026) |
+| [FIXES-ARTICLES-VISUAL.md](FIXES-ARTICLES-VISUAL.md) | إعادة تصميم 138 مقالاً بصرياً دون لمس 2973 |
 | [COVERAGE-ARCHITECTURE.md](COVERAGE-ARCHITECTURE.md) | تغطية كل الخدمات والمدن بدون قوالب متطابقة |
 | [FULL-SITE-AUDIT-AR.md](FULL-SITE-AUDIT-AR.md) | تدقيق شامل 5 سبتمبر 2026: مقالات، قالب، إعدادات، إضافات، بيانات فارغة |
 | [FIXES-APPLIED-ROUND4.md](FIXES-APPLIED-ROUND4.md) | إخفاء الاتصال، واتساب +971586634710، وإصلاحات آمنة دون لمس 2973 |
