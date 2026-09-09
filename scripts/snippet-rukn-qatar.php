@@ -722,4 +722,190 @@ add_action('rest_api_init', function () {
             return $out;
         },
     ]);
+    register_rest_route('rukn-qa/v1', '/theme-inspect', [
+        'methods' => 'GET',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $theme = get_template_directory();
+            $q = (string) $req->get_param('q');
+            if ($q === '') {
+                $q = 'post__features__data';
+            }
+            $file = (string) $req->get_param('file');
+            $out = [
+                'theme' => $theme,
+                'query' => $q,
+                'file' => $file,
+                'matches' => [],
+                'shortcodes' => [],
+                'content' => null,
+            ];
+            if ($file !== '') {
+                $full = $theme . '/' . ltrim(str_replace(['..', "\0"], '', $file), '/');
+                $real_theme = realpath($theme);
+                $real_file = realpath($full);
+                if ($real_theme && $real_file && strpos($real_file, $real_theme) === 0 && is_file($real_file)) {
+                    $out['content'] = file_get_contents($real_file);
+                }
+                return $out;
+            }
+            global $shortcode_tags;
+            if (is_array($shortcode_tags)) {
+                foreach (array_keys($shortcode_tags) as $tag) {
+                    if ($q === '*' || stripos($tag, $q) !== false || preg_match('/post_|feature|step|service|price|gallery|faq|schema/i', $tag)) {
+                        $out['shortcodes'][] = $tag;
+                    }
+                }
+            }
+            if (!is_dir($theme)) {
+                return $out;
+            }
+            $limit = 40;
+            $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($theme, FilesystemIterator::SKIP_DOTS));
+            foreach ($rii as $file) {
+                if (count($out['matches']) >= $limit) {
+                    break;
+                }
+                if (!$file->isFile()) {
+                    continue;
+                }
+                $ext = strtolower($file->getExtension());
+                if (!in_array($ext, ['php', 'js', 'json'], true)) {
+                    continue;
+                }
+                $path = $file->getPathname();
+                $c = @file_get_contents($path);
+                if (!is_string($c) || $c === '' || stripos($c, $q) === false) {
+                    continue;
+                }
+                $hits = [];
+                $offset = 0;
+                $qlower = strtolower($q);
+                $clower = strtolower($c);
+                while (count($hits) < 4 && ($pos = strpos($clower, $qlower, $offset)) !== false) {
+                    $start = max(0, $pos - 180);
+                    $hits[] = substr($c, $start, 900);
+                    $offset = $pos + max(1, strlen($q));
+                }
+                $out['matches'][] = [
+                    'file' => str_replace($theme . '/', '', $path),
+                    'hits' => $hits,
+                ];
+            }
+            return $out;
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/post-blocks', [
+        'methods' => ['GET', 'POST'],
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $id = (int) $req->get_param('id');
+            if ($id <= 0) {
+                return new WP_Error('missing', 'id required', ['status' => 400]);
+            }
+            if ($id === 2973 && empty($GLOBALS['rukn_unlock_2973'])) {
+                return new WP_Error('locked', 'post 2973 is locked', ['status' => 403]);
+            }
+            $p = get_post($id);
+            if (!$p) {
+                return new WP_Error('missing', 'no post', ['status' => 404]);
+            }
+            if ($req->get_method() === 'POST') {
+                $json = $req->get_json_params();
+                if (!is_array($json)) {
+                    $json = [];
+                }
+                $meta = $json['meta'] ?? $req->get_param('meta');
+                $updated = [];
+                if (is_array($meta)) {
+                    foreach ($meta as $k => $v) {
+                        if (!is_string($k) || $k === '' || strpos($k, 'rank_math') === 0) {
+                            continue;
+                        }
+                        update_post_meta($id, $k, $v);
+                        $updated[] = $k;
+                    }
+                }
+                $excerpt = $json['excerpt'] ?? $req->get_param('excerpt');
+                $content = $json['content'] ?? $req->get_param('content');
+                $post_update = ['ID' => $id];
+                if (is_string($excerpt) && $excerpt !== '') {
+                    $post_update['post_excerpt'] = wp_strip_all_tags($excerpt);
+                    $updated[] = 'excerpt';
+                }
+                if (is_string($content) && $content !== '') {
+                    $post_update['post_content'] = $content;
+                    $updated[] = 'content';
+                }
+                if (count($post_update) > 1) {
+                    wp_update_post($post_update);
+                }
+                $tags = $json['tags'] ?? $req->get_param('tags');
+                if (is_array($tags) && $p->post_type === 'post') {
+                    $tag_ids = [];
+                    foreach ($tags as $t) {
+                        $name = is_string($t) ? trim($t) : '';
+                        if ($name === '') {
+                            continue;
+                        }
+                        $term = term_exists($name, 'post_tag');
+                        if (!$term) {
+                            $term = wp_insert_term($name, 'post_tag');
+                        }
+                        if (is_array($term) && !empty($term['term_id'])) {
+                            $tag_ids[] = (int) $term['term_id'];
+                        }
+                    }
+                    if ($tag_ids) {
+                        wp_set_post_terms($id, $tag_ids, 'post_tag', false);
+                        $updated[] = 'tags';
+                    }
+                }
+                $cities = $json['cities'] ?? $req->get_param('cities');
+                if (is_array($cities) && taxonomy_exists('cities')) {
+                    $city_ids = [];
+                    foreach ($cities as $c) {
+                        $name = is_string($c) ? trim($c) : '';
+                        if ($name === '') {
+                            continue;
+                        }
+                        $term = term_exists($name, 'cities');
+                        if (!$term) {
+                            $term = wp_insert_term($name, 'cities');
+                        }
+                        if (is_array($term) && !empty($term['term_id'])) {
+                            $city_ids[] = (int) $term['term_id'];
+                        }
+                    }
+                    if ($city_ids) {
+                        wp_set_object_terms($id, $city_ids, 'cities', false);
+                        $updated[] = 'cities';
+                    }
+                }
+                if (function_exists('do_action')) {
+                    do_action('litespeed_purge_post', $id);
+                }
+                $p = get_post($id);
+                return [
+                    'id' => $id,
+                    'updated' => $updated,
+                    'excerpt' => $p ? $p->post_excerpt : '',
+                    'tags' => wp_get_post_terms($id, 'post_tag', ['fields' => 'names']),
+                ];
+            }
+            $meta = get_post_meta($id);
+            $meta_out = [];
+            foreach ($meta as $k => $vals) {
+                $meta_out[$k] = maybe_unserialize($vals[0]);
+            }
+            return [
+                'id' => $p->ID,
+                'type' => $p->post_type,
+                'title' => $p->post_title,
+                'excerpt' => $p->post_excerpt,
+                'meta' => $meta_out,
+                'tags' => wp_get_post_terms($id, 'post_tag', ['fields' => 'names']),
+            ];
+        },
+    ]);
 });

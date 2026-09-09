@@ -338,21 +338,223 @@ def _ul(items):
     return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
 
 
-def _faq_block(title, city, pack):
-    qs = [
-        (f"ما هي {title}؟", f"{pack['what']} الخدمة تُقدَّم في {city} وباقي مدن قطر حسب الموعد."),
-        (f"متى أحتاج {title}؟", "عندما تظهر العلامات المذكورة أعلاه أو يتكرر العطل بعد إصلاح تجميلي."),
-        ("هل السعر ثابت من الرسالة؟", "لا. المعاينة أو وصف دقيق ثم عرض مكتوب. لا نخترع أسعاراً ثابتة لكل فيلا."),
-        ("هل تعملون خارج الدوحة؟", f"نعم بالتنسيق: {QATAR_AREAS}. زمن الوصول يُذكر بعد العنوان."),
-        ("كم تستغرق الزيارة؟", "تختلف حسب التشخيص والوصول. المدة التقريبية تُذكر بعد فهم الحالة."),
-        ("هل يلزم تكسير؟", "ليس دائماً. التشخيص أولاً وأي فتح يُذكر في العرض."),
-        ("كيف أتواصل؟", "واتساب من الزر في الصفحة. زر الاتصال الهاتفي مخفي مؤقتاً."),
-        ("ما الذي أحضّره قبل الزيارة؟", "العنوان، وصف العطل، وصور إن وُجدت، وتأمين وصول الفني للموقع."),
+TYPE_TAGS = {
+    "insulation": ["عزل أسطح في قطر", "عزل خزانات", "خدمات عزل قطر"],
+    "ac": ["صيانة تكييف قطر", "تنظيف مكيفات", "خدمات تكييف الدوحة"],
+    "sewer": ["تسليك مجاري قطر", "شفط بيارات", "خدمات صرف صحي"],
+    "plumbing": ["سباكة في قطر", "صيانة سباكة", "مضخات مياه قطر"],
+    "pest": ["مكافحة حشرات قطر", "رش حشرات الدوحة", "خدمات مكافحة"],
+    "cleaning": ["تنظيف منازل قطر", "تنظيف فلل الدوحة", "خدمات تنظيف"],
+    "garden": ["تنسيق حدائق قطر", "عشب صناعي", "تكريب نخيل"],
+    "pool": ["صيانة مسابح قطر", "إنشاء مسابح", "خدمات مسابح"],
+    "paint": ["دهانات قطر", "ديكور داخلي", "جبس بورد"],
+    "floor": ["سيراميك وباركيه قطر", "أرضيات", "انترلوك"],
+    "kitchen": ["ترميم مطابخ وحمامات", "تشطيب داخلي قطر"],
+    "build": ["مقاولات قطر", "صيانة مباني", "تشطيب فلل"],
+    "elec": ["كهرباء منازل قطر", "كاميرات مراقبة", "صيانة كهرباء"],
+    "appliance": ["صيانة أجهزة منزلية", "ثلاجات وغسالات قطر"],
+    "move": ["نقل عفش قطر", "تغليف أثاث"],
+    "outdoor": ["مظلات وسواتر قطر", "برجولات خشبية", "جلسات خارجية"],
+    "gasleak": ["كشف تسربات الغاز", "تسرب غاز الدوحة"],
+    "acleak": ["كشف تسربات التكييف", "تسرب فريون"],
+    "poolleak": ["كشف تسربات المسابح", "تسرب مسبح"],
+    "general": ["خدمات منزلية في قطر", "ركن التطور قطر"],
+}
+
+CITY_TAX = {
+    "الدوحة": "الدوحة",
+    "لوسيل": "لوسيل",
+    "الريان": "الريان",
+    "الوكرة": "الوكرة",
+    "الخور": "الخور",
+    "أم صلال": "أم صلال",
+    "الضعاين": "الظعاين",
+    "الظعاين": "الظعاين",
+    "الشمال": "الشمال",
+    "الشحانية": "الشحانية",
+}
+ALL_CITIES = ["الدوحة", "لوسيل", "الريان", "الوكرة", "الخور", "أم صلال", "الظعاين", "الشمال", "الشحانية"]
+
+SHORTCODES = "\n[post_features]\n\n[post_steps]\n\n[post_prices]\n\n[post_services]\n\n[post_call]\n"
+
+
+def faq_pairs(title: str, city: str, pack: dict, lang: str = "ar"):
+    if lang == "en":
+        return [
+            {"question": f"What is {title}?", "answer": f"{pack['what']} Available in {city} and other Qatar cities by appointment."},
+            {"question": "When should I book?", "answer": "When the signs above appear, or the fault returns after a cosmetic fix."},
+            {"question": "Is there a fixed price in chat?", "answer": "No. We inspect or collect a clear description, then send a written scope. We do not invent a villa-wide price list."},
+            {"question": "Do you work outside Doha?", "answer": f"Yes, by schedule across {QATAR_AREAS}."},
+            {"question": "How long is the visit?", "answer": "It depends on diagnosis and access. A time window is shared after we have the address."},
+            {"question": "Is breaking required?", "answer": "Not always. Diagnosis comes first; any opening is listed in the quote."},
+            {"question": "How do I contact you?", "answer": "Use WhatsApp on this page. The call button is hidden for now."},
+            {"question": "What should I prepare?", "answer": "Address, a short fault description, photos if available, and access for the technician."},
+            {"question": "Do you write the scope?", "answer": "Yes. Work starts after you approve a written range, not after a vague chat price."},
+            {"question": "Who is the service for?", "answer": "Homes, villas and buildings in Qatar that need this work after inspection."},
+        ]
+    return [
+        {"question": f"ما هي {title}؟", "answer": f"{pack['what']} الخدمة تُقدَّم في {city} وباقي مدن قطر حسب الموعد."},
+        {"question": f"متى أحتاج {title}؟", "answer": "عندما تظهر العلامات المذكورة في المقال أو يتكرر العطل بعد إصلاح تجميلي."},
+        {"question": "هل السعر ثابت من الرسالة؟", "answer": "لا. المعاينة أو وصف دقيق ثم عرض مكتوب. لا نخترع أسعاراً ثابتة لكل فيلا."},
+        {"question": "هل تعملون خارج الدوحة؟", "answer": f"نعم بالتنسيق: {QATAR_AREAS}. زمن الوصول يُذكر بعد العنوان."},
+        {"question": "كم تستغرق الزيارة؟", "answer": "تختلف حسب التشخيص والوصول. المدة التقريبية تُذكر بعد فهم الحالة."},
+        {"question": "هل يلزم تكسير؟", "answer": "ليس دائماً. التشخيص أولاً وأي فتح يُذكر في العرض."},
+        {"question": "كيف أتواصل؟", "answer": "واتساب من الزر في الصفحة. زر الاتصال الهاتفي مخفي مؤقتاً."},
+        {"question": "ما الذي أحضّره قبل الزيارة؟", "answer": "العنوان، وصف العطل، وصور إن وُجدت، وتأمين وصول الفني للموقع."},
+        {"question": "هل تكتبون نطاق العمل؟", "answer": "نعم. التنفيذ بعد الموافقة على عرض مكتوب، وليس بعد سعر عام من محادثة قصيرة."},
+        {"question": "لمن تناسب الخدمة؟", "answer": f"منازل وفلل ومنشآت في {city} وباقي قطر تحتاج هذا العمل بعد المعاينة."},
     ]
+
+
+def _faq_block(title, city, pack):
     out = ['<h2>أسئلة شائعة</h2>']
-    for q, a in qs:
-        out.append(f'<div class="faq-item"><h3>{q}</h3><p>{a}</p></div>')
+    for item in faq_pairs(title, city, pack, "ar"):
+        out.append(f'<div class="faq-item"><h3>{item["question"]}</h3><p>{item["answer"]}</p></div>')
     return "\n".join(out)
+
+
+def article_tags(title: str, city: str, ptype: str, lang: str = "ar"):
+    tags = [title]
+    if lang == "en":
+        tags.extend(["Qatar home services", "Rukn El Tatawer Qatar", city if city != "قطر" else "Doha"])
+        return [t for t in tags if t]
+    tags.append("خدمات منزلية في قطر")
+    tags.append("ركن التطور قطر")
+    tags.extend(TYPE_TAGS.get(ptype, TYPE_TAGS["general"]))
+    if city and city != "قطر":
+        tags.append(city)
+        tags.append(f"{title.split('في')[0].strip()} في {city}" if "في" in title else f"{title} {city}")
+    out, seen = [], set()
+    for t in tags:
+        t = (t or "").strip()
+        if t and t not in seen and len(t) < 80:
+            seen.add(t)
+            out.append(t)
+    return out[:8]
+
+
+def article_cities(city: str):
+    mapped = CITY_TAX.get(city)
+    if mapped:
+        return [mapped]
+    return list(ALL_CITIES)
+
+
+def fa_icon(name: str) -> str:
+    return f'<i class="fas {name}"></i>'
+
+
+def theme_meta(title: str, city: str, pack: dict, desc: str, lang: str = "ar"):
+    ar = lang != "en"
+    features = [
+        {
+            "title": "تشخيص أولاً" if ar else "Diagnose first",
+            "content": "نحدد المصدر قبل تغيير الخامة أو الفتح الواسع." if ar else "Find the cause before replacing materials or opening widely.",
+            "icon": fa_icon(pack["icon"]),
+        },
+        {
+            "title": "تغطية قطر" if ar else "Qatar coverage",
+            "content": QATAR_AREAS if ar else "Doha, Lusail, Al Rayyan, Al Wakrah and other cities by appointment.",
+            "icon": fa_icon("fa-map-location-dot"),
+        },
+        {
+            "title": "عرض مكتوب" if ar else "Written quote",
+            "content": "النطاق والتكلفة بعد فهم الحالة، لا سعر نهائي من رسالة قصيرة." if ar else "Scope and cost after we understand the case. No final price from a short chat.",
+            "icon": fa_icon("fa-file-invoice"),
+        },
+        {
+            "title": "تنسيق مسبق" if ar else "Scheduled visit",
+            "content": f"الزيارة في {city} بعد العنوان ونوع العطل." if ar else f"Visit in {city} after address and fault type.",
+            "icon": fa_icon("fa-clock"),
+        },
+    ]
+    steps = [{"title": n, "content": t} for n, t in pack["steps"]]
+    services = [{"title": a, "content": f"{b} — {c}"} for a, b, c, _d in pack["types"]]
+    prices = [{"title": factor, "value": "يُحدَّد بعد المعاينة" if ar else "Set after inspection"} for factor in pack["cost"]]
+    return {
+        "whatsapp_number": WA,
+        "phone_number": "",
+        "articon": fa_icon(pack["icon"]),
+        "hide_features__section": "",
+        "hide_work_steps": "",
+        "hide_services_section": "",
+        "hide_price_list__section": "",
+        "hide_call_section": "",
+        "hide_post_gallery": "on",
+        "position__post_card": "bottom_content",
+        "post__features__data": {
+            "features__title": "لماذا تختار ركن التطور؟" if ar else "Why Rukn El Tatawer?",
+            "features__content": f"{title} في {city}: تشخيص ثم نطاق مكتوب." if ar else f"{title} in {city}: inspection then a written scope.",
+            "yourcolor__post_features": features,
+        },
+        "post__work_steps__data": {
+            "work_steps__title": "خطوات العمل" if ar else "How we work",
+            "work_steps__content": "من المعاينة إلى التسليم دون تخطي التشخيص." if ar else "From inspection to handover without skipping diagnosis.",
+            "work_steps_items": steps,
+        },
+        "post__services__data": {
+            "services__title": "أنواع العمل في هذه الخدمة" if ar else "Work types in this service",
+            "services__content": "البنود تتضح بعد المعاينة حسب حالة الموقع." if ar else "Items are confirmed after inspecting the site.",
+            "post_services_items": services,
+        },
+        "post__price_list__data": {
+            "price_list__title": f"عوامل تكلفة {title}" if ar else f"Cost factors for {title}",
+            "price_list__content": "لا قائمة أسعار ثابتة لكل فيلا. هذه العوامل تغيّر النطاق." if ar else "No fixed villa price list. These factors change the scope.",
+            "price_list__table_title1": "العامل" if ar else "Factor",
+            "price_list__table_title2": "الأثر" if ar else "Effect",
+            "price_list__items": prices,
+        },
+        "post__call_section__data": {
+            "call_section_title": f"هل تحتاج إلى {title}؟" if ar else f"Need {title}?",
+            "call_section_content": "صف العطل والحي على واتساب لتحديد المعاينة." if ar else "Send the area and the fault on WhatsApp to book a visit.",
+            "call_section_phone": "",
+            "call_section_whatsapp": WA,
+        },
+        "post__card__data": {
+            "post_card_title": f"طلب {title}" if ar else f"Request {title}",
+            "post_card_content": "معاينة ثم عرض مكتوب. واتساب لتحديد الوقت." if ar else "Inspection then a written quote. WhatsApp for timing.",
+            "hide__card__callbutton": "on",
+            "hide__card__whatsapp": "",
+        },
+        "post__service_request__data": {
+            "orderservices": f"طلب {title}" if ar else f"Request {title}",
+            "contentservices": "صف الحي والعطل وصور إن وُجدت." if ar else "Share the area, the fault, and photos if you have them.",
+            "hide__service__callbutton": "on",
+            "hide__service__whatsapp": "",
+        },
+        "post__popover__data": {
+            "popover_call_title": "تواصل واتساب" if ar else "WhatsApp us",
+            "popover_call_content": "أرسل الحي ونوع العطل لتحديد موعد المعاينة في قطر." if ar else "Send the area and fault type to schedule a visit in Qatar.",
+            "popover_call_icon": '<i class="fab fa-whatsapp"></i>',
+        },
+        "yourcolor__faqs": faq_pairs(title, city, pack, lang),
+        "YourColor_Article": {
+            "hide_schema_Article": "",
+            "headline": title,
+            "description": desc,
+            "articleBody": f"{pack['what']} التغطية: {city} — {QATAR_AREAS}." if ar else f"{pack['what']} Coverage: {city}, Qatar.",
+        },
+        "YourColor_Service": {
+            "hide_schema_Service": "",
+            "priceRange": "حسب المعاينة" if ar else "After inspection",
+            "description": desc,
+            "addressLocality": "الدوحة" if ar else "Doha",
+            "postalCode": "",
+            "telephone": "",
+            "addressCountry": "QA",
+            "streetAddress": "الدوحة، قطر" if ar else "Doha, Qatar",
+            "addressRegion": "قطر" if ar else "Qatar",
+            "areaServed": QATAR_AREAS if ar else "Doha, Lusail, Al Rayyan, Al Wakrah, Al Khor, Umm Salal, Al Daayen, Al Shamal, Al Shahaniya",
+            "OfferCatalog": title,
+            "identifier": "",
+            "additionalType": "Service",
+        },
+        "YourColor_ImageObject": {
+            "hide_schema_ImageObject": "",
+            "description": f"{title} — ركن التطور في قطر" if ar else f"{title} — Rukn El Tatawer Qatar",
+            "contentLocation": "قطر" if ar else "Qatar",
+        },
+    }
 
 
 def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, str]:
@@ -391,11 +593,7 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
 <p><img src="{img}" alt="{alt}" width="800" height="450" loading="eager" decoding="async"></p>
 <h2>ما هي الخدمة؟</h2>
 <p>{pack['what']} في منازل ومنشآت قطر يختلف التنفيذ بين فيلا في الريان وبرج في الخليج الغربي؛ لذلك المعاينة جزء من العمل لا إضافة شكلية.</p>
-<div class="features-grid">
-<div class="feature-card"><i class="fas {pack['icon']}"></i><h3>تشخيص أولاً</h3><p>نحدد المصدر قبل تغيير الخامة أو الفتح الواسع.</p></div>
-<div class="feature-card"><i class="fas fa-map-location-dot"></i><h3>تغطية قطر</h3><p>{QATAR_AREAS}.</p></div>
-<div class="feature-card"><i class="fas fa-file-invoice"></i><h3>عرض مكتوب</h3><p>النطاق والتكلفة بعد فهم الحالة.</p></div>
-</div>
+[post_features]
 <h2>متى تحتاج إلى {title}؟</h2>
 {_ul(pack['when'])}
 <h2>علامات تستدعي الفحص</h2>
@@ -409,36 +607,21 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
 <thead><tr><th>البند</th><th>الوصف</th><th>الفائدة</th><th>متى</th></tr></thead>
 <tbody>{rows}</tbody>
 </table></div>
-<h2>كيف ننفّذ العمل؟</h2>
-<div class="steps-grid">
-"""
-    for i, (n, t) in enumerate(pack["steps"], 1):
-        html += f'<div class="step-card"><span class="step-number">{i:02d}</span><h3>{n}</h3><p>{t}</p></div>'
-    html += f"""
-</div>
+[post_steps]
 <blockquote class="expert-tip"><i class="fas fa-lightbulb"></i> <strong>نصيحة:</strong> صوّر العطل والعداد إن وُجد، واذكر الحي. ذلك يختصر جدولة الزيارة في {city}.</blockquote>
 <h2>الأدوات والفحص</h2>
 <p>{pack['tools']} لا نثبت جهازاً واحداً لكل حالة.</p>
 <h2>أخطاء شائعة</h2>
 {_ul(pack['mistakes'])}
-<section class="cta-section">
-<i class="fas fa-headset"></i>
-<h2>هل تحتاج إلى {title}؟</h2>
-<p>صف العطل والحي على واتساب لنؤكد إمكانية الزيارة والوقت المتوقع.</p>
-<a class="cta-button whatsapp-button" href="{wa}" rel="nofollow noopener" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
-</section>
+[post_call]
 <h2>مقارنة سريعة</h2>
 <div class="responsive-table"><table>
 <thead><tr><th>المعيار</th><th>عمل منظم</th><th>عمل عشوائي</th></tr></thead>
 <tbody>{cmp_rows}</tbody>
 </table></div>
-<h2>كم تكلفة {title} في {city}؟</h2>
-<p>لا ننشر قائمة أسعار ثابتة لكل فيلا لأن الحالات تختلف. العوامل:</p>
-{_ul(pack['cost'])}
-<p>بعد المعاينة يصلك نطاق مكتوب قبل التنفيذ.</p>
-<h2>خدمات مرتبطة</h2>
+[post_prices]
+[post_services]
 <p>{pack['related']} دليل المدن: <a href="{CITIES_HUB}">المدن التي نغطيها في قطر</a>.</p>
-{_faq_block(title, city, pack)}
 <h2>خلاصة</h2>
 <p>{title} في {city} تبدأ بفهم العطل لا بعرض عام. ركن التطور يزور بالتنسيق، يشرح التشخيص، ويكتب النطاق. للتواصل استخدم واتساب في هذه الصفحة.</p>
 </div>
@@ -462,16 +645,32 @@ def _build_en(title, city, pack, wa, img, alt):
 <p><img src="{img}" alt="{alt}" width="800" height="450" loading="eager" decoding="async"></p>
 <h2>What you get</h2>
 <p>{pack['what']}</p>
-<div class="features-grid">
-<div class="feature-card"><i class="fas {pack['icon']}"></i><h3>Diagnose first</h3><p>Find the cause before replacing materials.</p></div>
-<div class="feature-card"><i class="fas fa-map-location-dot"></i><h3>Qatar coverage</h3><p>Doha, Lusail, Al Rayyan, Al Wakrah and other cities by schedule.</p></div>
-<div class="feature-card"><i class="fas fa-file-invoice"></i><h3>Written quote</h3><p>No final price from a short chat alone.</p></div>
-</div>
+[post_features]
 <h2>When to book</h2>
 {_ul(pack['when'])}
-<h2>Cost factors</h2>
-<p>We do not invent fixed prices. Factors: {_ul(pack['cost'])}</p>
-<section class="cta-section"><h2>Need {title}?</h2><p>Send the area and photos on WhatsApp.</p>
-<a class="cta-button whatsapp-button" href="{wa}" rel="nofollow noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></section>
+[post_steps]
+[post_prices]
+[post_services]
+[post_call]
+<p>City coverage: <a href="{CITIES_HUB}">Qatar cities we cover</a>.</p>
 </div>
 """
+
+
+def build_theme_payload(title: str, slug: str, lang: str = "ar") -> dict:
+    city = detect_city(title, slug)
+    ptype = classify(title, slug)
+    pack = PACKS[ptype]
+    html, desc, kw = build_article(title, slug, lang)
+    meta = theme_meta(title, city, pack, desc, lang)
+    return {
+        "html": html,
+        "desc": desc,
+        "keyword": kw,
+        "excerpt": desc,
+        "tags": article_tags(title, city, ptype, lang),
+        "cities": article_cities(city),
+        "meta": meta,
+        "city": city,
+        "ptype": ptype,
+    }
