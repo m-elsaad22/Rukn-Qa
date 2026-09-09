@@ -228,6 +228,32 @@ add_filter('rank_math/sitemap/robots', function ($robots) {
 
 add_action('wp_head', function () {
     echo '<style id="rukn-hide-call">.fab-call,a.fab-btn.fab-call,a[href^="tel:"],a[href="tel:"],a[href="tel: "],.--contact--button-call-link,.-callbutton--post-card,.post-card-buttons.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>';
+    echo '<style id="rukn-article-ui">
+.rukn-article{color:#151c28;line-height:1.85;font-size:17px;max-width:100%}
+.rukn-article .article-hero{background:linear-gradient(145deg,#0A1F4E 0%,#041c36 70%);color:#fff;border-radius:18px;padding:22px 20px;margin:16px 0 22px}
+.rukn-article .hero-label{display:inline-block;background:#f0c33c;color:#041c36;font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.rukn-article .article-hero h2{color:#fff;margin:8px 0 10px;font-size:1.35rem;line-height:1.45}
+.rukn-article .article-hero p{color:#e3e9f2;margin:0 0 14px}
+.rukn-article .hero-buttons,.rukn-article .cta-section{display:flex;flex-wrap:wrap;gap:10px}
+.rukn-article .cta-button{display:inline-flex;align-items:center;gap:8px;background:#0e8a47;color:#fff!important;text-decoration:none!important;padding:12px 18px;border-radius:12px;font-weight:700;min-height:44px}
+.rukn-article .features-grid,.rukn-article .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0}
+.rukn-article .feature-card,.rukn-article .step-card{background:#fff;border:1px solid #e3e9f2;border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(10,31,78,.06)}
+.rukn-article .feature-card i,.rukn-article .step-card i{color:#1269eb;font-size:22px;margin-bottom:8px}
+.rukn-article .step-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#0A1F4E;color:#f0c33c;font-weight:800;margin-bottom:8px}
+.rukn-article .warning-box{background:#fff5f5;border-right:4px solid #c0392b;border-radius:12px;padding:14px 16px;margin:16px 0}
+.rukn-article .expert-tip{background:#edf8ff;border-right:4px solid #2E9DF7;border-radius:12px;padding:14px 16px;margin:16px 0}
+.rukn-article .cta-section{background:linear-gradient(145deg,#0A1F4E,#14335e);color:#fff;border-radius:16px;padding:20px;margin:22px 0;flex-direction:column}
+.rukn-article .cta-section h2,.rukn-article .cta-section p{color:#fff}
+.rukn-article .responsive-table{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;border-radius:12px;border:1px solid #e3e9f2}
+.rukn-article table{width:100%;border-collapse:collapse;min-width:480px}
+.rukn-article th{background:#0A1F4E;color:#fff;padding:10px 12px;text-align:right;font-weight:700}
+.rukn-article td{padding:10px 12px;border-bottom:1px solid #eef2f6;background:#fff}
+.rukn-article tr:nth-child(even) td{background:#f7fafc}
+.rukn-article .faq-item{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px 16px;margin:10px 0}
+.rukn-article .faq-item h3{margin:0 0 8px;font-size:1.05rem;color:#0A1F4E}
+.rukn-article img{max-width:100%;height:auto;border-radius:12px}
+@media(max-width:640px){.rukn-article{font-size:16px}.rukn-article .features-grid,.rukn-article .steps-grid{grid-template-columns:1fr}.rukn-article .article-hero h2{font-size:1.2rem}.rukn-article table{min-width:100%;font-size:14px}}
+</style>';
 }, 1);
 
 add_action('wp_footer', function () {
