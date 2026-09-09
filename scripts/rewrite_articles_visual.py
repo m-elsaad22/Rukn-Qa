@@ -147,9 +147,11 @@ def rewrite_services():
         return 0
     n = 0
     for p in items:
+        pid = int(p["id"])
         if pid == 1877:
             note("SKIP service 1877 leak CPT")
             continue
+        title = unescape((p.get("title") or {}).get("rendered") or "")
         slug = p.get("slug") or ""
         html, desc, kw = build_article(title, slug, "ar")
         st, _ = api(f"/wp/v2/services/{pid}", "POST", {"content": html})
