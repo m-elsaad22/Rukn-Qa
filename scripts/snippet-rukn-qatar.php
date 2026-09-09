@@ -35,6 +35,10 @@ function rukn_qa_home_title() {
 
 function rukn_qa_en_pairs() {
     $map = [
+        'شركة ركن التطور هي الشركة الرائدة في الخدمات المنزلية، سواء كشف تسربات المياه أو خدمات العزل أو خدمات تنظيف مسابح وغيرهم لأنها تمتلك خبرة كبيرة ويمكنها توفير جميع الخدمات التي تبحث عنها، اتصل بنا الآن واحصل على الخدمة التي تريدها.' => 'Rukn El-Tatawer is a leading home-services company in Qatar for water leak detection, insulation, pool cleaning and more — contact us for the service you need.',
+        'اتصل أو أرسل واتساب على  974+ ونرد عليك لتحديد الموعد.' => 'Send WhatsApp and we will reply to book the visit.',
+        'اتصل أو أرسل واتساب على 974+ ونرد عليك لتحديد الموعد.' => 'Send WhatsApp and we will reply to book the visit.',
+        'اتصل أو أرسل WhatsApp على 974+ ونرد عليك لتحديد الموعد.' => 'Send WhatsApp and we will reply to book the visit.',
         'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة' => 'Rukn El-Tatawer Qatar | Water leak detection, roof insulation and home maintenance in Doha',
         'ركن التطور الرائدة في تقديم كل الخدمات المنزلية، كشف تسربات المياه💧🕵️‍♂️عزل الأسطح🏠المسابح🏊‍♂️ التشطيبات🧱الديكورات🎨صيانة عامة🛠️السباكة🚿الكهرباء💡الأجهزة الكهربائية🔌تنسيق الحدائق🌴التنظيف🧼مكافحة الحشرات🐜وكل ما تحتاجه لراحة منزلك أو منشأتك.' => 'Rukn El-Tatawer leads home services in Qatar: water leak detection, roof insulation, pools, finishing, interiors, general maintenance, plumbing, electrical, appliances, landscaping, cleaning, pest control — everything your home or facility needs.',
         'من أشهر العلامات: ارتفاع مفاجئ في فاتورة المياه، بقع رطوبة أو تقشير في الجدران والأسقف، رائحة عفن، أو صوت مياه مع إغلاق كل المحابس.' => 'Common signs: a sudden rise in the water bill, damp patches or peeling on walls and ceilings, a musty smell, or the sound of water after every tap is closed.',
@@ -296,7 +300,16 @@ function rukn_qa_en_pairs() {
         'من نحن' => 'About us',
         'القائمة' => 'Menu',
         'إغلاق' => 'Close',
-        'بحث' => 'Search',
+        'aria-label="بحث"' => 'aria-label="Search"',
+        '<small>خدمة</small>' => '<small>services</small>',
+        'class="lbl">خدمة<' => 'class="lbl">services<',
+        'alt="خدمة"' => 'alt="service"',
+        'صيانة مباني' => 'Building maintenance',
+        'مقالات' => 'Articles',
+        'ونصائح' => 'and tips',
+        ' — في ' => ' — in ',
+        'خريطة موقع' => 'Map of',
+        'مرحباً!' => 'Hello!',
         'واتساب' => 'WhatsApp',
         'متاحة' => 'Available',
         'مباشر' => 'Live',
