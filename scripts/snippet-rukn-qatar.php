@@ -350,6 +350,7 @@ add_action('template_redirect', function () {
         $html = str_replace('"wa_number":"97431110184"', '"wa_number":"971586634710"', $html);
         $html = str_replace('"call_number":"+97431110184"', '"call_number":""', $html);
         $html = str_replace('"call_show":true', '"call_show":false', $html);
+        $html = preg_replace('/,"aggregateRating"\s*:\s*\{[^{}]*\}/', '', $html);
         if ($is_locked) {
             return $html;
         }

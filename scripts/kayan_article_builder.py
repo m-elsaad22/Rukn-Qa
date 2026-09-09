@@ -446,6 +446,13 @@ def fa_icon(name: str) -> str:
 
 def theme_meta(title: str, city: str, pack: dict, desc: str, lang: str = "ar"):
     ar = lang != "en"
+    loc = "" if city == "قطر" or (city and city in title) else city
+    if ar:
+        feat_intro = f"{title}: تشخيص ثم نطاق مكتوب." if not loc else f"{title} في {loc}: تشخيص ثم نطاق مكتوب."
+        visit_copy = f"الزيارة في {city} بعد العنوان ونوع العطل."
+    else:
+        feat_intro = f"{title}: inspection then a written scope."
+        visit_copy = f"Visit in {city} after address and fault type."
     features = [
         {
             "title": "تشخيص أولاً" if ar else "Diagnose first",
@@ -464,7 +471,7 @@ def theme_meta(title: str, city: str, pack: dict, desc: str, lang: str = "ar"):
         },
         {
             "title": "تنسيق مسبق" if ar else "Scheduled visit",
-            "content": f"الزيارة في {city} بعد العنوان ونوع العطل." if ar else f"Visit in {city} after address and fault type.",
+            "content": visit_copy,
             "icon": fa_icon("fa-clock"),
         },
     ]
@@ -484,7 +491,7 @@ def theme_meta(title: str, city: str, pack: dict, desc: str, lang: str = "ar"):
         "position__post_card": "bottom_content",
         "post__features__data": {
             "features__title": "لماذا تختار ركن التطور؟" if ar else "Why Rukn El Tatawer?",
-            "features__content": f"{title} في {city}: تشخيص ثم نطاق مكتوب." if ar else f"{title} in {city}: inspection then a written scope.",
+            "features__content": feat_intro,
             "yourcolor__post_features": features,
         },
         "post__work_steps__data": {
@@ -534,6 +541,12 @@ def theme_meta(title: str, city: str, pack: dict, desc: str, lang: str = "ar"):
             "description": desc,
             "articleBody": f"{pack['what']} التغطية: {city} — {QATAR_AREAS}." if ar else f"{pack['what']} Coverage: {city}, Qatar.",
         },
+        "YourColor__Rating": {
+            "hide_schema_rating": "on",
+            "RatingValue_def": "",
+            "Best_Rating_def": "",
+            "RatingCount_def": "",
+        },
         "YourColor_Service": {
             "hide_schema_Service": "",
             "priceRange": "حسب المعاينة" if ar else "After inspection",
@@ -579,6 +592,7 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
             ("المناخ", "خامات تحتمل حرارة ورطوبة قطر"),
         ]
     )
+    loc_suffix = f" في {city}" if city and city not in title else ""
     html = f"""
 <div class="rukn-article">
 <p><strong>{title}</strong> من ركن التطور: {pack['what']} نغطي {city} ضمن {QATAR_AREAS} بالتنسيق المسبق. التشخيص قبل الإصلاح، ثم عرض مكتوب. لا سعر نهائي عبر رسالة دون فهم الحالة.</p>
@@ -623,10 +637,12 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
 [post_services]
 <p>{pack['related']} دليل المدن: <a href="{CITIES_HUB}">المدن التي نغطيها في قطر</a>.</p>
 <h2>خلاصة</h2>
-<p>{title} في {city} تبدأ بفهم العطل لا بعرض عام. ركن التطور يزور بالتنسيق، يشرح التشخيص، ويكتب النطاق. للتواصل استخدم واتساب في هذه الصفحة.</p>
+<p>{title}{loc_suffix} تبدأ بفهم العطل لا بعرض عام. ركن التطور يزور بالتنسيق، يشرح التشخيص، ويكتب النطاق. للتواصل استخدم واتساب في هذه الصفحة.</p>
 </div>
 """
-    desc = f"{title} في قطر: تشخيص قبل التنفيذ وعرض مكتوب. تغطية {city} وباقي المدن. تواصل واتساب لتحديد المعاينة."
+    desc = f"{title}: تشخيص قبل التنفيذ وعرض مكتوب. تغطية مدن قطر. تواصل واتساب لتحديد المعاينة."
+    if city and city != "قطر" and city not in title:
+        desc = f"{title} في {city}: تشخيص قبل التنفيذ وعرض مكتوب. تغطية {city} وباقي المدن. تواصل واتساب لتحديد المعاينة."
     if len(desc) > 158:
         desc = desc[:155] + "…"
     return html.strip(), desc, title
