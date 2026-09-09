@@ -13,6 +13,335 @@ const RUKN_QA_GEO = '25.2854, 51.5310';
 const RUKN_QA_LEAK = '/water-leak-detection-company-in-qatar/';
 const RUKN_QA_HIDE_CALL = true;
 
+function rukn_qa_is_english() {
+    if (function_exists('kayan_i18n_is_english') && kayan_i18n_is_english()) {
+        return true;
+    }
+    if (function_exists('pll_current_language') && pll_current_language() === 'en') {
+        return true;
+    }
+    $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
+    if (strpos($uri, '/qa/en') !== false) {
+        return true;
+    }
+    return (bool) preg_match('#(^|/)en(/|$)#', $uri);
+}
+
+function rukn_qa_home_title() {
+    return rukn_qa_is_english()
+        ? 'Rukn El-Tatawer Qatar | Water leak detection, roof insulation and home maintenance in Doha'
+        : 'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة';
+}
+
+function rukn_qa_en_pairs() {
+    $map = [
+        'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة' => 'Rukn El-Tatawer Qatar | Water leak detection, roof insulation and home maintenance in Doha',
+        'ركن التطور الرائدة في تقديم كل الخدمات المنزلية، كشف تسربات المياه💧🕵️‍♂️عزل الأسطح🏠المسابح🏊‍♂️ التشطيبات🧱الديكورات🎨صيانة عامة🛠️السباكة🚿الكهرباء💡الأجهزة الكهربائية🔌تنسيق الحدائق🌴التنظيف🧼مكافحة الحشرات🐜وكل ما تحتاجه لراحة منزلك أو منشأتك.' => 'Rukn El-Tatawer leads home services in Qatar: water leak detection, roof insulation, pools, finishing, interiors, general maintenance, plumbing, electrical, appliances, landscaping, cleaning, pest control — everything your home or facility needs.',
+        'من أشهر العلامات: ارتفاع مفاجئ في فاتورة المياه، بقع رطوبة أو تقشير في الجدران والأسقف، رائحة عفن، أو صوت مياه مع إغلاق كل المحابس.' => 'Common signs: a sudden rise in the water bill, damp patches or peeling on walls and ceilings, a musty smell, or the sound of water after every tap is closed.',
+        'نغطي كشف التسربات والعزل والصيانة العامة والسباكة والتكييف والكهرباء والتنظيف ومكافحة الحشرات وتنسيق الحدائق والمسابح والطاقة الشمسية والصبغ والديكورات.' => 'We cover leak detection, insulation, general maintenance, plumbing, AC, electrical, cleaning, pest control, landscaping, pools, solar, painting and interiors.',
+        'من كشف تسربات المياه بدون تكسير وعزل الأسطح، إلى الصيانة العامة والتكييف والتنظيف ومكافحة الحشرات وتنسيق الحدائق والطاقة الشمسية — فريق مقيم في الدوحة يغطي قطر، بتشخيص قبل الإصلاح وعرض سعر مكتوب.' => 'From non-destructive water leak detection and roof insulation to general maintenance, AC, cleaning, pest control, landscaping and solar — a Doha-based team covering Qatar, with diagnosis before repair and a written quote.',
+        'نعم. نستخدم كاميرا حرارية وأجهزة كشف لتحديد مصدر التسرب بدقة قبل أي تكسير، وتستلم تقريراً مصوّراً يوضح الموقع والسبب.' => 'Yes. We use a thermal camera and detection devices to locate the leak before any breaking, and you receive a photo report showing the location and cause.',
+        'حقوق النشر 2026 © جميع الحقوق محفوظة لصالح "شركة ركن التطور - قطر"' => 'Copyright 2026 © All rights reserved to Rukn El-Tatawer Company - Qatar',
+        'نعم، ويختلف حسب نوع الخدمة والخامة المستخدمة — ويُوضَّح لك مكتوباً في عرض السعر قبل البدء.' => 'Yes. It depends on the service and materials, and it is written in the quote before work starts.',
+        'نعم — لا نسعّر عبر الهاتف. الفني يعاين الموقع ويشخّص المشكلة، ثم تستلم عرض سعر واضح.' => 'Yes — we do not quote by phone. A technician inspects the site, diagnoses the issue, then you receive a clear quote.',
+        'مقرنا الدوحة، ونغطي الريان ولوسيل وأم صلال والوكرة والخور والخيسة والشحانية.' => 'We are based in Doha and cover Al Rayyan, Lusail, Umm Salal, Al Wakrah, Al Khor, Al Kheesa and Al Shahaniya.',
+        'اختر الخدمة ومدينتك في قطر، ونتواصل معك لتحديد موعد المعاينة.' => 'Choose the service and your city in Qatar, and we will contact you to book an inspection.',
+        'حلول شاملة لكل احتياجات منزلك أو منشأتك — بفريق واحد في كل مدن قطر.' => 'Complete solutions for your home or facility — one team across all cities in Qatar.',
+        'خدمة واحدة تغطي كل احتياجات المكان — بفريق مقيم في قطر ومسؤولية واحدة.' => 'One service covering every need on site — a Qatar-based team and one point of contact.',
+        'فريق ركن التطور يغطي {city} — معاينة وتشخيص قبل بدء العمل.' => 'The Rukn El-Tatawer team covers {city} — inspection and diagnosis before work starts.',
+        'مرحباً، أرغب في طلب خدمة:' => 'Hello, I would like to request this service:',
+        'مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر' => 'Hello, I would like to enquire about Rukn El-Tatawer services in Qatar',
+        'تُحدَّد بعد المعاينة حسب حجم العمل، وتكون مكتوبة في عرض السعر.' => 'It is set after inspection according to the scope of work, and it is written in the quote.',
+        'من تسرب مياه إلى صيانة شاملة — تواصل معنا ونصلك للمعاينة والتشخيص.' => 'From a water leak to full maintenance — contact us and we will come for inspection and diagnosis.',
+        'إجابات واضحة لأكثر ما يسأل عنه عملاؤنا في قطر.' => 'Clear answers to what our clients in Qatar ask most.',
+        'اتصل أو أرسل واتساب على 974+ ونرد عليك لتحديد الموعد.' => 'Send WhatsApp and we will reply to book the visit.',
+        'اتصل أو أرسل واتساب على  ونرد عليك لتحديد الموعد.' => 'Send WhatsApp and we will reply to book the visit.',
+        'معلومات تساعدك تفهم المشكلة قبل ما تتصل.' => 'Information that helps you understand the issue before you contact us.',
+        'خبرتنا مكتوبة — نصائح عملية لمنزلك في قطر.' => 'Practical written advice for your home in Qatar.',
+        'تسربات وعزل وسباكة وتكييف وتنظيف ومكافحة حشرات — من نفس الشركة.' => 'Leaks, insulation, plumbing, AC, cleaning and pest control — from the same company.',
+        'كشف التسربات بالكاميرا الحرارية بدون تكسير — نحدد المصدر أولاً.' => 'Thermal leak detection without breaking — we locate the source first.',
+        'تعرف المشكلة والتكلفة والمدة قبل أن يبدأ أي فني.' => 'Know the issue, cost and duration before any technician starts.',
+        'الدوحة والريان ولوسيل وأم صلال والوكرة والخور وغيرها.' => 'Doha, Al Rayyan, Lusail, Umm Salal, Al Wakrah, Al Khor and more.',
+        'فريق ثابت يعرف طبيعة المباني والمناخ في قطر.' => 'A standing team that knows Qatar buildings and climate.',
+        'اتصال أو واتساب على مدار الأسبوع — بلا وسطاء.' => 'Call or WhatsApp all week — no middlemen.',
+        'مقارنة صريحة بين طريقتنا وما هو شائع في السوق.' => 'A clear comparison between our method and what is common in the market.',
+        'مقرنا الدوحة، وفريقنا يصل إليك في أي مدينة.' => 'Based in Doha, and our team reaches you in any city.',
+        'تواصل معنا ونوضح لك إمكانية الوصول لموقعك.' => 'Contact us and we will confirm whether we can reach your location.',
+        'أرقام تعكس نطاق عملنا داخل الدولة.' => 'Figures that reflect the scale of our work in Qatar.',
+        'من أول اتصال حتى إغلاق المشكلة.' => 'From the first contact until the issue is closed.',
+        'اتصال أو واتساب، ونحدد موعد زيارة الموقع.' => 'Call or WhatsApp, and we book a site visit.',
+        'تشخيص بالأجهزة وتقرير مصوّر يوضح المشكلة ومصدرها.' => 'Instrument diagnosis and a photo report showing the issue and its source.',
+        'تكلفة ومدة مكتوبة قبل بدء أي عمل.' => 'Cost and duration in writing before any work starts.',
+        'ننفّذ ونسلّم بعد معاينتك — مع متابعة بعد التسليم.' => 'We carry out the work and hand over after your inspection — with follow-up after handover.',
+        'تحديد دقيق لمصدر التسرب بدون تكسير.' => 'Precise leak location without breaking.',
+        'حماية من الحرارة وتسرب المياه.' => 'Protection from heat and water leaks.',
+        'صيانة شاملة للمباني والمنشآت.' => 'Full maintenance for buildings and facilities.',
+        'تركيب وصيانة وإصلاح الأعطال.' => 'Installation, servicing and fault repair.',
+        'إصلاح وتركيب احترافي يدوم.' => 'Professional repair and installation that lasts.',
+        'حل الانسدادات من جذورها.' => 'Clearing blockages at the source.',
+        'نظافة عميقة لكل المساحات.' => 'Deep cleaning for every space.',
+        'إبادة آمنة ومرخّصة.' => 'Safe, licensed pest control.',
+        'مساحات خارجية بتصميم وتنفيذ متكامل.' => 'Outdoor spaces designed and built as one project.',
+        'تنفيذ ومعالجة وصيانة دورية.' => 'Build, treat and maintain on a schedule.',
+        'تشطيب داخلي بلمسة نظيفة.' => 'Interior finishing with a clean result.',
+        'توريد وتركيب أنظمة الطاقة الشمسية.' => 'Supply and installation of solar systems.',
+        'تعرف المشكلة ومصدرها قبل ما تدفع' => 'Know the issue and its source before you pay',
+        'تقرير مصوّر قبل أي إصلاح' => 'Photo report before any repair',
+        'تشخيص بالأجهزة قبل التكسير' => 'Instrument diagnosis before breaking',
+        'عرض سعر مكتوب قبل البدء' => 'Written quote before work starts',
+        'الصيانة العامة وصيانة المباني' => 'General and building maintenance',
+        'التكييف والأجهزة الكهربائية' => 'AC and electrical appliances',
+        'الصبغ والجبس بورد والديكورات' => 'Painting, gypsum board and interiors',
+        'تصميم وتنفيذ الديكورات' => 'Interior design and fit-out',
+        'تركيب وصيانة التكييف' => 'AC installation and maintenance',
+        'صيانة الأجهزة الكهربائية' => 'Electrical appliance maintenance',
+        'إنشاء وصيانة المسابح' => 'Pool construction and maintenance',
+        'خدمات الطاقة الشمسية' => 'Solar energy services',
+        'العزل المائي والحراري' => 'Waterproofing and thermal insulation',
+        'التنظيف والتعقيم' => 'Cleaning and disinfection',
+        'مكافحة الحشرات' => 'Pest control',
+        'تنسيق الحدائق' => 'Landscaping',
+        'النوافير والشلالات' => 'Fountains and waterfalls',
+        'الصبغ والدهانات' => 'Painting and coatings',
+        'تركيب الجبس بورد' => 'Gypsum board installation',
+        'التشطيبات الداخلية' => 'Interior finishing',
+        'كشف تسربات المياه' => 'Water leak detection',
+        'عزل الأسطح' => 'Roof insulation',
+        'الصيانة العامة' => 'General maintenance',
+        'صيانة المباني' => 'Building maintenance',
+        'أعمال السباكة' => 'Plumbing works',
+        'تسليك المجاري' => 'Drain clearing',
+        'أعمال الكهرباء' => 'Electrical works',
+        'لوحة خدمات ركن التطور — قطر' => 'Rukn El-Tatawer services board — Qatar',
+        'ركن التطور قطر —' => 'Rukn El-Tatawer Qatar —',
+        'الخدمات المنزلية المتكاملة' => 'integrated home services',
+        'خدماتنا المنزلية' => 'Our home services',
+        'المتكاملة في قطر' => 'complete in Qatar',
+        'في كل مدن الدولة' => 'across every city in the country',
+        'شركة ركن التطور قطر' => 'Rukn El-Tatawer Company Qatar',
+        'شركة ركن التطور - قطر' => 'Rukn El-Tatawer Company - Qatar',
+        'من نحن — ركن التطور في قطر' => 'About us — Rukn El-Tatawer in Qatar',
+        'اتصل بنا — ركن التطور قطر' => 'Contact us — Rukn El-Tatawer Qatar',
+        'الصيانة المنزلية والأجهزة' => 'Home and appliance maintenance',
+        'لماذا يختار عملاء قطر' => 'Why Qatar clients choose',
+        'ركن التطور في قطر' => 'Rukn El-Tatawer in Qatar',
+        'ركن التطور؟' => 'Rukn El-Tatawer?',
+        'ركن التطور' => 'Rukn El-Tatawer',
+        'أكمل الطلب عبر واتساب' => 'Complete the request on WhatsApp',
+        'تواصل عبر واتساب' => 'Chat on WhatsApp',
+        'اطلب الخدمة الآن' => 'Request the service now',
+        'اطلب الخدمة' => 'Request service',
+        'اختر الخدمة' => 'Choose service',
+        'اختر المدينة' => 'Choose city',
+        'اختر الإمارة' => 'Choose city',
+        'ما الخدمة التي' => 'What service do you',
+        'تحتاجها؟' => 'need?',
+        'ابدأ الآن' => 'Start now',
+        'كشف بدون تكسير' => 'Detection without breaking',
+        'نغطي كل مدن قطر' => 'We cover every city in Qatar',
+        '20 خدمة منزلية' => '20 home services',
+        'عرض سعر مكتوب' => 'Written quote',
+        'كشف تسربات' => 'Leak detection',
+        'عزل أسطح' => 'Roof insulation',
+        'صيانة تكييف' => 'AC maintenance',
+        'تنظيف وتعقيم' => 'Cleaning and disinfection',
+        'مكافحة حشرات' => 'Pest control',
+        'سباكة وتسليك' => 'Plumbing and drains',
+        'مدن تغطية' => 'cities covered',
+        'فريق مقيم في قطر' => 'Qatar-based team',
+        'متابعة بعد التسليم' => 'Follow-up after handover',
+        'وقت الاستجابة' => 'Response time',
+        'حالة الخدمة' => 'Service status',
+        'دعم الطوارئ' => 'Emergency support',
+        'يُحدَّد عند التواصل' => 'Confirmed when you contact us',
+        'كاميرا حرارية متطورة' => 'Advanced thermal camera',
+        'بدون تكسير' => 'No breaking',
+        'تقرير مصوّر مفصّل' => 'Detailed photo report',
+        'إصلاح بعد التشخيص' => 'Repair after diagnosis',
+        'عزل فوم بولي يوريثان' => 'Spray polyurethane foam',
+        'أغشية بيتومينية معدّلة' => 'Modified bitumen membranes',
+        'طلاء عازل للحرارة' => 'Heat-reflective coating',
+        'عزل خزانات وحمامات' => 'Tank and bathroom waterproofing',
+        'معالجة الشروخ' => 'Crack repair',
+        'ترميم وتجديد' => 'Restoration and renovation',
+        'عقود صيانة دورية' => 'Scheduled maintenance contracts',
+        'تنظيف الفلاتر والكويل' => 'Filter and coil cleaning',
+        'شحن الفريون' => 'Refrigerant recharge',
+        'إصلاح الأجهزة الكهربائية' => 'Electrical appliance repair',
+        'تمديدات وإنارة' => 'Wiring and lighting',
+        'إصلاح تسربات الأنابيب' => 'Pipe leak repair',
+        'تركيب الأدوات الصحية' => 'Sanitary ware installation',
+        'فحص شبكات المياه' => 'Water network inspection',
+        'توصيل السخانات' => 'Water heater connection',
+        'تسليك بالضغط' => 'High-pressure clearing',
+        'تسليك بالسوستة' => 'Cable drain clearing',
+        'كاميرا فحص المواسير' => 'Pipe inspection camera',
+        'تنظيف بيارات' => 'Septic tank cleaning',
+        'تنظيف عميق شامل' => 'Full deep clean',
+        'تعقيم بالبخار' => 'Steam disinfection',
+        'تنظيف الخزانات' => 'Tank cleaning',
+        'مواد صديقة للبيئة' => 'Eco-friendly materials',
+        'مواد آمنة ومرخصة' => 'Safe licensed materials',
+        'إبادة كاملة' => 'Full treatment',
+        'متابعة بعد التنفيذ' => 'Follow-up after the job',
+        'آمن للأطفال' => 'Child-safe',
+        'تصميم الحدائق' => 'Garden design',
+        'عشب طبيعي وصناعي' => 'Natural and artificial turf',
+        'شبكات ري' => 'Irrigation networks',
+        'إنارة خارجية' => 'Outdoor lighting',
+        'إنشاء مسابح' => 'Pool construction',
+        'معالجة المياه' => 'Water treatment',
+        'صيانة دورية' => 'Scheduled maintenance',
+        'نوافير وشلالات' => 'Fountains and waterfalls',
+        'صبغ داخلي وخارجي' => 'Indoor and outdoor painting',
+        'تركيب جبس بورد' => 'Gypsum board installation',
+        'تصميم وتنفيذ ديكورات' => 'Interior design and fit-out',
+        'تشطيبات داخلية' => 'Interior finishing',
+        'دراسة الاستهلاك' => 'Consumption study',
+        'توريد وتركيب الألواح' => 'Panel supply and installation',
+        'سخانات شمسية' => 'Solar water heaters',
+        'لماذا نحن' => 'Why us',
+        'كيف نعمل؟' => 'How we work',
+        'تواصل وتشخيص' => 'Contact and diagnosis',
+        'معاينة وتقرير' => 'Inspection and report',
+        'عرض سعر واضح' => 'Clear quote',
+        'التنفيذ والمتابعة' => 'Delivery and follow-up',
+        'تشخيص قبل الإصلاح' => 'Diagnosis before repair',
+        'كل الخدمات في مكان' => 'All services in one place',
+        'تقرير وعرض مكتوب' => 'Written report and quote',
+        'تغطية مدن قطر' => 'Qatar city coverage',
+        'فنيون مدرّبون' => 'Trained technicians',
+        'تواصل مباشر' => 'Direct contact',
+        'أرقامنا' => 'Our figures',
+        'مشروع منفّذ' => 'completed projects',
+        'في قطر منذ' => 'in Qatar since',
+        'عدد المشاريع' => 'projects',
+        'سنة التأسيس' => 'founded',
+        'ما الذي يميّز' => 'What sets us apart',
+        'الشائع في السوق' => 'Typical in the market',
+        'كشف التسرب بدون تكسير' => 'Leak detection without breaking',
+        'تقرير مصوّر قبل الإصلاح' => 'Photo report before repair',
+        'كل الخدمات من جهة واحدة' => 'All services from one company',
+        'تخصص واحد غالباً' => 'Usually one specialism',
+        'نطاق التغطية' => 'Coverage',
+        'عدد الخدمات' => 'Number of services',
+        'مناطق الخدمة' => 'Service areas',
+        'تغطية 8 مدن' => '8 cities covered',
+        'المقر الرئيسي: الدوحة — قطر.' => 'Head office: Doha — Qatar.',
+        'المقر: الدوحة' => 'Office: Doha',
+        '20 خدمة متوفرة' => '20 services available',
+        'كشف التسربات' => 'Leak detection',
+        'السباكة والتسليك' => 'Plumbing and drains',
+        'التكييف والكهرباء' => 'AC and electrical',
+        'الحدائق والمسابح' => 'Gardens and pools',
+        'الطاقة الشمسية' => 'Solar energy',
+        'الصبغ والديكورات' => 'Painting and interiors',
+        'مدينتك غير مذكورة؟' => 'Is your city not listed?',
+        'مركز المعرفة' => 'Knowledge hub',
+        'دليل كشف التسربات' => 'Leak detection guide',
+        'علامات تسرب المياه' => 'Signs of a water leak',
+        'الكشف بدون تكسير' => 'Detection without breaking',
+        'تسرب الخزانات' => 'Tank leaks',
+        'أنواع العزل المائي' => 'Types of waterproofing',
+        'العزل الحراري' => 'Thermal insulation',
+        'عزل الأسطح والخزانات' => 'Roof and tank insulation',
+        'دليل الصيانة العامة' => 'General maintenance guide',
+        'الصيانة الدورية' => 'Scheduled maintenance',
+        'صيانة الأجهزة' => 'Appliance servicing',
+        'التنظيف ومكافحة الحشرات' => 'Cleaning and pest control',
+        'دليل التنظيف' => 'Cleaning guide',
+        'التنظيف العميق' => 'Deep cleaning',
+        'دليل الطاقة الشمسية' => 'Solar energy guide',
+        'كيف تعمل الألواح' => 'How the panels work',
+        'السخانات الشمسية' => 'Solar water heaters',
+        'دليل العزل' => 'Insulation guide',
+        'الخدمات المنزلية' => 'home services',
+        'اقرأ المزيد' => 'Read more',
+        'كل المقالات' => 'All articles',
+        'عندك مشكلة' => 'Have a problem',
+        'في منزلك؟' => 'at home?',
+        'تغطية كل قطر' => 'Coverage across Qatar',
+        'الأسئلة الشائعة' => 'FAQ',
+        'هل تكشفون التسرب بدون تكسير؟' => 'Do you detect leaks without breaking?',
+        'ما المدن التي تغطونها في قطر؟' => 'Which cities do you cover in Qatar?',
+        'كيف أعرف أن عندي تسرب؟' => 'How do I know I have a leak?',
+        'هل تقدمون كل الخدمات أم تخصص واحد؟' => 'Do you offer every service or only one specialism?',
+        'هل يوجد ضمان على العمل؟' => 'Is the work guaranteed?',
+        'كم تستغرق مدة التنفيذ؟' => 'How long does the work take?',
+        'هل المعاينة قبل التسعير؟' => 'Is there an inspection before the quote?',
+        'كيف أطلب الخدمة؟' => 'How do I request the service?',
+        'روابط هامة' => 'Important links',
+        'سياسة الخصوصية' => 'Privacy policy',
+        'خريطة الموقع' => 'Sitemap',
+        'أهم خدماتنا' => 'Top services',
+        'روابط سريعة' => 'Quick links',
+        'تحدث مع خبير' => 'Talk to an expert',
+        'مقرنا الرئيسي' => 'Head office',
+        'ابحث في الموقع' => 'Search the site',
+        'المعيار' => 'Criteria',
+        'مقارنة' => 'Compare',
+        'خدماتنا' => 'Our services',
+        'المدونة' => 'Blog',
+        'العزل' => 'Insulation',
+        'الصيانة' => 'Maintenance',
+        'التنظيف' => 'Cleaning',
+        'المسابح' => 'Pools',
+        'الخزانات' => 'Tanks',
+        'الدليل' => 'Guide',
+        'دليل' => 'Guide',
+        'الشائعة' => 'asked',
+        'الأسئلة' => 'Questions',
+        'الرئيسية' => 'Home',
+        'اتصل بنا' => 'Contact us',
+        'من نحن' => 'About us',
+        'القائمة' => 'Menu',
+        'إغلاق' => 'Close',
+        'بحث' => 'Search',
+        'واتساب' => 'WhatsApp',
+        'متاحة' => 'Available',
+        'مباشر' => 'Live',
+        'محدودة' => 'Limited',
+        'نغطي' => 'We cover',
+        'المدن' => 'Cities',
+        'مدن قطر' => 'Qatar cities',
+        'كل مدن قطر' => 'every city in Qatar',
+        'مدن' => 'cities',
+        'المقر' => 'Office',
+        'تغطية' => 'Coverage',
+        'فنيون' => 'Technicians',
+        'تواصل' => 'Contact',
+        'مشاريع' => 'Projects',
+        'تأسيس' => 'Founded',
+        'عرض سعر' => 'Quote',
+        'تقرير مصوّر' => 'Photo report',
+        'التكييف والأجهزة' => 'AC and appliances',
+        'كل الخدمات' => 'All services',
+        'عرض مكتوب' => 'Written quote',
+        'تشخيص' => 'Diagnosis',
+        'سباكة' => 'Plumbing',
+        'الدوحة غالباً' => 'Mostly Doha',
+        '8 مدن' => '8 cities',
+        '20 خدمة' => '20 services',
+        'أم صلال' => 'Umm Salal',
+        'الشحانية' => 'Al Shahaniya',
+        'الخيسة' => 'Al Kheesa',
+        'الوكرة' => 'Al Wakrah',
+        'الريان' => 'Al Rayyan',
+        'لوسيل' => 'Lusail',
+        'الخور' => 'Al Khor',
+        'الدوحة' => 'Doha',
+        'في قطر' => 'in Qatar',
+        'قطر' => 'Qatar',
+        'المدينة' => 'city',
+        'الإمارة' => 'city',
+    ];
+    uksort($map, static function ($a, $b) {
+        return strlen($b) <=> strlen($a);
+    });
+    return $map;
+}
+
+
 function rukn_allowed_city_slugs() {
     return [
         'sewerage-company-in-doha',
@@ -202,10 +531,8 @@ add_filter('rank_math/frontend/canonical', function ($canonical) {
         return $canonical;
     }
     $canonical = str_replace('https://www.rukn-eltatawer.com/qa/qa/', 'https://www.rukn-eltatawer.com/qa/', $canonical);
-    $is_en = (function_exists('pll_current_language') && pll_current_language() === 'en')
-        || (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/qa/en') !== false);
     if (is_front_page()) {
-        return $is_en ? 'https://www.rukn-eltatawer.com/qa/en/' : 'https://www.rukn-eltatawer.com/qa/';
+        return rukn_qa_is_english() ? 'https://www.rukn-eltatawer.com/qa/en/' : 'https://www.rukn-eltatawer.com/qa/';
     }
     return $canonical;
 }, 99);
@@ -267,9 +594,13 @@ add_action('wp_head', function () {
 
 add_action('wp_footer', function () {
     $wa = RUKN_QA_WA;
-    $msg = rawurlencode('مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر');
+    $is_en = rukn_qa_is_english();
+    $wa_msg = $is_en
+        ? 'Hello, I would like to enquire about Rukn El-Tatawer services in Qatar'
+        : 'مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر';
+    $msg = rawurlencode($wa_msg);
     echo '<script id="rukn-qa-contact-fix">';
-    echo 'window.RuknCS=Object.assign(window.RuknCS||{},{call_show:false,wa_show:true,call_number:"",wa_number:"' . esc_js($wa) . '",wa_message:"مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر"});';
+    echo 'window.RuknCS=Object.assign(window.RuknCS||{},{call_show:false,wa_show:true,call_number:"",wa_number:"' . esc_js($wa) . '",wa_message:"' . esc_js($wa_msg) . '"});';
     echo '(function(){var w="' . esc_js($wa) . '",m="' . $msg . '";';
     echo 'function hideCall(root){root=root||document;root.querySelectorAll(\'a[href^="tel:"],.fab-call,.--button-call-link-phone,.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn\').forEach(function(a){if(a.classList&&(a.classList.contains("fa-whatsapp")||(a.getAttribute("href")||"").indexOf("wa.me")!==-1||a.classList.contains("--button-call-link-whatsapp")))return;a.style.setProperty("display","none","important");a.setAttribute("hidden","hidden");if((a.getAttribute("href")||"").indexOf("tel:")===0)a.removeAttribute("href");});}';
     echo 'function apply(){hideCall();document.querySelectorAll("a[href*=\'wa.me\'],a[href*=\'api.whatsapp\'],a[data-fn-wa],a.btn-wa,a.fab-wa").forEach(function(a){var u="https://wa.me/"+w+"?text="+m;a.setAttribute("href",u);if(a.hasAttribute("data-wa-number")){a.setAttribute("data-wa-number","+"+w);}});}';
@@ -279,8 +610,7 @@ add_action('wp_footer', function () {
     echo 'document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-count]").forEach(function(el){if((el.textContent||"").trim()==="0"){el.textContent=el.getAttribute("data-count")||"0";}});});';
     echo '</script>';
     if (is_front_page()) {
-        $is_en = (function_exists('pll_current_language') && pll_current_language() === 'en')
-            || (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/qa/en') !== false);
+        $is_en = rukn_qa_is_english();
         $url = $is_en
             ? 'https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/'
             : 'https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/';
@@ -291,19 +621,19 @@ add_action('wp_footer', function () {
 
 add_filter('pre_get_document_title', function ($title) {
     if (is_front_page() && !is_singular()) {
-        return 'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة';
+        return rukn_qa_home_title();
     }
     return $title;
 }, 99);
 add_filter('rank_math/frontend/title', function ($title) {
     if (is_front_page() && !is_singular()) {
-        return 'ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة';
+        return rukn_qa_home_title();
     }
     return $title;
 }, 99);
 
 add_filter('language_attributes', function ($out) {
-    if (function_exists('pll_current_language') && pll_current_language() === 'en') {
+    if (rukn_qa_is_english()) {
         return 'lang="en-GB" dir="ltr"';
     }
     return $out;
@@ -394,6 +724,9 @@ add_action('template_redirect', function () {
             'href="https://www.rukn-eltatawer.com/qa/shrkh-dhanat-dakhlyh-fy-qtr/" title="الصبغ والجبس بورد والديكورات"',
             $html
         );
+        $html = str_replace('اختر الإمارة', 'اختر المدينة', $html);
+        $html = str_replace('والإمارة', 'والمدينة', $html);
+        $html = str_replace('الإمارة', 'المدينة', $html);
         $html = str_replace('الخيثة', 'الخيسة', $html);
         $html = str_replace('المشحمية', 'الشحانية', $html);
         $html = str_replace('+974 3111 0184', '', $html);
@@ -418,18 +751,20 @@ add_action('template_redirect', function () {
         $html = str_replace('الإمارات', 'قطر', $html);
         $html = str_replace('المجموعه المتحده للخدمات المتكاملة', 'شركة ركن التطور', $html);
         $html = str_replace('https://www.rukn-eltatawer.com/qa/qa/', 'https://www.rukn-eltatawer.com/qa/', $html);
+        $is_en = rukn_qa_is_english();
+        if ($is_en) {
+            $pairs = rukn_qa_en_pairs();
+            $html = str_replace(array_keys($pairs), array_values($pairs), $html);
+            $html = preg_replace('/<html[^>]*>/', '<html lang="en-GB" dir="ltr">', $html, 1);
+        }
         if (is_front_page()) {
+            $home_title = rukn_qa_home_title();
             $html = preg_replace(
                 '/<title>.*?<\/title>/is',
-                '<title>ركن التطور قطر | كشف تسربات وعزل أسطح وصيانة في الدوحة</title>',
+                '<title>' . esc_html($home_title) . '</title>',
                 $html,
                 1
             );
-        }
-        $is_en = (function_exists('pll_current_language') && pll_current_language() === 'en')
-            || (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/qa/en') !== false);
-        if ($is_en) {
-            $html = preg_replace('/<html[^>]*>/', '<html lang="en-GB" dir="ltr">', $html, 1);
         }
         return $html;
     });
