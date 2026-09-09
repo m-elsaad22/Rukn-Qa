@@ -227,7 +227,7 @@ add_filter('rank_math/sitemap/robots', function ($robots) {
 });
 
 add_action('wp_head', function () {
-    echo '<style id="rukn-hide-call">.fab-call,a.fab-btn.fab-call,a[href^="tel:"],a[href="tel:"],a[href="tel: "],.--contact--button-call-link,.-callbutton--post-card,.post-card-buttons.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>';
+    echo '<style id="rukn-hide-call">.fab-call,a.fab-btn.fab-call,a[href^="tel:"],a[href="tel:"],a[href="tel: "],.--button-call-link-phone,.-callbutton--post-card,.post-card-buttons.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>';
     echo '<style id="rukn-article-ui">
 .rukn-article{color:#151c28;line-height:1.85;font-size:17px;max-width:100%}
 .rukn-article .article-hero{background:linear-gradient(145deg,#0A1F4E 0%,#041c36 70%);color:#fff;border-radius:18px;padding:22px 20px;margin:16px 0 22px}
@@ -254,6 +254,15 @@ add_action('wp_head', function () {
 .rukn-article img{max-width:100%;height:auto;border-radius:12px}
 @media(max-width:640px){.rukn-article{font-size:16px}.rukn-article .features-grid,.rukn-article .steps-grid{grid-template-columns:1fr}.rukn-article .article-hero h2{font-size:1.2rem}.rukn-article table{min-width:100%;font-size:14px}}
 </style>';
+    echo '<style id="rukn-fa-wa">
+.yc-shortcode-features--icon>i,.yc-shortcode-features--icon .fa-solid,.yc-shortcode-features--icon .fas,.rukn-article .fas,.rukn-article .fa-solid{font-family:"Font Awesome 6 Free"!important;font-weight:900!important;font-style:normal!important;display:inline-block!important;line-height:1!important;-webkit-font-smoothing:antialiased}
+.yc-shortcode-features--icon .fa-brands,.fa-brands,.fab,i.fa-whatsapp,.--button-call-link-whatsapp i{font-family:"Font Awesome 6 Brands"!important;font-weight:400!important;font-style:normal!important}
+.yc-shortcode--section--contactus .--contact--post-call--buttons{display:flex!important;flex-direction:row!important;align-items:center!important;gap:12px}
+.yc-shortcode--section--contactus a.--button-call-link-whatsapp,.yc-shortcode--section--contactus a.rukn-wa-3d{display:inline-flex!important;visibility:visible!important;pointer-events:auto!important;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 28px!important;border:0!important;border-radius:18px!important;color:#fff!important;text-decoration:none!important;font-weight:800!important;font-size:18px!important;background:linear-gradient(180deg,#40e57a 0%,#25d366 42%,#128c7e 100%)!important;box-shadow:0 10px 0 #0b6b4f,0 16px 28px rgba(18,140,126,.4)!important;transform:translateY(-4px);text-shadow:0 1px 0 rgba(0,0,0,.15)}
+.yc-shortcode--section--contactus a.--button-call-link-whatsapp:hover{transform:translateY(0);box-shadow:0 6px 0 #0b6b4f,0 10px 18px rgba(18,140,126,.35)!important}
+.yc-shortcode--section--contactus a.--button-call-link-whatsapp i{font-size:28px!important;margin:0!important}
+@media(max-width:640px){.yc-shortcode--section--contactus{flex-direction:column}.yc-shortcode--section--contactus a.--button-call-link-whatsapp{width:100%;box-sizing:border-box}}
+</style>';
 }, 1);
 
 add_action('wp_footer', function () {
@@ -262,7 +271,7 @@ add_action('wp_footer', function () {
     echo '<script id="rukn-qa-contact-fix">';
     echo 'window.RuknCS=Object.assign(window.RuknCS||{},{call_show:false,wa_show:true,call_number:"",wa_number:"' . esc_js($wa) . '",wa_message:"مرحباً، أريد الاستفسار عن خدمات ركن التطور في قطر"});';
     echo '(function(){var w="' . esc_js($wa) . '",m="' . $msg . '";';
-    echo 'function hideCall(root){root=root||document;root.querySelectorAll(\'a[href^="tel:"],.fab-call,.--contact--button-call-link,.-callbutton--post-card,[data-call="Phone"],.btn-call\').forEach(function(a){a.style.setProperty("display","none","important");a.setAttribute("hidden","hidden");a.removeAttribute("href");});}';
+    echo 'function hideCall(root){root=root||document;root.querySelectorAll(\'a[href^="tel:"],.fab-call,.--button-call-link-phone,.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn\').forEach(function(a){if(a.classList&&(a.classList.contains("fa-whatsapp")||(a.getAttribute("href")||"").indexOf("wa.me")!==-1||a.classList.contains("--button-call-link-whatsapp")))return;a.style.setProperty("display","none","important");a.setAttribute("hidden","hidden");if((a.getAttribute("href")||"").indexOf("tel:")===0)a.removeAttribute("href");});}';
     echo 'function apply(){hideCall();document.querySelectorAll("a[href*=\'wa.me\'],a[href*=\'api.whatsapp\'],a[data-fn-wa],a.btn-wa,a.fab-wa").forEach(function(a){var u="https://wa.me/"+w+"?text="+m;a.setAttribute("href",u);if(a.hasAttribute("data-wa-number")){a.setAttribute("data-wa-number","+"+w);}});}';
     echo 'apply();document.addEventListener("DOMContentLoaded",apply);setTimeout(apply,300);setTimeout(apply,1200);setTimeout(apply,3000);';
     echo 'if(window.MutationObserver){new MutationObserver(function(){apply();}).observe(document.documentElement,{childList:true,subtree:true});}';
