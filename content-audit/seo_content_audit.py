@@ -360,14 +360,23 @@ def request_json(url: str, auth: str | None, timeout: int = 90) -> tuple[Any, di
     raise RuntimeError(last_err)
 
 
-def request_html(url: str, timeout: int = 25) -> tuple[int, str, str]:
+def request_html(url: str, timeout: int = 25, follow: bool = False) -> tuple[int, str, str]:
+    """Fetch HTML. Default does not follow redirects (SEO-accurate status)."""
+    class NoRedir(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[no-untyped-def]
+            raise urllib.error.HTTPError(newurl, code, msg, headers, fp)
+
+    handlers: list[urllib.request.BaseHandler] = [urllib.request.HTTPSHandler(context=_ctx())]
+    if not follow:
+        handlers.insert(0, NoRedir())
+    opener = urllib.request.build_opener(*handlers)
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html"})
     try:
-        with urllib.request.urlopen(req, timeout=timeout, context=_ctx()) as resp:
+        with opener.open(req, timeout=timeout) as resp:
             return resp.status, resp.read().decode("utf-8", "replace"), resp.geturl()
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", "replace") if e.fp else ""
-        loc = e.headers.get("Location", "")
+        loc = e.headers.get("Location", "") if e.headers else ""
         return e.code, body, loc or url
     except Exception as e:
         return 0, str(e), url
