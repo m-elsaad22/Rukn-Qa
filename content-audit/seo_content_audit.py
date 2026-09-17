@@ -133,14 +133,14 @@ GRID_MARKERS = [
 # Service-family lexicons (Arabic + English slug hints)
 KIND_RULES: list[tuple[str, re.Pattern[str]]] = [
     ("sound", re.compile(r"soundproof|عازل?\s*صوت|عزل\s*صوت|مسار الصوت", re.I)),
-    ("leak", re.compile(r"leak|humidity|waterproof|تسرب|رطوب|كشف تسرب|بدون تكسير", re.I)),
+    ("leak", re.compile(r"leak[-_ ]|humidity|waterproof|تسرب|رطوب|كشف تسرب|بدون تكسير", re.I)),
     ("insulate", re.compile(r"insulat|lining|thermal|عزل\s*(أسطح|سطح|خزان|حراري)|فوم|عازل حرار", re.I)),
-    ("ac", re.compile(r"(^|-)ac-|freon|cooling|split-ac|تكييف|مكيف|فريون|دكت", re.I)),
-    ("pest", re.compile(r"pest|cockroach|termite|حشرات|صراصير|بق|رمة|قوارض|تعقيم", re.I)),
+    ("ac", re.compile(r"(^|[\s-])(ac|freon|cooling|split-ac)([\s-]|$) |تكييف|مكيف|فريون|\bدكت\b", re.I)),
+    ("pest", re.compile(r"pest|cockroach|termite|حشرات|صراصير|بق الفراش|نمل أبيض|\bالرمة\b|قوارض|تعقيم", re.I)),
     ("clean", re.compile(r"clean|polishing|تنظيف|جلي|تلميع", re.I)),
-    ("plumb", re.compile(r"plumb|drain|septic|sewerage|سباك|مجاري|صرف|سخان|مضخة", re.I)),
+    ("plumb", re.compile(r"plumb|drain|septic|sewerage|سباك|مجاري|صرف صحي|تسليك|سخان ماء|مضخة", re.I)),
     ("electric", re.compile(r"electric|lighting|cctv|كهرب|إنارة|كاميرات", re.I)),
-    ("garden", re.compile(r"garden|grass|irrigation|landscap|حديق|عشب|ري |نافورة", re.I)),
+    ("garden", re.compile(r"garden|grass|irrigation|landscap|حديق|عشب|ري الحد|نافورة", re.I)),
     ("paint", re.compile(r"paint|wallpaper|gypsum|دهان|صبغ|جبس|ورق جدران", re.I)),
     ("solar", re.compile(r"solar|طاقة شمسية|سخان شمسي", re.I)),
     ("renovate", re.compile(r"inspect|renovation|crack|ترميم|فحص فيلا|شقوق", re.I)),
@@ -149,6 +149,11 @@ KIND_RULES: list[tuple[str, re.Pattern[str]]] = [
     ("shipping", re.compile(r"shipping|freight|شحن", re.I)),
     ("scrap", re.compile(r"scrap|سكراب|مستعمل", re.I)),
 ]
+
+
+def kind_scores(blob: str) -> dict[str, int]:
+    s = blob or ""
+    return {kind: len(rx.findall(s)) for kind, rx in KIND_RULES}
 
 
 # ---------------------------------------------------------------------------
@@ -311,11 +316,9 @@ def service_stem(slug: str) -> str:
 
 
 def detect_kind(blob: str) -> str:
-    s = blob or ""
-    for kind, rx in KIND_RULES:
-        if rx.search(s):
-            return kind
-    return "general"
+    scores = kind_scores(blob)
+    best = max(scores, key=scores.get)
+    return best if scores[best] > 0 else "general"
 
 
 def is_city_grid(html: str, slug: str) -> bool:
@@ -567,6 +570,8 @@ def classify_severity(issues: list[str]) -> str:
 
 def build_doc(item: dict[str, Any], ptype: str) -> Doc:
     html = rendered(item.get("content"))
+    html = re.sub(r'(?is)<div[^>]*id="ez-toc-container"[^>]*>.*?</div>', " ", html)
+    html = re.sub(r'(?is)<div[^>]*class="[^"]*ez-toc[^"]*"[^>]*>.*?</div>', " ", html)
     title = strip_tags(rendered(item.get("title")))
     excerpt = strip_tags(rendered(item.get("excerpt")))
     parsed = parse_html(html)
@@ -687,16 +692,25 @@ def flag_docs(docs: list[Doc], thin: int) -> None:
             d.notes.append(f"نفس جذع الخدمة `{d.stem}` على {d.cannibal_group_size} URL")
 
         # intent
-        if d.kind_title != "general" and d.kind_body != "general" and d.kind_title != d.kind_body:
-            # AC vs leak etc.
-            if {d.kind_title, d.kind_body} not in [
-                {"leak", "plumb"},
-                {"leak", "insulate"},
-                {"insulate", "paint"},
-                {"ac", "clean"},
-            ]:
+        # intent: only when the title family is absent from the body and another family dominates
+        if (
+            not d.is_grid
+            and d.type == "post"
+            and d.kind_title != "general"
+            and not d.slug.startswith("services-in-")
+        ):
+            scores = kind_scores(d.text)
+            own = scores.get(d.kind_title, 0)
+            best_kind = max(scores, key=scores.get) if scores else "general"
+            best_n = scores.get(best_kind, 0)
+            if own == 0 and best_n >= 2 and best_kind != d.kind_title:
                 d.issues.append("intent_mismatch")
-                d.notes.append(f"العنوان/السلَج أسرة `{d.kind_title}` بينما النص `{d.kind_body}`")
+                d.notes.append(f"العنوان/السلَج أسرة `{d.kind_title}` بينما النص يغلب عليه `{best_kind}` ({best_n} إشارة)")
+        elif d.type == "services" and d.kind_title != "general":
+            scores = kind_scores(d.text)
+            if scores.get(d.kind_title, 0) == 0 and scores.get("leak", 0) >= 3:
+                d.issues.append("intent_mismatch")
+                d.notes.append("صفحة خدمة CPT يغلب عليها فقرة تسربات لا موضوع الخدمة")
 
         if d.city:
             ar_map = {
@@ -888,7 +902,7 @@ def md_escape(s: str) -> str:
     return (s or "").replace("|", "/").replace("\n", " ").strip()
 
 
-def write_summary(docs: list[Doc], out: Path, thin: int, live_mode: str) -> None:
+def write_summary(docs: list[Doc], out: Path, thin: int, live_mode: str, base: str) -> None:
     n = len(docs)
     grid = [d for d in docs if d.is_grid]
     other = [d for d in docs if not d.is_grid]
@@ -899,8 +913,6 @@ def write_summary(docs: list[Doc], out: Path, thin: int, live_mode: str) -> None
     ph = [d for d in docs if "placeholder_or_shortcode" in d.issues]
     miss_h2 = [d for d in docs if "missing_h2_h3" in d.issues]
     cannibal = [d for d in docs if "keyword_cannibalization" in d.issues]
-    orphans = [d for d in docs if d.rank_orphan in {"1", "True", "true", True, "yes"} or d.rank_orphan == "True"]
-    # rank orphan comes as True/False from API stored as str
     orphans = [d for d in docs if str(d.rank_orphan).lower() in {"1", "true", "yes"}]
     word_ok = [d for d in docs if d.words >= thin]
 
@@ -914,7 +926,7 @@ def write_summary(docs: list[Doc], out: Path, thin: int, live_mode: str) -> None
     a = lines.append
     a("# تدقيق سيو تقني ومحتوى — ركن التطور قطر")
     a("")
-    a(f"**المصدر:** {DEFAULT_BASE} عبر REST (مقالات + صفحات + CPT خدمات).")
+    a(f"**المصدر:** {base} عبر REST (مقالات + صفحات + CPT خدمات).")
     a(f"**التاريخ:** {time.strftime('%Y-%m-%d')}")
     a(f"**الصفحات المفحوصة:** {n} — أنواع: {dict(types)}")
     a(f"**عتبة المحتوى الضعيف:** {thin} كلمة. **فحص HTML الحي:** `{live_mode}`.")
@@ -1207,7 +1219,7 @@ def main() -> int:
             )
 
     md_path = out_dir / "seo-audit-summary.md"
-    write_summary(docs, md_path, args.thin, args.live_html)
+    write_summary(docs, md_path, args.thin, args.live_html, args.base)
 
     index = {
         "fetched": len(docs),
