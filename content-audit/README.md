@@ -13,6 +13,16 @@
 | [city-grid-publish-2026-09.md](city-grid-publish-2026-09.md) | نشر تغطية 9 مدن بمحتوى مختلف لكل مقال، مع إبقاء الشحن/البيانو مسودة |
 | [snippets/city-grid-publisher.php](snippets/city-grid-publisher.php) | قصاصة ووردبريس 7: توليد HTML فريد ونشر الشبكة |
 | [seo_content_audit.py](seo_content_audit.py) | سكربت تدقيق سيو تقني + جودة محتوى عبر REST (بدون تخزين كلمة المرور) |
+| [seo_remediation.py](seo_remediation.py) | محرّك الإصلاح: مسودة خارج التخصص، إصلاح H1/tel، شبكة روابط داخلية، هيكل LLM (dry-run افتراضي) |
+| [seo-remediation.md](seo-remediation.md) | تعليمات المراجعة ثم `--apply` |
+
+## إصلاح السيو (بعد مراجعة الخطة)
+
+```bash
+cp .env.example .env
+python3 content-audit/seo_remediation.py --dry-run --tasks 1,2,3,4
+python3 content-audit/seo_remediation.py --apply --tasks 1,2,3
+```
 | [reports/seo-technical/seo-audit-summary.md](reports/seo-technical/seo-audit-summary.md) | ملخص تدقيق 1950 URL منشوراً (17 سبتمبر 2026) |
 | [reports/seo-technical/seo-audit-issues.csv](reports/seo-technical/seo-audit-issues.csv) | جدول: عنوان، رابط، كلمات، فئة المشكلة، ملاحظات |
 | [reports/seo-technical/seo-audit-all.csv](reports/seo-technical/seo-audit-all.csv) | الجرد الكامل مع هياكل العناوين وRank Math والفحص الحي |
