@@ -187,7 +187,7 @@ class WpClient:
             "Content-Type": "application/json",
         }
 
-    def request(self, method: str, path: str, payload: dict[str, Any] | None = None, timeout: int = 90) -> tuple[int, Any]:
+    def request(self, method: str, path: str, payload: dict[str, Any] | None = None, timeout: int = 120) -> tuple[int, Any]:
         url = path if path.startswith("http") else self.base + path
         data = None if payload is None else json.dumps(payload, ensure_ascii=False).encode("utf-8")
         limiter = self.writes if method in {"POST", "PUT", "PATCH", "DELETE"} else self.reads
@@ -204,7 +204,7 @@ class WpClient:
                 raw = e.read().decode("utf-8", "replace") if e.fp else ""
                 if e.code in {429, 502, 503} and attempt < 5:
                     LOG.warning("HTTP %s on %s %s — retry %s", e.code, method, path, attempt + 1)
-                    time.sleep(2 + attempt * 3)
+                    time.sleep(4 + attempt * 5)
                     last_err = e
                     continue
                 try:
@@ -214,8 +214,9 @@ class WpClient:
                 return e.code, err_body
             except Exception as e:
                 last_err = e
-                time.sleep(1 + attempt)
-        raise RuntimeError(last_err)
+                LOG.warning("%s %s failed (%s) — retry %s", method, path, e, attempt + 1)
+                time.sleep(3 + attempt * 4)
+        return 0, {"message": str(last_err or "request failed")}
 
     def paginate(self, route: str, extra: str = "") -> list[dict[str, Any]]:
         out: list[dict[str, Any]] = []
@@ -560,7 +561,12 @@ def task3_mesh(posts: list[dict[str, Any]], per_list: int) -> list[Action]:
 
     LOG.info("City×service catalog: %s posts, %s cities, %s stems", len(city_posts), len(by_city), len(by_stem))
     actions: list[Action] = []
+    skipped_done = 0
     for p in city_posts:
+        raw = p["_raw"] or p["_rend"]
+        if MESH_START in raw or f'id="{MESH_ID}"' in raw:
+            skipped_done += 1
+            continue
         city, stem = p["_city"], p["_stem"]
         others_city = [x for x in by_city[city] if x["id"] != p["id"]]
         others_svc = [x for x in by_stem[stem] if x["_city"] != city]
@@ -589,6 +595,7 @@ def task3_mesh(posts: list[dict[str, Any]], per_list: int) -> list[Action]:
                 {"content": new_html},
             )
         )
+    LOG.info("Task 3 skip already-meshed: %s  remaining: %s", skipped_done, len(actions))
     return actions
 
 
@@ -676,30 +683,48 @@ class LLMExpander:
         )
 
 
-def apply_actions(wp: WpClient, actions: list[Action], resume_after: int, apply: bool) -> list[Action]:
+def apply_actions(
+    wp: WpClient,
+    actions: list[Action],
+    resume_after: int,
+    apply: bool,
+    progress_path: Path | None = None,
+) -> list[Action]:
     done = 0
-    for act in actions:
-        if act.id <= resume_after and act.task == "3_mesh":
-            act.result = "skipped_resume"
-            continue
-        # Never touch Code Snippet 5 / never PUT the frozen leak pillar.
-        if act.id == LOCKED_PILLAR_ID:
-            act.result = "BLOCKED_BY_SNIPPET5"
-            LOG.warning("Skip PUT #%s %s — BLOCKED_BY_SNIPPET5 (snippet 5 untouched)", act.id, act.slug)
-            continue
-        if not apply:
-            act.result = "dry-run"
-            continue
-        code, body = wp.put_post(act.type, act.id, act.payload)
-        if code >= 400:
-            msg = body.get("message", body) if isinstance(body, dict) else body
-            act.result = f"HTTP_{code}:{msg}"
-            LOG.error("FAIL %s %s #%s %s", act.task, act.slug, act.id, act.result)
-            continue
-        act.result = f"ok_{code}"
-        done += 1
-        if done % 25 == 0:
-            LOG.info("applied %s/%s (last id=%s)", done, len(actions), act.id)
+    prog = progress_path.open("a", encoding="utf-8") if progress_path and apply else None
+    try:
+        for act in actions:
+            if act.id <= resume_after and act.task == "3_mesh":
+                act.result = "skipped_resume"
+                continue
+            if act.id == LOCKED_PILLAR_ID:
+                act.result = "BLOCKED_BY_SNIPPET5"
+                LOG.warning("Skip PUT #%s %s — BLOCKED_BY_SNIPPET5 (snippet 5 untouched)", act.id, act.slug)
+                continue
+            if not apply:
+                act.result = "dry-run"
+                continue
+            try:
+                code, body = wp.put_post(act.type, act.id, act.payload)
+            except Exception as e:
+                act.result = f"EXC:{e}"
+                LOG.error("FAIL %s %s #%s %s", act.task, act.slug, act.id, act.result)
+                continue
+            if code == 0 or code >= 400:
+                msg = body.get("message", body) if isinstance(body, dict) else body
+                act.result = f"HTTP_{code}:{msg}"
+                LOG.error("FAIL %s %s #%s %s", act.task, act.slug, act.id, act.result)
+                continue
+            act.result = f"ok_{code}"
+            done += 1
+            if prog:
+                prog.write(json.dumps({"id": act.id, "slug": act.slug, "task": act.task, "result": act.result}, ensure_ascii=False) + "\n")
+                prog.flush()
+            if done % 25 == 0:
+                LOG.info("applied %s/%s (last id=%s)", done, len(actions), act.id)
+    finally:
+        if prog:
+            prog.close()
     return actions
 
 
@@ -771,7 +796,7 @@ def main() -> int:
             expander = LLMExpander()
             expander.expand(packets[0] if packets else {})
 
-    apply_actions(wp, actions, args.resume_after, apply)
+    apply_actions(wp, actions, args.resume_after, apply, progress_path=out_dir / "progress.jsonl")
 
     plan = {
         "mode": "apply" if apply else "dry-run",
