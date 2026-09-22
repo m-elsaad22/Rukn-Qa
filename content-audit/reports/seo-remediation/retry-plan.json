@@ -1,0 +1,39 @@
+{
+  "mode": "apply",
+  "base": "https://www.rukn-eltatawer.com/qa",
+  "counts": {
+    "task1": 0,
+    "task2": 0,
+    "task3": 2,
+    "task4_packets": 0,
+    "ok": 2,
+    "failed": 0
+  },
+  "actions": [
+    {
+      "task": "3_mesh",
+      "method": "PUT",
+      "type": "post",
+      "id": 12699,
+      "slug": "water-pipe-leak-detection-al-daayen",
+      "url": "https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-al-daayen/",
+      "reason": "mesh 5 city-peers + 5 city-variants",
+      "result": "ok_200"
+    },
+    {
+      "task": "3_mesh",
+      "method": "PUT",
+      "type": "post",
+      "id": 11135,
+      "slug": "water-leak-detection-al-khor",
+      "url": "https://www.rukn-eltatawer.com/qa/water-leak-detection-al-khor/",
+      "reason": "mesh 5 city-peers + 5 city-variants",
+      "result": "ok_200"
+    }
+  ],
+  "mesh_sample": {
+    "id": 12699,
+    "slug": "water-pipe-leak-detection-al-daayen",
+    "html_tail": "in cleaning</a></li>\n<li><i class=\"fas fa-wrench\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/crawling-pest-control-al-daayen/\">crawling pest control</a></li>\n<li><i class=\"fas fa-wrench\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/flea-control-al-daayen/\">flea control</a></li>\n<li><i class=\"fas fa-wrench\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/wooden-arbor-installation-al-daayen/\">wooden arbor installation</a></li>\n<li><i class=\"fas fa-wrench\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/drain-unclogging-al-daayen/\">drain unclogging</a></li>\n    </ul>\n  </div>\n  <div class=\"rukn-mesh-block\">\n    <h2><i class=\"fas fa-city\" aria-hidden=\"true\"></i> كشف تسريبات مواسير مياه في في مدن أخرى</h2>\n    <ul>\n<li><i class=\"fas fa-location-arrow\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-al-shahaniya/\">كشف تسريبات مواسير مياه في في الشحانية</a></li>\n<li><i class=\"fas fa-location-arrow\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-umm-salal/\">كشف تسريبات مواسير مياه في في أم صلال</a></li>\n<li><i class=\"fas fa-location-arrow\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-doha/\">كشف تسريبات مواسير مياه في في الدوحة</a></li>\n<li><i class=\"fas fa-location-arrow\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-al-khor/\">كشف تسريبات مواسير مياه في في الخور</a></li>\n<li><i class=\"fas fa-location-arrow\" aria-hidden=\"true\"></i> <a href=\"https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-al-rayyan/\">كشف تسريبات مواسير مياه في في الريان</a></li>\n    </ul>\n  </div>\n</nav>\n<!-- rukn-internal-mesh:end -->\n"
+  }
+}

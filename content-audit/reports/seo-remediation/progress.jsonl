@@ -1312,3 +1312,5 @@
 {"id": 11148, "slug": "ac-leak-detection-doha", "task": "3_mesh", "result": "ok_200"}
 {"id": 12693, "slug": "water-pipe-leak-detection-doha", "task": "3_mesh", "result": "ok_200"}
 {"id": 11132, "slug": "water-leak-detection-doha", "task": "3_mesh", "result": "ok_200"}
+{"id": 12699, "slug": "water-pipe-leak-detection-al-daayen", "task": "3_mesh", "result": "ok_200"}
+{"id": 11135, "slug": "water-leak-detection-al-khor", "task": "3_mesh", "result": "ok_200"}

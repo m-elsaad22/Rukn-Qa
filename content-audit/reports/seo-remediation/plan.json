@@ -6,8 +6,8 @@
     "task2": 1,
     "task3": 1316,
     "task4_packets": 15,
-    "ok": 1314,
-    "failed": 3
+    "ok": 1316,
+    "failed": 1
   },
   "actions": [
     {
@@ -13058,7 +13058,7 @@
       "slug": "water-pipe-leak-detection-al-daayen",
       "url": "https://www.rukn-eltatawer.com/qa/water-pipe-leak-detection-al-daayen/",
       "reason": "mesh 5 city-peers + 5 city-variants",
-      "result": "HTTP_500:<h1>Error establishing a database connection</h1>"
+      "result": "ok_200"
     },
     {
       "task": "3_mesh",
@@ -13098,7 +13098,7 @@
       "slug": "water-leak-detection-al-khor",
       "url": "https://www.rukn-eltatawer.com/qa/water-leak-detection-al-khor/",
       "reason": "mesh 5 city-peers + 5 city-variants",
-      "result": "HTTP_500:<h1>Error establishing a database connection</h1>"
+      "result": "ok_200"
     },
     {
       "task": "3_mesh",

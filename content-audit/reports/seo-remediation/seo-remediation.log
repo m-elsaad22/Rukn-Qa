@@ -173,3 +173,27 @@
 2026-09-22 05:50:25,595 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 3
 2026-09-22 05:50:40,307 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 4
 2026-09-22 05:51:00,098 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 5
+2026-09-22 05:51:24,808 WARNING REST not ready HTTP 500 — retry 2 (1021s left)
+2026-09-22 05:51:57,193 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 1
+2026-09-22 05:52:01,897 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 2
+2026-09-22 05:52:11,517 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 3
+2026-09-22 05:52:26,212 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 4
+2026-09-22 05:52:45,889 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 5
+2026-09-22 05:53:13,213 WARNING REST not ready HTTP 500 — retry 3 (913s left)
+2026-09-22 05:53:43,890 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 1
+2026-09-22 05:53:48,597 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 2
+2026-09-22 05:53:58,291 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 3
+2026-09-22 05:54:12,916 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 4
+2026-09-22 05:54:33,200 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 5
+2026-09-22 05:54:57,817 WARNING REST not ready HTTP 500 — retry 4 (808s left)
+2026-09-22 05:55:28,519 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 1
+2026-09-22 05:55:33,057 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 2
+2026-09-22 05:55:42,602 WARNING HTTP 500 on GET /wp-json/wp/v2/posts/12699?context=edit&_fields=id,slug,status — retry 3
+2026-09-22 05:55:57,586 INFO REST probe HTTP 200 (1/2)
+2026-09-22 05:56:00,130 INFO REST healthy (HTTP 200 ×2)
+2026-09-22 05:56:00,130 INFO Retry mesh for IDs [11135, 12699] (snippet 5 untouched)
+2026-09-22 05:56:00,154 INFO Loaded 1773 city posts from content-audit/reports/seo-remediation/actions-dry-run.csv
+2026-09-22 05:56:02,392 INFO City×service catalog: 1773 posts, 9 cities, 197 stems
+2026-09-22 05:56:02,392 INFO Task 3 skip already-meshed: 0  remaining: 2
+2026-09-22 05:56:02,393 INFO Task 3 planned: 2 mesh updates
+2026-09-22 05:56:05,116 INFO Plan written to content-audit/reports/seo-remediation/retry-plan.json (2 actions)
