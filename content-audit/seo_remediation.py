@@ -682,25 +682,20 @@ def apply_actions(wp: WpClient, actions: list[Action], resume_after: int, apply:
         if act.id <= resume_after and act.task == "3_mesh":
             act.result = "skipped_resume"
             continue
+        # Never touch Code Snippet 5 / never PUT the frozen leak pillar.
+        if act.id == LOCKED_PILLAR_ID:
+            act.result = "BLOCKED_BY_SNIPPET5"
+            LOG.warning("Skip PUT #%s %s — BLOCKED_BY_SNIPPET5 (snippet 5 untouched)", act.id, act.slug)
+            continue
         if not apply:
             act.result = "dry-run"
             continue
-        if act.id == LOCKED_PILLAR_ID and "content" in act.payload:
-            LOG.warning("PUT #%s may be discarded by snippet 5 freeze", LOCKED_PILLAR_ID)
         code, body = wp.put_post(act.type, act.id, act.payload)
         if code >= 400:
-            act.result = f"HTTP_{code}:{(body or {}).get('message', body)}"
+            msg = body.get("message", body) if isinstance(body, dict) else body
+            act.result = f"HTTP_{code}:{msg}"
             LOG.error("FAIL %s %s #%s %s", act.task, act.slug, act.id, act.result)
             continue
-        if act.id == LOCKED_PILLAR_ID and "content" in act.payload:
-            verify = wp.request("GET", f"/wp-json/wp/v2/posts/{act.id}?context=edit&_fields=id,content")
-            raw = ""
-            if verify[0] == 200 and isinstance(verify[1], dict):
-                raw = (verify[1].get("content") or {}).get("raw") or ""
-            if "<h1" in raw.lower() or 'href="tel:' in raw.lower():
-                act.result = "BLOCKED_BY_SNIPPET5"
-                LOG.error("Post 2973 still has H1/tel after PUT — unlock $GLOBALS['rukn_unlock_2973']")
-                continue
         act.result = f"ok_{code}"
         done += 1
         if done % 25 == 0:
