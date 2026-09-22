@@ -202,7 +202,7 @@ class WpClient:
                     return resp.status, body
             except urllib.error.HTTPError as e:
                 raw = e.read().decode("utf-8", "replace") if e.fp else ""
-                if e.code in {429, 502, 503} and attempt < 5:
+                if e.code in {429, 500, 502, 503} and attempt < 5:
                     LOG.warning("HTTP %s on %s %s — retry %s", e.code, method, path, attempt + 1)
                     time.sleep(4 + attempt * 5)
                     last_err = e
@@ -218,13 +218,19 @@ class WpClient:
                 time.sleep(3 + attempt * 4)
         return 0, {"message": str(last_err or "request failed")}
 
-    def paginate(self, route: str, extra: str = "") -> list[dict[str, Any]]:
+    def paginate(
+        self,
+        route: str,
+        extra: str = "",
+        fields: str = "id,slug,link,title,content,excerpt,type,status",
+        context: str = "edit",
+    ) -> list[dict[str, Any]]:
         out: list[dict[str, Any]] = []
         page = 1
         while True:
             q = (
-                f"/wp-json/wp/v2/{route}?context=edit&status=publish&per_page=100"
-                f"&page={page}&_fields=id,slug,link,title,content,excerpt,type,status{extra}"
+                f"/wp-json/wp/v2/{route}?context={context}&status=publish&per_page=100"
+                f"&page={page}&_fields={fields}{extra}"
             )
             code, body = self.request("GET", q)
             if code == 400 and page > 1:
@@ -238,6 +244,14 @@ class WpClient:
                 break
             page += 1
         return out
+
+    def get_post(self, ptype: str, post_id: int) -> tuple[int, Any]:
+        route = "posts" if ptype == "post" else ptype
+        return self.request(
+            "GET",
+            f"/wp-json/wp/v2/{route}/{post_id}?context=edit"
+            "&_fields=id,slug,link,title,content,excerpt,type,status",
+        )
 
     def put_post(self, ptype: str, post_id: int, payload: dict[str, Any]) -> tuple[int, Any]:
         route = "posts" if ptype == "post" else ptype
@@ -538,7 +552,79 @@ def task2_pillars(posts: list[dict[str, Any]]) -> list[Action]:
     return actions
 
 
-def task3_mesh(posts: list[dict[str, Any]], per_list: int) -> list[Action]:
+def wait_for_rest(wp: WpClient, timeout_sec: int, probe_id: int | None = None) -> None:
+    deadline = time.monotonic() + max(1, timeout_sec)
+    attempt = 0
+    streak = 0
+    path = (
+        f"/wp-json/wp/v2/posts/{probe_id}?context=edit&_fields=id,slug,status"
+        if probe_id
+        else "/wp-json/wp/v2/posts?per_page=1&_fields=id"
+    )
+    while True:
+        code, body = wp.request("GET", path, timeout=40)
+        if code == 200:
+            streak += 1
+            if streak >= 2:
+                LOG.info("REST healthy (HTTP 200 ×%s)", streak)
+                return
+            LOG.info("REST probe HTTP 200 (%s/2)", streak)
+            time.sleep(2)
+            continue
+        streak = 0
+        attempt += 1
+        left = deadline - time.monotonic()
+        LOG.warning("REST not ready HTTP %s — retry %s (%.0fs left)", code, attempt, max(0, left))
+        if left <= 0:
+            raise RuntimeError(f"REST still unhealthy after {timeout_sec}s: HTTP {code} {body}")
+        time.sleep(min(30.0, max(5.0, left / 4)))
+
+
+def posts_from_actions_csv(path: Path) -> list[dict[str, Any]]:
+    import csv
+
+    posts: list[dict[str, Any]] = []
+    with path.open(encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row.get("task") != "3_mesh":
+                continue
+            slug = row.get("slug") or ""
+            city = city_from_slug(slug)
+            title = slug.replace("-", " ")
+            if city:
+                title = f"{service_stem(slug).replace('-', ' ')} {CITY_AR.get(city, city)}"
+            posts.append(
+                {
+                    "id": int(row["id"]),
+                    "slug": slug,
+                    "link": row.get("url") or "",
+                    "title": {"raw": title, "rendered": title},
+                    "type": row.get("type") or "post",
+                    "status": "publish",
+                    "content": {"raw": "", "rendered": ""},
+                }
+            )
+    LOG.info("Loaded %s city posts from %s", len(posts), path)
+    return posts
+
+
+def hydrate_posts(wp: WpClient, posts: list[dict[str, Any]], only_ids: set[int]) -> None:
+    by_id = {int(p["id"]): p for p in posts if p.get("id") is not None}
+    for pid in sorted(only_ids):
+        p = by_id.get(pid)
+        code, body = wp.get_post((p or {}).get("type") or "post", pid)
+        if code != 200 or not isinstance(body, dict):
+            LOG.error("hydrate #%s failed: HTTP %s %s", pid, code, body)
+            continue
+        if p is None:
+            posts.append(body)
+        else:
+            p.update(body)
+
+
+def task3_mesh(
+    posts: list[dict[str, Any]], per_list: int, only_ids: set[int] | None = None
+) -> list[Action]:
     city_posts: list[dict[str, Any]] = []
     for p in posts:
         slug = p.get("slug") or ""
@@ -563,7 +649,12 @@ def task3_mesh(posts: list[dict[str, Any]], per_list: int) -> list[Action]:
     actions: list[Action] = []
     skipped_done = 0
     for p in city_posts:
+        if only_ids is not None and int(p["id"]) not in only_ids:
+            continue
         raw = p["_raw"] or p["_rend"]
+        if only_ids is not None and not (raw or "").strip():
+            LOG.error("Skip mesh #%s %s — content not loaded", p["id"], p.get("slug"))
+            continue
         if MESH_START in raw or f'id="{MESH_ID}"' in raw:
             skipped_done += 1
             continue
@@ -758,9 +849,13 @@ def main() -> int:
     ap.add_argument("--execute-llm", action="store_true", help="Actually call the LLM (default: architecture only)")
     ap.add_argument("--out-dir", default="content-audit/reports/seo-remediation")
     ap.add_argument("--limit-mesh", type=int, default=0, help="Debug: max Task 3 updates")
+    ap.add_argument("--retry-ids", default="", help="Task 3 only: light catalog + mesh these post IDs")
+    ap.add_argument("--wait-rest", type=int, default=0, help="Seconds to wait for REST HTTP 200 before fetching")
+    ap.add_argument("--catalog-csv", default="", help="Optional CSV of prior 3_mesh rows to avoid a full REST catalog")
     args = ap.parse_args()
     apply = bool(args.apply) and not args.dry_run
     tasks = {t.strip() for t in args.tasks.split(",") if t.strip()}
+    retry_ids = {int(x) for x in args.retry_ids.split(",") if x.strip().isdigit()}
 
     out_dir = Path(args.out_dir)
     setup_log(out_dir)
@@ -772,7 +867,22 @@ def main() -> int:
 
     base, basic = creds()
     wp = WpClient(base, basic, min_interval=args.min_interval)
-    posts, services = catalog(wp)
+    if args.wait_rest:
+        probe = next(iter(retry_ids), None)
+        wait_for_rest(wp, args.wait_rest, probe_id=probe)
+
+    if retry_ids:
+        LOG.info("Retry mesh for IDs %s (snippet 5 untouched)", sorted(retry_ids))
+        csv_path = Path(args.catalog_csv) if args.catalog_csv else out_dir / "actions-dry-run.csv"
+        if csv_path.is_file():
+            posts = posts_from_actions_csv(csv_path)
+        else:
+            posts = wp.paginate("posts", fields="id,slug,link,title,type,status", context="view")
+        hydrate_posts(wp, posts, retry_ids)
+        services: list[dict[str, Any]] = []
+        tasks = {"3"}
+    else:
+        posts, services = catalog(wp)
 
     actions: list[Action] = []
     packets: list[dict[str, Any]] = []
@@ -785,7 +895,7 @@ def main() -> int:
         LOG.info("Task 2 planned: %s pillar updates", len(t2))
         actions.extend(t2)
     if "3" in tasks:
-        t3 = task3_mesh(posts, max(3, min(5, args.mesh_links)))
+        t3 = task3_mesh(posts, max(3, min(5, args.mesh_links)), only_ids=retry_ids or None)
         if args.limit_mesh:
             t3 = t3[: args.limit_mesh]
         LOG.info("Task 3 planned: %s mesh updates", len(t3))
@@ -798,6 +908,10 @@ def main() -> int:
 
     apply_actions(wp, actions, args.resume_after, apply, progress_path=out_dir / "progress.jsonl")
 
+    def _action_row(a: Action) -> dict[str, Any]:
+        row = {k: v for k, v in asdict(a).items() if k != "payload"}
+        return row
+
     plan = {
         "mode": "apply" if apply else "dry-run",
         "base": base,
@@ -809,21 +923,17 @@ def main() -> int:
             "ok": sum(1 for a in actions if str(a.result).startswith("ok")),
             "failed": sum(1 for a in actions if str(a.result).startswith("HTTP") or a.result == "BLOCKED_BY_SNIPPET5"),
         },
-        "actions": [
-            {k: v for k, v in asdict(a).items() if k != "payload" or a.task != "3_mesh"}
-            for a in actions
-        ],
+        "actions": [_action_row(a) for a in actions],
     }
-    # Task 3 payloads are huge; keep one sample mesh for review.
     sample = next((a for a in actions if a.task == "3_mesh"), None)
     if sample:
-        plan["mesh_sample"] = {
-            "id": sample.id,
-            "slug": sample.slug,
-            "html_tail": (sample.payload.get("content") or "")[-1800:],
-        }
-    plan_path = out_dir / "plan.json"
-    # Strip full HTML from task3 rows already done; for task2 keep payload
+        tail = (sample.payload.get("content") or "")[-1800:]
+        tail = re.sub(r"https://wa\.me/\d+", "https://wa.me/", tail)
+        tail = re.sub(r"974\d{7,}", "[redacted]", tail)
+        plan["mesh_sample"] = {"id": sample.id, "slug": sample.slug, "html_tail": tail}
+    plan_name = "retry-plan.json" if retry_ids else "plan.json"
+    csv_name = "actions-retry.csv" if retry_ids else "actions.csv"
+    plan_path = out_dir / plan_name
     plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     csv_lines = ["task,id,type,slug,url,reason,result"]
     for a in actions:
@@ -833,7 +943,7 @@ def main() -> int:
                 for x in (a.task, a.id, a.type, a.slug, a.url, a.reason, a.result)
             )
         )
-    (out_dir / "actions.csv").write_text("\n".join(csv_lines) + "\n", encoding="utf-8")
+    (out_dir / csv_name).write_text("\n".join(csv_lines) + "\n", encoding="utf-8")
     LOG.info("Plan written to %s (%s actions)", plan_path, len(actions))
     return 0
 
