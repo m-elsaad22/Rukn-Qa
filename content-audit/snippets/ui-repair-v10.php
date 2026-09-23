@@ -12,7 +12,24 @@ if (!defined('ABSPATH')) {
 const RUKN_QA_WA_KEEP = '971586634710';
 
 function rukn_qa_is_en_html($html) {
-    return is_string($html) && (strpos($html, 'kayan-lang-en') !== false || strpos($html, 'lang="en"') !== false);
+    if (!is_string($html) || $html === '') {
+        return false;
+    }
+    if (strpos($html, 'kayan-lang-en') !== false) {
+        return true;
+    }
+    if (preg_match('/<html[^>]*\blang="en"/i', $html)) {
+        return true;
+    }
+    return false;
+}
+
+function rukn_qa_preg_replace($pattern, $replacement, $html, $limit = -1) {
+    if (!is_string($html) || $html === '') {
+        return $html;
+    }
+    $out = preg_replace($pattern, $replacement, $html, $limit);
+    return is_string($out) ? $out : $html;
 }
 
 function rukn_qa_nav_links($en = false) {
@@ -513,11 +530,11 @@ function rukn_qa_repair_v10_html($html) {
     }
     $en = rukn_qa_is_en_html($html);
     $nav = rukn_qa_nav_links($en);
-    $html = preg_replace('#<nav class="menu">\s*</nav>#', '<nav class="menu">' . $nav . '</nav>', $html, 1);
+    $html = rukn_qa_preg_replace('#<nav class="menu">\s*</nav>#', '<nav class="menu">' . $nav . '</nav>', $html, 1);
 
     if (strpos($html, 'id="ruknMob"') !== false && strpos($html, 'rukn-v10-nav') === false) {
         $mob = '<nav class="rukn-v10-nav">' . rukn_qa_mob_links($en) . '</nav>';
-        $html = preg_replace(
+        $html = rukn_qa_preg_replace(
             '#(<div class="mob" id="ruknMob">)(.*?)(<a href="https://wa\.me/' . RUKN_QA_WA_KEEP . '")#s',
             '$1$2' . $mob . '$3',
             $html,
@@ -541,9 +558,9 @@ function rukn_qa_repair_v10_html($html) {
         $html
     );
 
-    $html = preg_replace('#<a class="twitter"[^>]*>.*?</a>#is', '', $html);
-    $html = preg_replace('#<a class="linkedin"[^>]*>.*?</a>#is', '', $html);
-    $html = preg_replace('#<a class="instagram"[^>]*>.*?</a>#is', '', $html);
+    $html = rukn_qa_preg_replace('#<a class="twitter"[^>]*>.*?</a>#is', '', $html);
+    $html = rukn_qa_preg_replace('#<a class="linkedin"[^>]*>.*?</a>#is', '', $html);
+    $html = rukn_qa_preg_replace('#<a class="instagram"[^>]*>.*?</a>#is', '', $html);
 
     $contact = home_url('/contact-us/');
     $html = str_replace(
@@ -554,19 +571,19 @@ function rukn_qa_repair_v10_html($html) {
     $html = str_replace('<small>Doha, Qa 🇶🇦</small>', '<small>الدوحة، قطر</small>', $html);
     $html = str_replace('<small>e-mail</small>', '<small>info@rukn-eltatawer.com</small>', $html);
 
-    $html = preg_replace(
+    $html = rukn_qa_preg_replace(
         '#<h1>من نحن</h1>\s*<p class="psub">.*?</p>#s',
         '<h1>نحن <em>ركن التطور</em> — شريكك في راحة المنزل</h1><p class="psub">فريق خدمات منزلية يعمل من الدوحة: تشخيص قبل الإصلاح، تقرير واضح، وعرض سعر مكتوب. نغطي الدوحة ولوسيل والريان والوكرة وباقي مدن قطر.</p>',
         $html,
         1
     );
-    $html = preg_replace(
+    $html = rukn_qa_preg_replace(
         '#<h1>اتصل بنا</h1>\s*<p class="psub">.*?</p>#s',
         '<h1>تواصل <em>معنا</em> — عبر واتساب</h1><p class="psub">أرسل المدينة ونوع الخدمة ووصف العطل. نحدد موعد المعاينة ثم نكتب العرض قبل التنفيذ. أزرار الاتصال مخفية حتى يتوفر رقم قطري جديد.</p>',
         $html,
         1
     );
-    $html = preg_replace(
+    $html = rukn_qa_preg_replace(
         '#<h1>الأسئلة الشائعة</h1>\s*<p class="psub">.*?</p>#s',
         '<h1>الأسئلة <em>الشائعة</em></h1><p class="psub">إجابات مباشرة عن التغطية، المعاينة، الضمان، والتواصل عبر واتساب في قطر.</p>',
         $html,
@@ -588,6 +605,20 @@ function rukn_qa_repair_v10_html($html) {
         'مكافحة الحشرات' => 'https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/',
         'كيف تعمل الألواح' => 'https://www.rukn-eltatawer.com/qa/solar-energy/',
         'السخانات الشمسية' => 'https://www.rukn-eltatawer.com/qa/solar-energy/',
+        'Signs of a water leak' => 'https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/',
+        'Detection without breaking' => 'https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/',
+        'Tank leaks' => 'https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/',
+        'Tank cleaning' => 'https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/',
+        'Pest control' => 'https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/',
+        'How the panels work' => 'https://www.rukn-eltatawer.com/qa/solar-energy/',
+        'Solar water heaters' => 'https://www.rukn-eltatawer.com/qa/solar-energy/',
+        'أنواع الInsulation المائي' => 'https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/',
+        'الInsulation الحراري' => 'https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/',
+        'Roof insulation وTanks' => 'https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/',
+        'الMaintenance الدورية' => 'https://www.rukn-eltatawer.com/qa/maintenance/',
+        'Maintenance المباني' => 'https://www.rukn-eltatawer.com/qa/maintenance/',
+        'Maintenance الأجهزة' => 'https://www.rukn-eltatawer.com/qa/maintenance/',
+        'الCleaning العميق' => 'https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/',
     ];
     foreach ($guides as $label => $url) {
         $html = str_replace(
@@ -597,9 +628,24 @@ function rukn_qa_repair_v10_html($html) {
         );
     }
 
-    $html = preg_replace('#<form[^>]*action="#"[\s\S]*?</form>#i', '', $html);
-    $html = preg_replace('#<(div|section|aside)[^>]*class="[^"]*(?:--rating--widgets--stars-averageList|ratingServise--stars-value|-Js-Rate-AverageItems)[^"]*"[^>]*>[\s\S]*?</\\1>#i', '', $html);
+    $html = rukn_qa_preg_replace('~<form[^>]*action="#"[\\s\\S]*?</form>~i', '', $html);
     $html = str_replace('"wa_number":""', '"wa_number":"' . RUKN_QA_WA_KEEP . '"', $html);
+
+    $html = str_replace(
+        '<div class="faq-q">كيف أحجز خدمة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a" style="max-height:400px"><p>يمكن الحجز عبر الموقع مباشرة أو الاتصال بنا</p></div>',
+        '<div class="faq-q">كيف أحجز خدمة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a" style="max-height:400px"><p>أرسل المدينة ونوع الخدمة ووصف العطل على واتساب. نحدد موعد المعاينة ثم نكتب العرض قبل التنفيذ. لا يوجد زر اتصال حتى يتوفر رقم قطري جديد.</p></div>',
+        $html
+    );
+    $html = str_replace(
+        '<div class="faq-q">ما هي طرق الدفع المتاحة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>نقدي، تحويل بنكي، أو دفع إلكتروني حسب الخدمة المتاحة.</p></div>',
+        '<div class="faq-q">هل تعملون خارج الدوحة؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>نعم بالتنسيق: لوسيل والريان والوكرة والخور وأم صلال والظعاين والشمال والشحانية. زمن الوصول يُذكر بعد العنوان.</p></div>',
+        $html
+    );
+    $html = str_replace(
+        '<div class="faq-q">هل يمكن إلغاء أو تعديل الحجز؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>نعم، يمكن تعديل أو إلغاء الحجز قبل وصول الفريق حسب السياسات الموضحة في الموقع.</p></div>',
+        '<div class="faq-q">هل الضمان عشر سنوات دائماً؟ <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>لا. مدة الضمان تُكتب في عرض السعر حسب الخدمة والخامة، وليست وعداً عاماً لكل عمل.</p></div>',
+        $html
+    );
 
     return $html;
 }
