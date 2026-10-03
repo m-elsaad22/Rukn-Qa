@@ -13,5 +13,6 @@
 | [COVERAGE-ARCHITECTURE.md](COVERAGE-ARCHITECTURE.md) | تغطية كل الخدمات والمدن بدون قوالب متطابقة |
 | [FULL-SITE-AUDIT-AR.md](FULL-SITE-AUDIT-AR.md) | تدقيق شامل 5 سبتمبر 2026: مقالات، قالب، إعدادات، إضافات، بيانات فارغة |
 | [FIXES-APPLIED-ROUND4.md](FIXES-APPLIED-ROUND4.md) | إخفاء الاتصال، واتساب +971586634710، وإصلاحات آمنة دون لمس 2973 |
+| [UNPUBLISH-CITY-CLONES.md](UNPUBLISH-CITY-CLONES.md) | سحب قوالب المدن ونسخ التسرب المنشورة بالخطأ (3 أكتوبر 2026) |
 
 التغييرات على ووردبريس عبر REST + مقتطف Code Snippets. المقال #2973 مقفول ولا يُعاد كتابته.
