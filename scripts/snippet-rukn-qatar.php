@@ -652,34 +652,45 @@ add_filter('language_attributes', function ($out) {
     return $out;
 }, 99);
 
+function rukn_qa_request_slug() {
+    $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    $path = preg_replace('#^qa/#', '', $path);
+    return basename($path);
+}
+
+function rukn_qa_maybe_redirect_city_or_leak() {
+    if (is_admin() || wp_doing_ajax() || (function_exists('wp_is_json_request') && wp_is_json_request())) {
+        return;
+    }
+    $id = is_singular('post') ? (int) get_queried_object_id() : 0;
+    $slug = $id ? (string) get_post_field('post_name', $id) : '';
+    if (!$slug) {
+        $slug = rukn_qa_request_slug();
+    }
+    if ($id === 2973 || !$slug || $slug === 'water-leak-detection-company-in-qatar' || $slug === 'water-leak-detection-qatar-en') {
+        return;
+    }
+    if (preg_match('/^(water-leak-detection|water-pipe-leak-detection)-/', $slug)) {
+        wp_safe_redirect(home_url(RUKN_QA_LEAK), 301);
+        exit;
+    }
+    if (!in_array($slug, rukn_allowed_city_slugs(), true)) {
+        $suf = rukn_city_suffix($slug);
+        $hub = $suf ? rukn_city_hub_path($suf) : null;
+        if ($hub) {
+            wp_safe_redirect(home_url($hub), 301);
+            exit;
+        }
+    }
+}
+
+add_action('template_redirect', 'rukn_qa_maybe_redirect_city_or_leak', 0);
+
 add_action('template_redirect', function () {
     if (is_admin() || wp_doing_ajax() || wp_is_json_request()) {
         return;
     }
-    $slug = '';
-    $id = 0;
-    if (is_singular('post')) {
-        $id = (int) get_queried_object_id();
-        $slug = (string) get_post_field('post_name', $id);
-    } elseif (is_404()) {
-        $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
-        $path = preg_replace('#^qa/#', '', $path);
-        $slug = basename($path);
-    }
-    if ($id !== 2973 && $slug && $slug !== 'water-leak-detection-company-in-qatar' && $slug !== 'water-leak-detection-qatar-en') {
-        if (preg_match('/^(water-leak-detection|water-pipe-leak-detection)-/', $slug)) {
-            wp_safe_redirect(home_url(RUKN_QA_LEAK), 301);
-            exit;
-        }
-        if (!in_array($slug, rukn_allowed_city_slugs(), true)) {
-            $suf = rukn_city_suffix($slug);
-            $hub = $suf ? rukn_city_hub_path($suf) : null;
-            if ($hub) {
-                wp_safe_redirect(home_url($hub), 301);
-                exit;
-            }
-        }
-    }
+    rukn_qa_maybe_redirect_city_or_leak();
     if (is_post_type_archive('pricing')) {
         wp_safe_redirect(home_url('/as3ar/'), 301);
         exit;
@@ -1055,6 +1066,20 @@ function rukn_unpublish_city_templates() {
             update_post_meta($id, 'rank_math_canonical_url', home_url('/water-leak-detection-company-in-qatar/'));
         }
         unset($robots);
+        if (class_exists('\RankMath\Redirections\DB')) {
+            foreach ($rows as $row) {
+                $slug = (string) $row->post_name;
+                $to = home_url(RUKN_QA_LEAK);
+                if (strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
+                    \RankMath\Redirections\DB::add([
+                        'sources' => [['pattern' => $slug, 'comparison' => 'exact']],
+                        'url_to' => $to,
+                        'header_code' => 301,
+                        'status' => 'active',
+                    ]);
+                }
+            }
+        }
     }
     if (function_exists('wp_cache_flush')) {
         wp_cache_flush();
