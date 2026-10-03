@@ -425,28 +425,32 @@ SHORTCODES = "\n[post_features]\n\n[post_steps]\n\n[post_prices]\n\n[post_servic
 def faq_pairs(title: str, city: str, pack: dict, lang: str = "ar"):
     if lang == "en":
         return [
-            {"question": f"What is {title}?", "answer": f"{pack['what']} Available in {city} and other Qatar cities by appointment."},
-            {"question": "When should I book?", "answer": "When the signs above appear, or the fault returns after a cosmetic fix."},
-            {"question": "Is there a fixed price in chat?", "answer": "No. We inspect or collect a clear description, then send a written scope. We do not invent a villa-wide price list."},
-            {"question": "Do you work outside Doha?", "answer": f"Yes, by schedule across {QATAR_AREAS}."},
-            {"question": "How long is the visit?", "answer": "It depends on diagnosis and access. A time window is shared after we have the address."},
-            {"question": "Is breaking required?", "answer": "Not always. Diagnosis comes first; any opening is listed in the quote."},
-            {"question": "How do I contact you?", "answer": "Use WhatsApp on this page. The call button is hidden for now."},
-            {"question": "What should I prepare?", "answer": "Address, a short fault description, photos if available, and access for the technician."},
-            {"question": "Do you write the scope?", "answer": "Yes. Work starts after you approve a written range, not after a vague chat price."},
-            {"question": "Who is the service for?", "answer": "Homes, villas and buildings in Qatar that need this work after inspection."},
+            {"question": f"What is {title}?", "answer": f"{pack['what']} This page is only for {title} in {city} and other Qatar cities. Work starts after inspection or a clear description, then a written scope."},
+            {"question": "When should I book?", "answer": f"When the signs on this page appear, or the fault returns after a cosmetic fix. Qatar heat and humidity often make {title} more urgent in summer."},
+            {"question": "Is there a fixed price in chat?", "answer": f"No. We do not invent a villa-wide price for {title} from a short message. Scope and cost follow the area, access and fault."},
+            {"question": "Do you work outside Doha?", "answer": "Yes, by appointment across Doha, Lusail, Al Rayyan, Al Wakrah, Al Khor, Umm Salal, Al Daayen, Al Shamal and Al Shahaniya. Travel time is given after the address."},
+            {"question": "How long is the visit?", "answer": f"It depends on {title}: roof, tank, ducts or floor access change the window. We share a range after we understand the case."},
+            {"question": "Is breaking required?", "answer": "Not always. Diagnosis comes first; any opening is listed in the quote before work starts."},
+            {"question": "How do I contact you?", "answer": f"WhatsApp from this page with the area and that you need {title}. Call buttons are hidden for now."},
+            {"question": "What should I prepare?", "answer": "Address or a nearby landmark, a short fault description, photos if you have them, and access for the technician."},
+            {"question": "Do you write the scope?", "answer": f"Yes. {title} starts after you approve a written range, not after a vague chat price."},
+            {"question": "Who is the service for?", "answer": f"Homes, villas and buildings in Qatar that need {title} after inspection. If the fault belongs on another page, we say so before the visit."},
+            {"question": "Is there a written warranty?", "answer": "It is stated in the quote according to the work and materials. Articles do not invent a blanket guarantee."},
+            {"question": "Do you cover Lusail and Al Rayyan?", "answer": f"Yes, on a schedule. Mention the city when you request {title} so travel time is planned."},
         ]
     return [
-        {"question": f"ما هي {title}؟", "answer": f"{pack['what']} الخدمة تُقدَّم في {city} وباقي مدن قطر حسب الموعد."},
-        {"question": f"متى أحتاج {title}؟", "answer": "عندما تظهر العلامات المذكورة في المقال أو يتكرر العطل بعد إصلاح تجميلي."},
-        {"question": "هل السعر ثابت من الرسالة؟", "answer": "لا. المعاينة أو وصف دقيق ثم عرض مكتوب. لا نخترع أسعاراً ثابتة لكل فيلا."},
-        {"question": "هل تعملون خارج الدوحة؟", "answer": f"نعم بالتنسيق: {QATAR_AREAS}. زمن الوصول يُذكر بعد العنوان."},
-        {"question": "كم تستغرق الزيارة؟", "answer": "تختلف حسب التشخيص والوصول. المدة التقريبية تُذكر بعد فهم الحالة."},
-        {"question": "هل يلزم تكسير؟", "answer": "ليس دائماً. التشخيص أولاً وأي فتح يُذكر في العرض."},
-        {"question": "كيف أتواصل؟", "answer": "واتساب من الزر في الصفحة. زر الاتصال الهاتفي مخفي مؤقتاً."},
-        {"question": "ما الذي أحضّره قبل الزيارة؟", "answer": "العنوان، وصف العطل، وصور إن وُجدت، وتأمين وصول الفني للموقع."},
-        {"question": "هل تكتبون نطاق العمل؟", "answer": "نعم. التنفيذ بعد الموافقة على عرض مكتوب، وليس بعد سعر عام من محادثة قصيرة."},
-        {"question": "لمن تناسب الخدمة؟", "answer": f"منازل وفلل ومنشآت في {city} وباقي قطر تحتاج هذا العمل بعد المعاينة."},
+        {"question": f"ما هي {title}؟", "answer": f"{pack['what']} الصفحة مخصّصة لـ{title} في {city} وباقي مدن قطر. التنفيذ بعد معاينة أو وصف دقيق ثم نطاق مكتوب، ولا تُخلط مع خدمة أخرى لمجرد تشابه الكلمات."},
+        {"question": f"متى أحتاج {title}؟", "answer": f"عندما تظهر العلامات أعلاه أو يتكرر العطل بعد إصلاح تجميلي. في مناخ قطر تتسارع بعض الأعطال صيفاً؛ إخفاء الأثر يزيد نطاق {title} لاحقاً."},
+        {"question": "هل السعر ثابت من الرسالة؟", "answer": f"لا. لا نخترع سعر فيلا كاملة من محادثة قصيرة. بعد فهم {title} يُكتب عرض يشمل ما سيُنفَّذ وما لن يُنفَّذ."},
+        {"question": "هل تعملون خارج الدوحة؟", "answer": f"نعم بالتنسيق: {QATAR_AREAS}. زمن الوصول لـ{title} يُذكر بعد الحي والعنوان، وليس وعداً بالدقيقة من أول رسالة."},
+        {"question": "كم تستغرق الزيارة؟", "answer": f"تختلف حسب تشخيص {title} والوصول (سطح، خزان، دكت، طابق). المدة التقريبية بعد فهم الحالة."},
+        {"question": "هل يلزم تكسير؟", "answer": "ليس دائماً. التشخيص أولاً وأي فتح يُذكر في العرض. إخفاء العطل دون معرفة المصدر يجعل التكسير لاحقاً أوسع."},
+        {"question": "كيف أتواصل؟", "answer": f"واتساب من زر هذه الصفحة مع ذكر أن الطلب عن {title} والحي وصور إن وُجدت. زر الاتصال مخفي مؤقتاً."},
+        {"question": "ما الذي أحضّره قبل الزيارة؟", "answer": "العنوان أو أقرب معلم، وصف العطل، صور أو فيديو قصير، وتأمين وصول الفني للسطح أو الخزان أو الغرفة."},
+        {"question": "هل تكتبون نطاق العمل؟", "answer": f"نعم. تنفيذ {title} يبدأ بعد الموافقة على عرض مكتوب، لا بعد سعر عام بلا بنود."},
+        {"question": "لمن تناسب الخدمة؟", "answer": f"منازل وفلل وشقق ومنشآت في {city} وباقي قطر تحتاج {title} بعد المعاينة. إن كان العطل خارج النطاق نوضحه قبل الزيارة."},
+        {"question": "هل الضمان مكتوب؟", "answer": "يُذكر في العرض حسب نوع العمل والخامة. لا نعد بضمان عام من جملة تسويقية في المقال."},
+        {"question": "هل تعملون في لوسيل والريان والوكرة؟", "answer": f"نعم ضمن التغطية، مع جدولة. اذكر المدينة في رسالة {title} حتى يُحسب وقت الطريق."},
     ]
 
 
@@ -669,7 +673,7 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
     img = article_image(ptype)
     alt = f"{title} — ركن التطور في قطر"
     if lang == "en":
-        html = _build_en(title, city, pack, wa, img, alt)
+        html = _build_en(title, city, pack, wa, img, alt, ptype)
         desc = f"{title} in Qatar. Site visit then a written quote. WhatsApp for timing in Doha and other cities."
         return html, desc, title
     rows = "".join(
@@ -684,6 +688,8 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
         ]
     )
     loc_suffix = f" في {city}" if city and city not in title else ""
+    from article_longform import unique_long_html
+    extra = unique_long_html(title, slug, city, ptype, pack, _faq_block(title, city, pack))
     html = f"""
 <div class="rukn-article">
 <p><strong>{title}</strong> من ركن التطور: {pack['what']} نغطي {city} ضمن {QATAR_AREAS} بالتنسيق المسبق. التشخيص قبل الإصلاح، ثم عرض مكتوب. لا سعر نهائي عبر رسالة دون فهم الحالة.</p>
@@ -727,6 +733,7 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
 [post_prices]
 [post_services]
 <p>{pack['related']} دليل المدن: <a href="{CITIES_HUB}">المدن التي نغطيها في قطر</a>.</p>
+{extra}
 <h2>خلاصة</h2>
 <p>{title}{loc_suffix} تبدأ بفهم العطل لا بعرض عام. ركن التطور يزور بالتنسيق، يشرح التشخيص، ويكتب النطاق. للتواصل استخدم واتساب في هذه الصفحة.</p>
 </div>
@@ -739,7 +746,13 @@ def build_article(title: str, slug: str, lang: str = "ar") -> tuple[str, str, st
     return html.strip(), desc, title
 
 
-def _build_en(title, city, pack, wa, img, alt):
+def _build_en(title, city, pack, wa, img, alt, ptype="general"):
+    from article_longform import unique_long_html_en
+    extra = unique_long_html_en(title, city, ptype, pack)
+    faq = "".join(
+        f"<div class=\"faq-item\"><h3>{i['question']}</h3><p>{i['answer']}</p></div>"
+        for i in faq_pairs(title, city, pack, "en")
+    )
     return f"""
 <div class="rukn-article">
 <p><strong>{title}</strong> with Rukn El Tatawer in Qatar: inspection first, then a written scope. Coverage includes Doha and other cities by appointment.</p>
@@ -755,10 +768,17 @@ def _build_en(title, city, pack, wa, img, alt):
 [post_features]
 <h2>When to book</h2>
 {_ul(pack['when'])}
+<h2>Warning signs</h2>
+{_ul(pack['signs'])}
+<h2>Common causes in Qatar</h2>
+{_ul(pack['causes'])}
 [post_steps]
 [post_prices]
 [post_services]
 [post_call]
+{extra}
+<h2>FAQ</h2>
+{faq}
 <p>City coverage: <a href="{CITIES_HUB}">Qatar cities we cover</a>.</p>
 </div>
 """

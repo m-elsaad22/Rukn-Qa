@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from kayan_article_builder import WA, build_theme_payload
+from post_policy import LOCKED_POST_IDS, SKIP_SERVICES, should_rewrite_post
 
 _wp_user = os.environ.get("WP_USER", "cursor")
 _wp_pass = os.environ.get("WP_APP_PASSWORD", "")
@@ -29,8 +30,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 CursorFix/1.0",
     "Content-Type": "application/json",
 }
-LOCKED = {2973}
-SKIP_SERVICES = {1877}
+LOCKED = LOCKED_POST_IDS
 
 
 def api(path, method="GET", data=None, timeout=180):
@@ -100,7 +100,7 @@ def list_type(rest_base):
 
 
 def fill_one(pid, title, slug, link, lang, is_post=True):
-    if pid in LOCKED:
+    if pid in LOCKED or (is_post and not should_rewrite_post(pid, title, slug)):
         return "skip"
     payload = build_theme_payload(title, slug, lang)
     meta = payload["meta"]
@@ -148,7 +148,10 @@ def main():
             ok += 1
         elif result == "skip":
             skip += 1
-            note(f"SKIP locked {pid} {slug}")
+            if pid in LOCKED:
+                note(f"SKIP locked {pid} {slug}")
+            elif skip <= 8 or skip % 200 == 0:
+                note(f"SKIP city/clone {pid} {slug}")
         else:
             fail += 1
         if (ok + skip + fail) % 10 == 0:
