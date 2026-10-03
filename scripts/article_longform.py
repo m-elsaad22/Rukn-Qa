@@ -127,11 +127,84 @@ def _long_faq(title: str, city: str, pack: dict, core: str) -> str:
     return "\n".join(out)
 
 
+def _build_en_long(title: str, slug: str) -> tuple[str, str, str]:
+    city = detect_city(title, slug)
+    ptype, pack = pack_for(title, slug, "en")
+    wa = wa_url(title)
+    img = article_image(ptype)
+    alt = f"{title} — Rukn El Tatawer Qatar"
+    cities = "Doha, Lusail, Al Rayyan, Al Wakrah, Al Khor, Umm Salal, Al Daayen, Al Shamal and Al Shahaniya"
+    html = f"""
+<div class="rukn-article">
+<p><strong>{title}</strong> is a national Qatar service page from Rukn El Tatawer — not a copied city template. We inspect the site or review a clear photo description, then send a written scope before work starts. The team is based in Doha and visits {cities} by appointment.</p>
+<section class="article-hero"><div class="hero-content">
+<span class="hero-label">Qatar home services</span>
+<h2>{title} — inspect, then write the scope</h2>
+<p>WhatsApp the area and the fault. We do not give a final villa price from a short chat. Call buttons are hidden for now.</p>
+<div class="hero-buttons"><a class="cta-button whatsapp-button" href="{wa}" rel="nofollow noopener" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+</div></section>
+<p><img src="{img}" alt="{alt}" width="800" height="450" loading="eager" decoding="async"></p>
+<h2>What this service means in Qatar</h2>
+<p>{pack['what']} A villa in Al Rayyan is not a tower in West Bay. Access, materials and downtime change. Heat, humidity, dust and coastal salt around Wakrah and Lusail wear insulation, AC coils and pipe fittings faster than a mild climate. That is why we refuse one material or one visit length for every building.</p>
+<p>If the visit shows that this service is not the real cause, we say so in the report and we do not continue unused work. Water leak detection for the whole country stays on one ranking page: <a href="{LEAK}">water leak detection in Qatar</a>. We do not clone that article per city.</p>
+[post_features]
+<h2>When to book</h2>
+<p>Book when a sign keeps returning, not after a rumour. Typical triggers:</p>
+{_ul(pack['when'])}
+<p>If the sign appeared after the first summer on new finishing, after a roof wash, or with a jump in the Kahramaa bill, do not wait until paint peels or cooling fails completely. Delay in Qatar usually widens the scope.</p>
+<h2>Signs we check on site</h2>
+{_ul(pack['signs'])}
+<blockquote class="warning-box"><i class="fas fa-exclamation-triangle"></i> <strong>Note:</strong> Hiding the fault with paint, daily water top-up or extra AC load removes evidence and raises the later cost.</blockquote>
+<h2>Common causes after inspection</h2>
+{_ul(pack['causes'])}
+<h2>How we work</h2>
+<p>We agree a time window, review what you sent, diagnose, and explain the next step before starting. If the scope changes — a local opening or a different material — work pauses until you approve the written change. Tools: {pack['tools']}</p>
+[post_steps]
+<h2>Mistakes that delay the fix</h2>
+{_ul(pack['mistakes'])}
+[post_call]
+[post_prices]
+[post_services]
+<h2>Cities we cover — without duplicate articles</h2>
+<p>We do not publish the same {title} text for every city. City hub pages explain building types; this page stays national.</p>
+<ul>
+<li><a href="{CITY_HUBS['الدوحة']}">Doha</a> — towers and villas; building management access is common.</li>
+<li><a href="{CITY_HUBS['لوسيل']}">Lusail</a> — apartments and central AC more than courtyards.</li>
+<li><a href="{CITY_HUBS['الريان']}">Al Rayyan</a> — villas, ground tanks and irrigation lines.</li>
+<li><a href="{CITY_HUBS['الوكرة']}">Al Wakrah</a> — coastal humidity on old insulation.</li>
+<li><a href="{CITY_HUBS['الخور']}">Al Khor</a> — longer travel; the window is set after the address.</li>
+<li><a href="{CITY_HUBS['أم صلال']}">Umm Salal</a> — villas and farms, including Al Kheesa.</li>
+<li><a href="{CITY_HUBS['الظعاين']}">Al Daayen</a> — newer compounds near north Lusail.</li>
+<li><a href="{CITY_HUBS['الشمال']}">Al Shamal</a> — furthest north; booked in advance.</li>
+<li><a href="{CITY_HUBS['الشحانية']}">Al Shahaniya</a> — wide roofs and gardens west of Rayyan.</li>
+</ul>
+<p>City index: <a href="{CITIES_HUB}">Qatar cities we cover</a>.</p>
+<h2>What this page does not promise</h2>
+<p>No invented star ratings, no fixed price list for every villa, and no phone call button for now. WhatsApp is enough to schedule the visit.</p>
+<h2>After handover</h2>
+<p>We tell you if this job needs a follow-up — seasonal AC wash, a flood test on insulation, or a second pest visit. Keep the written scope. If a new symptom appears that was not in the diagnosis, send photos before assuming the first visit failed.</p>
+<h2>FAQ</h2>
+<div class="faq-item"><h3>Is there a site visit?</h3><p>Yes, or a detailed photo description when that is enough to write a first scope.</p></div>
+<div class="faq-item"><h3>Do you work outside Doha?</h3><p>Yes, by appointment across {cities}.</p></div>
+<div class="faq-item"><h3>Is there a warranty?</h3><p>It is written in the quote for that job and material. We do not invent a site-wide warranty here.</p></div>
+<div class="faq-item"><h3>How long is the visit?</h3><p>It depends on access and diagnosis. A time window is shared after we have the address — we do not promise a same-hour arrival to Al Shamal.</p></div>
+<div class="faq-item"><h3>Will you break walls first?</h3><p>No. Diagnosis comes first. Any opening is listed in the quote before it happens.</p></div>
+<div class="faq-item"><h3>How do I contact you?</h3><p>Use WhatsApp on this page. The call button is hidden temporarily.</p></div>
+<div class="faq-item"><h3>Do you publish a city copy of this article?</h3><p>No. City hubs explain buildings. This page stays the national {title} page.</p></div>
+<p>Coverage: {city}, Qatar. Related leak method if water is involved: <a href="{LEAK}">water leak detection in Qatar</a>.</p>
+<h2>Summary</h2>
+<p>{title} starts with diagnosis in Qatar’s climate, then a written scope. Message the area and building type on WhatsApp to book the visit. The ranking Arabic leak article is not rewritten from this English page.</p>
+</div>
+"""
+    desc = f"{title} in Qatar. Inspection then a written quote. WhatsApp for timing in Doha and other cities."
+    if len(desc) > 158:
+        desc = desc[:155] + "…"
+    return html.strip(), desc, title
+
+
 def build_longform(title: str, slug: str, lang: str = "ar") -> tuple[str, str, str]:
     if lang == "en":
-        from kayan_article_builder import build_article
-
-        return build_article(title, slug, "en")
+        return _build_en_long(title, slug)
     city = detect_city(title, slug)
     ptype, pack = pack_for(title, slug, "ar")
     core = service_core(title)
