@@ -1013,21 +1013,36 @@ add_action('rest_api_init', function () {
         'permission_callback' => function () { return current_user_can('manage_options'); },
         'callback' => function ($req) {
             $limit = max(1, min(4, (int) ($req->get_param('limit') ?: 2)));
-            $q = new WP_Query([
-                'post_type' => 'post',
-                'post_status' => 'draft',
-                'posts_per_page' => 40,
-                'orderby' => 'ID',
-                'order' => 'DESC',
-                'no_found_rows' => true,
-            ]);
+            global $wpdb;
+            $like = $wpdb->prepare(
+                "SELECT ID FROM {$wpdb->posts}
+                 WHERE post_type = 'post' AND post_status = 'draft' AND ID <> 2973
+                   AND post_name NOT LIKE %s AND post_name NOT LIKE %s
+                   AND (post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
+                     OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
+                     OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s)
+                 ORDER BY ID DESC LIMIT %d",
+                'water-leak-detection-%',
+                'water-pipe-leak-detection-%',
+                '%-doha',
+                '%-lusail',
+                '%-al-rayyan',
+                '%-al-wakrah',
+                '%-al-khor',
+                '%-umm-salal',
+                '%-al-daayen',
+                '%-al-shamal',
+                '%-al-shahaniya',
+                $limit
+            );
+            $ids = array_map('intval', $wpdb->get_col($like));
             $done = [];
             $skipped = [];
-            foreach ($q->posts as $p) {
-                if (count($done) >= $limit) {
-                    break;
+            foreach ($ids as $id) {
+                $p = get_post($id);
+                if (!$p) {
+                    continue;
                 }
-                $id = (int) $p->ID;
                 $slug = (string) $p->post_name;
                 $title = (string) $p->post_title;
                 if ($id === 2973 || strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
