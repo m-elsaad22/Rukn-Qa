@@ -823,15 +823,46 @@ add_action('template_redirect', function () {
 });
 
 
+function rukn_qa_keep_slugs() {
+    return [
+        'water-leak-detection-company-in-qatar',
+        'water-leak-detection-qatar-en',
+        'house-cleaning-in-qatar',
+        'villa-cleaning-in-qatar',
+        'apartment-cleaning-in-qatar',
+        'shrkh-tnzyf-mdakhn-mtaam-fy-qtr',
+        'shrkh-tnzyf-bad-altshtyb-fy-qtr',
+        'shrkh-jly-rkham-fy-qtr',
+        'shrkh-tlmya-syramyk-fy-qtr',
+        'shrkh-tnzyf-wajhat-hjryh-fy-qtr',
+        'cockroach-control-in-qatar',
+        'shrkh-tslyk-mjary-fy-qtr',
+        'services',
+    ];
+}
+
+function rukn_qa_purge_caches() {
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+    if (function_exists('do_action')) {
+        do_action('litespeed_purge_all');
+    }
+}
+
 add_action('rest_api_init', function () {
     register_rest_route('rukn-qa/v1', '/redirect', [
         'methods' => 'POST',
         'permission_callback' => function () { return current_user_can('manage_options'); },
         'callback' => function ($req) {
             $from = ltrim((string) $req->get_param('from'), '/');
+            $from = preg_replace('#^qa/#', '', $from);
             $to = (string) $req->get_param('to');
             if (!$from || !$to) {
                 return new WP_Error('bad', 'from/to required', ['status' => 400]);
+            }
+            if (in_array($from, rukn_qa_keep_slugs(), true) || $from === 'water-leak-detection-company-in-qatar') {
+                return new WP_Error('keep', 'refusing redirect from keep URL', ['status' => 400]);
             }
             if (class_exists('\RankMath\Redirections\DB')) {
                 $id = \RankMath\Redirections\DB::add([
@@ -843,6 +874,73 @@ add_action('rest_api_init', function () {
                 return ['ok' => true, 'id' => $id, 'engine' => 'rankmath'];
             }
             return new WP_Error('no_rm', 'Rank Math redirections unavailable', ['status' => 500]);
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/redirects', [
+        'methods' => 'GET',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $q = ltrim((string) $req->get_param('q'), '/');
+            global $wpdb;
+            $table = $wpdb->prefix . 'rank_math_redirections';
+            $cache = $wpdb->prefix . 'rank_math_redirections_cache';
+            $like = '%' . $wpdb->esc_like($q) . '%';
+            $rows = $wpdb->get_results($wpdb->prepare(
+                "SELECT id, url_to, status, header_code, sources FROM {$table} WHERE sources LIKE %s OR url_to LIKE %s LIMIT 50",
+                $like,
+                $like
+            ), ARRAY_A);
+            $cache_rows = $wpdb->get_results($wpdb->prepare(
+                "SELECT redirection_id, from_url FROM {$cache} WHERE from_url LIKE %s LIMIT 50",
+                $like
+            ), ARRAY_A);
+            return ['q' => $q, 'rows' => $rows, 'cache' => $cache_rows];
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/redirect-delete', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $from = ltrim((string) $req->get_param('from'), '/');
+            $from = preg_replace('#^qa/#', '', $from);
+            if (!$from) {
+                return new WP_Error('bad', 'from required', ['status' => 400]);
+            }
+            global $wpdb;
+            $table = $wpdb->prefix . 'rank_math_redirections';
+            $cache = $wpdb->prefix . 'rank_math_redirections_cache';
+            $like = '%' . $wpdb->esc_like($from) . '%';
+            $ids = array_map('intval', $wpdb->get_col($wpdb->prepare(
+                "SELECT id FROM {$table} WHERE sources LIKE %s",
+                $like
+            )));
+            $cache_ids = array_map('intval', $wpdb->get_col($wpdb->prepare(
+                "SELECT redirection_id FROM {$cache} WHERE from_url = %s OR from_url = %s OR from_url LIKE %s",
+                $from,
+                '/' . $from,
+                '%/' . $wpdb->esc_like($from)
+            )));
+            $ids = array_values(array_unique(array_filter(array_merge($ids, $cache_ids))));
+            $deleted = [];
+            foreach ($ids as $id) {
+                if (class_exists('\RankMath\Redirections\DB') && method_exists('\RankMath\Redirections\DB', 'delete')) {
+                    \RankMath\Redirections\DB::delete($id);
+                } else {
+                    $wpdb->delete($table, ['id' => $id]);
+                    $wpdb->delete($cache, ['redirection_id' => $id]);
+                }
+                $deleted[] = $id;
+            }
+            rukn_qa_purge_caches();
+            return ['ok' => true, 'from' => $from, 'deleted' => $deleted];
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/purge-cache', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function () {
+            rukn_qa_purge_caches();
+            return ['ok' => true];
         },
     ]);
 });

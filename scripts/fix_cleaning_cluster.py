@@ -187,13 +187,18 @@ def rewrite_pillars():
             raise SystemExit(f"{pid} only {payload['words']} words")
         if payload["kind"] == "chimney" and payload["ptype"] != "chimney":
             raise SystemExit(f"chimney classified as {payload['ptype']}")
-        body = {
-            "content": payload["html"],
-            "excerpt": payload["excerpt"],
-        }
-        st, out = api(f"/wp/v2/posts/{pid}", "POST", body)
+        st, out = api(
+            "/rukn-qa/v1/post-blocks",
+            "POST",
+            {
+                "id": pid,
+                "content": payload["html"],
+                "excerpt": payload["excerpt"],
+                "meta": payload.get("meta") or {},
+            },
+        )
         note(f"REWRITE {pid} {slug} http={st} words={payload['words']} pack={payload['ptype']}")
-        if st not in (200, 201):
+        if st not in (200, 201) or (isinstance(out, dict) and out.get("code") == "locked"):
             raise SystemExit(f"rewrite failed {pid}: {out}")
         rm_meta(
             pid,
@@ -201,10 +206,8 @@ def rewrite_pillars():
             description=payload["desc"],
             keyword=payload["keyword"],
             robots=["index", "follow"],
+            canonical=f"{SITE}/{slug}/",
         )
-        meta = payload.get("meta") or {}
-        if meta:
-            api(f"/wp/v2/posts/{pid}", "POST", {"meta": theme_fields(meta)})
         rows.append(
             {
                 "id": pid,
@@ -217,6 +220,31 @@ def rewrite_pillars():
             }
         )
         time.sleep(0.08)
+    return rows
+
+
+KEEP_SLUGS = [
+    "house-cleaning-in-qatar",
+    "villa-cleaning-in-qatar",
+    "apartment-cleaning-in-qatar",
+    "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+    "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+    "shrkh-jly-rkham-fy-qtr",
+    "shrkh-tlmya-syramyk-fy-qtr",
+    "shrkh-tnzyf-wajhat-hjryh-fy-qtr",
+    "cockroach-control-in-qatar",
+    "shrkh-tslyk-mjary-fy-qtr",
+]
+
+
+def clear_keep_source_redirects():
+    rows = []
+    for slug in KEEP_SLUGS:
+        st, out = api("/rukn-qa/v1/redirects?q=" + slug)
+        note(f"REDIRECTS {slug} http={st} rows={len(out.get('rows') or []) if isinstance(out, dict) else out}")
+        st2, out2 = api("/rukn-qa/v1/redirect-delete", "POST", {"from": slug})
+        note(f"DEL-SRC {slug} http={st2} {out2}")
+        rows.append({"slug": slug, "list": out, "deleted": out2})
     return rows
 
 
@@ -252,12 +280,16 @@ def main():
     assert_classifier()
     push_snippet()
     lockcheck()
+    cleared = clear_keep_source_redirects()
     rewrites = rewrite_pillars()
     merges = merge_clones()
+    st, purged = api("/rukn-qa/v1/purge-cache", "POST", {})
+    note(f"PURGE {st} {purged}")
     lockcheck()
     summary = {
         "rewrites": rewrites,
         "merges": merges,
+        "cleared_keep_redirects": cleared,
         "locked": 2973,
         "min_words": min(r["words"] for r in rewrites),
     }
