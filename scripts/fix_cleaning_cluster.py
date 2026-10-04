@@ -44,15 +44,6 @@ PILLARS = {
 # Duplicate URLs → keep URL (path on /qa)
 MERGES = {
     10334: ("shrkh-tnzyf-mnazl-fy-qtr-2", "/house-cleaning-in-qatar/"),
-    10338: ("shrkh-tnzyf-mjals-fy-qtr", "/house-cleaning-in-qatar/"),
-    10345: ("shrkh-tnzyf-knb-fy-qtr", "/house-cleaning-in-qatar/"),
-    10346: ("shrkh-tnzyf-stayr-fy-qtr", "/house-cleaning-in-qatar/"),
-    10347: ("shrkh-tnzyf-mratb-fy-qtr", "/house-cleaning-in-qatar/"),
-    10344: ("shrkh-tnzyf-sjad-wmwkyt-fy-qtr", "/house-cleaning-in-qatar/"),
-    10339: ("shrkh-tnzyf-khyam-wbywt-shar-fy-qtr", "/house-cleaning-in-qatar/"),
-    10353: ("aamlat-tnzyf-balsaah-fy-qtr", "/house-cleaning-in-qatar/"),
-    10337: ("shrkh-tnzyf-qswr-fy-qtr", "/villa-cleaning-in-qatar/"),
-    10379: ("shrkh-tnzyf-ghrf-tftysh-fy-qtr", "/shrkh-tslyk-mjary-fy-qtr/"),
     10357: ("shrkh-mkafhh-srasyr-fy-qtr", "/cockroach-control-in-qatar/"),
     10368: ("shrkh-tkhzyn-athath-fy-qtr", "/services/"),
     10369: ("shrkh-tkhzyn-bdaya-fy-qtr", "/services/"),

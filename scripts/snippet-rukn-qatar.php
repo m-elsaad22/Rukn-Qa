@@ -662,15 +662,6 @@ function rukn_qa_request_slug() {
 function rukn_qa_cluster_redirects() {
     return [
         'shrkh-tnzyf-mnazl-fy-qtr-2' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-mjals-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-knb-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-stayr-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-mratb-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-sjad-wmwkyt-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-khyam-wbywt-shar-fy-qtr' => '/house-cleaning-in-qatar/',
-        'aamlat-tnzyf-balsaah-fy-qtr' => '/house-cleaning-in-qatar/',
-        'shrkh-tnzyf-qswr-fy-qtr' => '/villa-cleaning-in-qatar/',
-        'shrkh-tnzyf-ghrf-tftysh-fy-qtr' => '/shrkh-tslyk-mjary-fy-qtr/',
         'shrkh-mkafhh-srasyr-fy-qtr' => '/cockroach-control-in-qatar/',
         'shrkh-tkhzyn-athath-fy-qtr' => '/services/',
         'shrkh-tkhzyn-bdaya-fy-qtr' => '/services/',
@@ -697,14 +688,6 @@ function rukn_qa_maybe_redirect_city_or_leak() {
     if (isset($cluster[$slug])) {
         wp_safe_redirect(home_url($cluster[$slug]), 301);
         exit;
-    }
-    if (!in_array($slug, rukn_allowed_city_slugs(), true)) {
-        $suf = rukn_city_suffix($slug);
-        $hub = $suf ? rukn_city_hub_path($suf) : null;
-        if ($hub) {
-            wp_safe_redirect(home_url($hub), 301);
-            exit;
-        }
     }
 }
 
@@ -943,6 +926,100 @@ add_action('rest_api_init', function () {
             return ['ok' => true];
         },
     ]);
+    register_rest_route('rukn-qa/v1', '/clear-city-hub-redirects', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function () {
+            global $wpdb;
+            $table = $wpdb->prefix . 'rank_math_redirections';
+            $cache = $wpdb->prefix . 'rank_math_redirections_cache';
+            $rows = $wpdb->get_results(
+                "SELECT c.redirection_id, c.from_url, r.url_to
+                 FROM {$cache} c
+                 LEFT JOIN {$table} r ON r.id = c.redirection_id
+                 WHERE (c.from_url LIKE '%-doha' OR c.from_url LIKE '%-lusail'
+                    OR c.from_url LIKE '%-al-rayyan' OR c.from_url LIKE '%-al-wakrah'
+                    OR c.from_url LIKE '%-al-khor' OR c.from_url LIKE '%-umm-salal'
+                    OR c.from_url LIKE '%-al-daayen' OR c.from_url LIKE '%-al-shamal'
+                    OR c.from_url LIKE '%-al-shahaniya')
+                   AND (r.url_to LIKE '%services-in-%' OR r.url_to LIKE '%/cities/%')",
+                ARRAY_A
+            );
+            $deleted = [];
+            foreach ($rows as $row) {
+                $from = (string) ($row['from_url'] ?? '');
+                if (strpos($from, 'water-leak-detection') !== false || strpos($from, 'water-pipe-leak') !== false) {
+                    continue;
+                }
+                $id = (int) $row['redirection_id'];
+                if ($id <= 0) {
+                    continue;
+                }
+                if (class_exists('\RankMath\Redirections\DB') && method_exists('\RankMath\Redirections\DB', 'delete')) {
+                    \RankMath\Redirections\DB::delete($id);
+                } else {
+                    $wpdb->delete($table, ['id' => $id]);
+                    $wpdb->delete($cache, ['redirection_id' => $id]);
+                }
+                $deleted[] = $id;
+            }
+            rukn_qa_purge_caches();
+            return ['ok' => true, 'deleted' => count($deleted), 'ids' => array_slice($deleted, 0, 30)];
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/bulk-publish-posts', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $items = $req->get_json_params()['items'] ?? $req->get_param('items');
+            if (!is_array($items)) {
+                return new WP_Error('bad', 'items required', ['status' => 400]);
+            }
+            $ok = [];
+            $skip = [];
+            foreach ($items as $it) {
+                if (!is_array($it)) {
+                    continue;
+                }
+                $id = (int) ($it['id'] ?? 0);
+                $slug = (string) ($it['slug'] ?? get_post_field('post_name', $id));
+                if ($id <= 0 || $id === 2973) {
+                    $skip[] = ['id' => $id, 'reason' => 'locked-or-bad'];
+                    continue;
+                }
+                if (strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
+                    $skip[] = ['id' => $id, 'slug' => $slug, 'reason' => 'leak-clone'];
+                    continue;
+                }
+                $content = (string) ($it['content'] ?? '');
+                $excerpt = (string) ($it['excerpt'] ?? '');
+                if ($content === '') {
+                    $skip[] = ['id' => $id, 'reason' => 'empty'];
+                    continue;
+                }
+                $GLOBALS['rukn_allow_city_publish'] = 1;
+                wp_update_post([
+                    'ID' => $id,
+                    'post_content' => $content,
+                    'post_excerpt' => $excerpt,
+                    'post_status' => 'publish',
+                ], true);
+                update_post_meta($id, 'rank_math_robots', ['index', 'follow']);
+                if (!empty($it['canonical'])) {
+                    update_post_meta($id, 'rank_math_canonical_url', (string) $it['canonical']);
+                }
+                if (!empty($it['description'])) {
+                    update_post_meta($id, 'rank_math_description', (string) $it['description']);
+                }
+                if (!empty($it['title'])) {
+                    update_post_meta($id, 'rank_math_title', (string) $it['title'] . ' | ركن التطور قطر');
+                    update_post_meta($id, 'rank_math_focus_keyword', (string) $it['title']);
+                }
+                $ok[] = $id;
+            }
+            return ['ok' => true, 'updated' => count($ok), 'ids' => $ok, 'skipped' => $skip];
+        },
+    ]);
 });
 
 
@@ -981,13 +1058,6 @@ add_filter('wp_insert_post_data', function ($data, $postarr) {
             || strpos($blob, 'water-leak-detection-') !== false
             || strpos($blob, 'water-pipe-leak-detection-') !== false
         )
-    ) {
-        $data['post_status'] = 'draft';
-    }
-    if (
-        $type === 'post'
-        && in_array($status, ['publish', 'future'], true)
-        && rukn_is_city_template($data['post_title'] ?? '', $data['post_name'] ?? '')
     ) {
         $data['post_status'] = 'draft';
     }
