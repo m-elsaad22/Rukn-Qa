@@ -568,6 +568,7 @@ add_filter('rank_math/sitemap/robots', function ($robots) {
 
 add_action('wp_head', function () {
     echo '<style id="rukn-hide-call">.fab-call,a.fab-btn.fab-call,a[href^="tel:"],a[href="tel:"],a[href="tel: "],.--button-call-link-phone,.-callbutton--post-card,.post-card-buttons.-callbutton--post-card,[data-call="Phone"],.btn-call,.kayan-call-btn{display:none!important;visibility:hidden!important;pointer-events:none!important}</style>';
+    echo '<style id="rukn-hide-fake-social">.--rating--widgets--box,.--YC-single-rating-box--,.--rating--widgets--stars-averageList,.--rating--widgets--result--box,.-YC-WidgetType-rating__widget,.kayan-article-rate,.kayan-customer-ratings,.ratingServise--stars-value,form.kpp-form,.kpp-form,.kpp-pay-btn,.kpp-form-hint,.kpp-lead,p.kpp-form-hint{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important;margin:0!important;padding:0!important}</style>';
     echo '<style id="rukn-article-ui">
 .rukn-article{color:#151c28;line-height:1.85;font-size:17px;max-width:100%}
 .rukn-article .article-hero{background:linear-gradient(145deg,#0A1F4E 0%,#041c36 70%);color:#fff;border-radius:18px;padding:22px 20px;margin:16px 0 22px}
@@ -658,6 +659,24 @@ function rukn_qa_request_slug() {
     return basename($path);
 }
 
+function rukn_qa_cluster_redirects() {
+    return [
+        'shrkh-tnzyf-mnazl-fy-qtr-2' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-mjals-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-knb-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-stayr-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-mratb-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-sjad-wmwkyt-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-khyam-wbywt-shar-fy-qtr' => '/house-cleaning-in-qatar/',
+        'aamlat-tnzyf-balsaah-fy-qtr' => '/house-cleaning-in-qatar/',
+        'shrkh-tnzyf-qswr-fy-qtr' => '/villa-cleaning-in-qatar/',
+        'shrkh-tnzyf-ghrf-tftysh-fy-qtr' => '/shrkh-tslyk-mjary-fy-qtr/',
+        'shrkh-mkafhh-srasyr-fy-qtr' => '/cockroach-control-in-qatar/',
+        'shrkh-tkhzyn-athath-fy-qtr' => '/services/',
+        'shrkh-tkhzyn-bdaya-fy-qtr' => '/services/',
+    ];
+}
+
 function rukn_qa_maybe_redirect_city_or_leak() {
     if (is_admin() || wp_doing_ajax() || (function_exists('wp_is_json_request') && wp_is_json_request())) {
         return;
@@ -672,6 +691,11 @@ function rukn_qa_maybe_redirect_city_or_leak() {
     }
     if (preg_match('/^(water-leak-detection|water-pipe-leak-detection)-/', $slug)) {
         wp_safe_redirect(home_url(RUKN_QA_LEAK), 301);
+        exit;
+    }
+    $cluster = rukn_qa_cluster_redirects();
+    if (isset($cluster[$slug])) {
+        wp_safe_redirect(home_url($cluster[$slug]), 301);
         exit;
     }
     if (!in_array($slug, rukn_allowed_city_slugs(), true)) {
@@ -714,6 +738,10 @@ add_action('template_redirect', function () {
         $html = str_replace('"call_number":"+97431110184"', '"call_number":""', $html);
         $html = str_replace('"call_show":true', '"call_show":false', $html);
         $html = preg_replace('/,"aggregateRating"\s*:\s*\{[^{}]*\}/', '', $html);
+        $html = str_replace('الضعاين', 'الظعاين', $html);
+        $html = str_replace('بعد الضغط سيتم تحويلك لصفحة الدفع الآمنة لإتمام الطلب.', '', $html);
+        $html = str_replace('اختر الباقة المناسبة ثم أدخل بياناتك لإتمام الدفع.', '', $html);
+        $html = str_replace('ادفع الآن', '', $html);
         if ($is_locked) {
             return $html;
         }
