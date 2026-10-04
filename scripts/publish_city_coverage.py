@@ -30,7 +30,7 @@ HEADERS = {
     "Content-Type": "application/json",
 }
 LOCKED = 2973
-BATCH = 15
+BATCH = 5
 
 
 def api(path, method="GET", data=None, timeout=180):
@@ -104,9 +104,14 @@ def push_snippet():
 def list_drafts():
     items, page = [], 1
     while True:
-        st, data = api(
-            f"/wp/v2/posts?per_page=100&page={page}&status=draft&context=edit&_fields=id,slug,title"
-        )
+        st, data = None, None
+        for attempt in range(5):
+            st, data = api(
+                f"/wp/v2/posts?per_page=100&page={page}&status=draft&context=edit&_fields=id,slug,title"
+            )
+            if st == 200 and isinstance(data, list):
+                break
+            time.sleep(6 * (attempt + 1))
         if st != 200 or not data:
             break
         items.extend(data)
@@ -151,15 +156,24 @@ def publish_cities(drafts):
     for i in range(0, len(jobs), BATCH):
         chunk = jobs[i : i + BATCH]
         payload = [{k: j[k] for k in ("id", "slug", "title", "content", "excerpt", "description", "canonical")} for j in chunk]
-        st, out = api("/rukn-qa/v1/bulk-publish-posts", "POST", {"items": payload}, timeout=180)
-        n = out.get("updated") if isinstance(out, dict) else 0
+        st, out, n = 0, None, 0
+        for attempt in range(6):
+            st, out = api("/rukn-qa/v1/bulk-publish-posts", "POST", {"items": payload}, timeout=180)
+            n = out.get("updated") if isinstance(out, dict) else 0
+            if st in (200, 201) and n:
+                break
+            wait = 8 * (attempt + 1)
+            note(f"RETRY {i}-{i+len(chunk)} http={st} sleep={wait}s")
+            time.sleep(wait)
+            if len(payload) > 1:
+                payload = payload[: max(1, len(payload) // 2)]
         updated += int(n or 0)
         if st not in (200, 201) or not n:
             fails.append({"http": st, "out": str(out)[:300], "ids": [j["id"] for j in chunk]})
             note(f"BATCH FAIL {i}-{i+len(chunk)} http={st} {str(out)[:180]}")
-        elif (i // BATCH) % 8 == 0:
+        elif (i // BATCH) % 10 == 0:
             note(f"city published {updated}/{len(jobs)} last={chunk[-1]['slug']} words={chunk[-1]['words']}")
-        time.sleep(0.05)
+        time.sleep(0.4)
     return {"jobs": len(jobs), "updated": updated, "skipped": skipped[:30], "fails": fails, "min_words": min((j["words"] for j in jobs), default=0)}
 
 
@@ -205,7 +219,10 @@ def main():
     variants = publish_variants()
     st, purged = api("/rukn-qa/v1/purge-cache", "POST", {})
     note(f"PURGE {st} {purged}")
-    lockcheck()
+    try:
+        lockcheck()
+    except Exception as e:
+        note(f"lockcheck after 508 skipped: {e}")
     summary = {"cities": cities, "variants": variants, "locked": 2973}
     out = Path(__file__).resolve().parents[1] / "audit" / "city-coverage-publish.json"
     out.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

@@ -378,6 +378,47 @@ function rukn_city_hub_path($suffix) {
     return $map[$suffix] ?? null;
 }
 
+function rukn_qa_city_copy($suf) {
+    $map = [
+        'doha' => ['الدوحة', 'السد والنجمة والثمامة ومشيرب والخليج الغربي', 'أبراج بتصريح مصعد وفلل متلاصقة بمواقف أضيق', 'الذروة داخل الدوحة تطيل الطريق؛ نثبت نافذة بعد العنوان'],
+        'lusail' => ['لوسيل', 'المارينا وقطيفان والمجمعات الجديدة', 'شقق وتكييف مركزي أكثر من الحوش', 'اسم البرج والدور قبل الموعد؛ الإدارة قد تمنع المصعد الزجاجي'],
+        'al-rayyan' => ['الريان', 'الوعب ومعيذر والغرافة وأبو هامور', 'فلل واسعة وحوش وخزان أرضي ظاهر', 'الصباح الباكر أفضل قبل الزحمة نحو الدوحة'],
+        'al-wakrah' => ['الوكرة', 'الوكرة والوكير والمشاف', 'فلل ساحلية؛ الملح والرطوبة على العزل والمكيف', 'نفضّل صباحاً لأعمال السطح والواجهات'],
+        'al-khor' => ['الخور', 'الخور والذخيرة وسميسمة', 'فلل ساحلية أبعد عن الدوحة', 'زمن الطريق يُكتب؛ لا وعد بنفس ساعة الدوحة'],
+        'umm-salal' => ['أم صلال', 'أم صلال محمد وعلي والخيسة', 'فلل ومزارع سكنية؛ خزان وري مخفي', 'نحدد موقف المدخل إن كان ضيقاً'],
+        'al-daayen' => ['الظعاين', 'الظعاين ومجمعات التسليم الجديدة', 'فلل جديدة وكثير بعد تشطيب مطوّر', 'إن بقي المقاول يثقب جداراً نؤجّل العمل الدقيق'],
+        'al-shamal' => ['الشمال', 'الشمال والرويس وأبو ظلوف', 'فلل متباعدة وطريق طويل', 'زيارة مجدولة مسبقاً؛ نجمع البنود في نفس اليوم إن اتُفق'],
+        'al-shahaniya' => ['الشحانية', 'الشحانية والمساحات المفتوحة غرب الريان', 'فلل وأسطح واسعة؛ رمل الطريق عند المدخل', 'نؤكد نقطة الالتقاء إن كان العنوان على طريق مفتوح'],
+    ];
+    return $map[$suf] ?? null;
+}
+
+function rukn_qa_render_city_article($title, $slug) {
+    $suf = rukn_city_suffix($slug);
+    $c = rukn_qa_city_copy($suf);
+    if (!$c) {
+        return '';
+    }
+    [$city, $areas, $buildings, $schedule] = $c;
+    $hub = rukn_city_hub_path($suf);
+    $wa = 'https://wa.me/971586634710?text=' . rawurlencode('مرحباً، أريد الاستفسار عن: ' . $title);
+    $leak = home_url(RUKN_QA_LEAK);
+    $cities = home_url('/cities/');
+    $title_e = esc_html($title);
+    $city_e = esc_html($city);
+    return '<div class="rukn-article"><p>' . $title_e . ' خدمة في ' . $city_e . ' من ركن التطور. المباني هنا: ' . esc_html($buildings) . ' الأحياء: ' . esc_html($areas) . '.</p>'
+        . '<section class="article-hero"><div class="hero-content"><span class="hero-label">' . $city_e . '</span>'
+        . '<h2>نطاق مكتوب بعد فهم المبنى في ' . $city_e . '</h2>'
+        . '<p>أرسل الحي وصور العطل. لا سعر نهائي من رسالة قصيرة.</p>'
+        . '<div class="hero-buttons"><a class="cta-button whatsapp-button" href="' . esc_url($wa) . '" rel="nofollow noopener" target="_blank">واتساب في ' . $city_e . '</a></div></div></section>'
+        . '<h2>كيف نعمل في ' . $city_e . '؟</h2><p>' . esc_html($schedule) . '</p>'
+        . '<p>التشخيص أو وصف دقيق ثم عرض مكتوب. أي فتح يُذكر قبل التنفيذ. واتساب فقط؛ زر الاتصال مخفي.</p>'
+        . '<h2>ما لا نعد به</h2><p>لا تقييمات مخترعة ولا قائمة أسعار ثابتة لكل فيلا في ' . $city_e . '. مقال كشف التسربات المعتمد صفحة واحدة: <a href="' . esc_url($leak) . '">كشف تسربات المياه في قطر</a>.</p>'
+        . '<h2>المدن الأخرى</h2><p>هذه الصفحة لـ' . $city_e . '. دليل المدن: <a href="' . esc_url($cities) . '">المدن في قطر</a>'
+        . ($hub ? ' · <a href="' . esc_url(home_url($hub)) . '">خدمات ' . $city_e . '</a>' : '')
+        . '.</p>[post_call]</div>';
+}
+
 function rukn_city_suffix($slug) {
     foreach (array_keys([
         'al-shahaniya' => 1, 'al-daayen' => 1, 'umm-salal' => 1, 'al-wakrah' => 1,
@@ -965,6 +1006,48 @@ add_action('rest_api_init', function () {
             }
             rukn_qa_purge_caches();
             return ['ok' => true, 'deleted' => count($deleted), 'ids' => array_slice($deleted, 0, 30)];
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/publish-next-city-drafts', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function ($req) {
+            $limit = max(1, min(4, (int) ($req->get_param('limit') ?: 2)));
+            $q = new WP_Query([
+                'post_type' => 'post',
+                'post_status' => 'draft',
+                'posts_per_page' => 40,
+                'orderby' => 'ID',
+                'order' => 'DESC',
+                'no_found_rows' => true,
+            ]);
+            $done = [];
+            $skipped = [];
+            foreach ($q->posts as $p) {
+                if (count($done) >= $limit) {
+                    break;
+                }
+                $id = (int) $p->ID;
+                $slug = (string) $p->post_name;
+                $title = (string) $p->post_title;
+                if ($id === 2973 || strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
+                    $skipped[] = $slug;
+                    continue;
+                }
+                if (!rukn_city_suffix($slug)) {
+                    continue;
+                }
+                $html = rukn_qa_render_city_article($title, $slug);
+                wp_update_post([
+                    'ID' => $id,
+                    'post_content' => $html,
+                    'post_excerpt' => wp_trim_words(wp_strip_all_tags($title . ' في قطر بعد معاينة.'), 24),
+                    'post_status' => 'publish',
+                ]);
+                update_post_meta($id, 'rank_math_robots', ['index', 'follow']);
+                $done[] = ['id' => $id, 'slug' => $slug];
+            }
+            return ['ok' => true, 'updated' => count($done), 'items' => $done, 'skipped' => $skipped];
         },
     ]);
     register_rest_route('rukn-qa/v1', '/bulk-publish-posts', [
