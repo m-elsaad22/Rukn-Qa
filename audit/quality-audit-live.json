@@ -1,0 +1,453 @@
+{
+  "published": 143,
+  "locked_ok": true,
+  "under_1000": 3,
+  "under_1000_ids": [
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en",
+      "words": 830,
+      "title": "Water leak detection in Qatar without breaking"
+    },
+    {
+      "id": 12868,
+      "slug": "ac-maintenance-qatar-en",
+      "words": 841,
+      "title": "AC maintenance in Doha and Qatar"
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en",
+      "words": 847,
+      "title": "Roof insulation in Qatar"
+    }
+  ],
+  "template_counts": {
+    "longform-2026-10": 142,
+    "ranking-original": 1
+  },
+  "same_template_longform": 142,
+  "same_outline_groups": [],
+  "similar_pairs_ge_0.55": [
+    {
+      "sim": 0.889,
+      "a": "shrkh-tnzyf-knb-fy-qtr",
+      "b": "apartment-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10345,
+      "b_id": 10267
+    },
+    {
+      "sim": 0.889,
+      "a": "shrkh-tnzyf-mjals-fy-qtr",
+      "b": "villa-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10338,
+      "b_id": 10264
+    },
+    {
+      "sim": 0.882,
+      "a": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+      "b": "shrkh-tnzyf-mjals-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10349,
+      "b_id": 10338
+    },
+    {
+      "sim": 0.882,
+      "a": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+      "b": "villa-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10349,
+      "b_id": 10264
+    },
+    {
+      "sim": 0.875,
+      "a": "shrkh-tnzyf-ghrf-tftysh-fy-qtr",
+      "b": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10379,
+      "b_id": 10344
+    },
+    {
+      "sim": 0.872,
+      "a": "gas-leak-detection-doha",
+      "b": "shrkh-kshf-tsrbat-alghaz-fy-qtr",
+      "ptype": "gasleak",
+      "a_id": 11140,
+      "b_id": 10322
+    },
+    {
+      "sim": 0.872,
+      "a": "shrkh-nql-afsh-fy-qtr",
+      "b": "furniture-moving-with-packing-in-qatar",
+      "ptype": "move",
+      "a_id": 10364,
+      "b_id": 10295
+    },
+    {
+      "sim": 0.867,
+      "a": "shrkh-azl-hrary-fy-qtr",
+      "b": "shrkh-azl-hmamat-fy-qtr",
+      "ptype": "insulation",
+      "a_id": 10328,
+      "b_id": 10326
+    },
+    {
+      "sim": 0.867,
+      "a": "sewerage-company-in-doha",
+      "b": "shrkh-tslyk-mjary-fy-qtr",
+      "ptype": "sewer",
+      "a_id": 3182,
+      "b_id": 10377
+    },
+    {
+      "sim": 0.862,
+      "a": "shrkh-tnzyf-mratb-fy-qtr",
+      "b": "shrkh-tnzyf-mjals-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10347,
+      "b_id": 10338
+    },
+    {
+      "sim": 0.862,
+      "a": "shrkh-tnzyf-mratb-fy-qtr",
+      "b": "villa-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10347,
+      "b_id": 10264
+    },
+    {
+      "sim": 0.858,
+      "a": "shrkh-syanh-skhanat-myah-fy-qtr",
+      "b": "shrkh-syanh-dynamw-fy-qtr",
+      "ptype": "plumbing",
+      "a_id": 10384,
+      "b_id": 10381
+    },
+    {
+      "sim": 0.857,
+      "a": "shrkh-tlmya-syramyk-fy-qtr",
+      "b": "shrkh-tnzyf-stayr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10352,
+      "b_id": 10346
+    },
+    {
+      "sim": 0.857,
+      "a": "shrkh-azl-swty-fy-qtr",
+      "b": "shrkh-azl-mayy-fy-qtr",
+      "ptype": "insulation",
+      "a_id": 10331,
+      "b_id": 10329
+    },
+    {
+      "sim": 0.856,
+      "a": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+      "b": "shrkh-tnzyf-mratb-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10349,
+      "b_id": 10347
+    },
+    {
+      "sim": 0.855,
+      "a": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "b": "shrkh-tnzyf-stayr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10350,
+      "b_id": 10346
+    },
+    {
+      "sim": 0.854,
+      "a": "shrkh-tnzyf-mratb-fy-qtr",
+      "b": "shrkh-tnzyf-knb-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10347,
+      "b_id": 10345
+    },
+    {
+      "sim": 0.854,
+      "a": "shrkh-tnzyf-mratb-fy-qtr",
+      "b": "apartment-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10347,
+      "b_id": 10267
+    },
+    {
+      "sim": 0.854,
+      "a": "shrkh-azl-fwm-fy-qtr",
+      "b": "shrkh-azl-asth-fy-qtr",
+      "ptype": "insulation",
+      "a_id": 10330,
+      "b_id": 10324
+    },
+    {
+      "sim": 0.854,
+      "a": "shrkh-azl-hrary-fy-qtr",
+      "b": "shrkh-azl-mtabkh-fy-qtr",
+      "ptype": "insulation",
+      "a_id": 10328,
+      "b_id": 10327
+    },
+    {
+      "sim": 0.854,
+      "a": "shrkh-azl-mtabkh-fy-qtr",
+      "b": "shrkh-azl-hmamat-fy-qtr",
+      "ptype": "insulation",
+      "a_id": 10327,
+      "b_id": 10326
+    },
+    {
+      "sim": 0.853,
+      "a": "shrkh-trkyb-mdkhat-myah-fy-qtr",
+      "b": "shrkh-tasys-sbakh-fy-qtr",
+      "ptype": "plumbing",
+      "a_id": 10380,
+      "b_id": 10376
+    },
+    {
+      "sim": 0.85,
+      "a": "shrkh-syanh-dynamw-fy-qtr",
+      "b": "plumbing-maintenance-in-qatar",
+      "ptype": "plumbing",
+      "a_id": 10381,
+      "b_id": 10290
+    },
+    {
+      "sim": 0.85,
+      "a": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+      "b": "termite-control-in-qatar",
+      "ptype": "pest",
+      "a_id": 10361,
+      "b_id": 10277
+    },
+    {
+      "sim": 0.85,
+      "a": "shrkh-tnzyf-mratb-fy-qtr",
+      "b": "shrkh-tnzyf-stayr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10347,
+      "b_id": 10346
+    },
+    {
+      "sim": 0.849,
+      "a": "shrkh-tnzyf-stayr-fy-qtr",
+      "b": "shrkh-tnzyf-mjals-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10346,
+      "b_id": 10338
+    },
+    {
+      "sim": 0.849,
+      "a": "shrkh-tnzyf-stayr-fy-qtr",
+      "b": "villa-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10346,
+      "b_id": 10264
+    },
+    {
+      "sim": 0.849,
+      "a": "house-cleaning-in-qatar",
+      "b": "shrkh-tnzyf-mratb-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10258,
+      "b_id": 10347
+    },
+    {
+      "sim": 0.849,
+      "a": "house-cleaning-in-qatar",
+      "b": "shrkh-tnzyf-mjals-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10258,
+      "b_id": 10338
+    },
+    {
+      "sim": 0.849,
+      "a": "house-cleaning-in-qatar",
+      "b": "villa-cleaning-in-qatar",
+      "ptype": "cleaning",
+      "a_id": 10258,
+      "b_id": 10264
+    },
+    {
+      "sim": 0.848,
+      "a": "shrkh-mkafhh-aqarb-wthaabyn-fy-qtr",
+      "b": "bed-bug-control-in-qatar",
+      "ptype": "pest",
+      "a_id": 10360,
+      "b_id": 10274
+    },
+    {
+      "sim": 0.848,
+      "a": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "b": "shrkh-tnzyf-qswr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10350,
+      "b_id": 10337
+    },
+    {
+      "sim": 0.847,
+      "a": "shrkh-tnzyf-ghrf-tftysh-fy-qtr",
+      "b": "shrkh-tnzyf-stayr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10379,
+      "b_id": 10346
+    },
+    {
+      "sim": 0.847,
+      "a": "shrkh-tnzyf-stayr-fy-qtr",
+      "b": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10346,
+      "b_id": 10344
+    },
+    {
+      "sim": 0.847,
+      "a": "cockroach-control-in-qatar",
+      "b": "termite-control-in-qatar",
+      "ptype": "pest",
+      "a_id": 10272,
+      "b_id": 10277
+    },
+    {
+      "sim": 0.847,
+      "a": "house-cleaning-in-qatar",
+      "b": "shrkh-tnzyf-stayr-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10258,
+      "b_id": 10346
+    },
+    {
+      "sim": 0.845,
+      "a": "shrkh-syanh-skhanat-myah-fy-qtr",
+      "b": "plumbing-maintenance-in-qatar",
+      "ptype": "plumbing",
+      "a_id": 10384,
+      "b_id": 10290
+    },
+    {
+      "sim": 0.845,
+      "a": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "b": "shrkh-tnzyf-mratb-fy-qtr",
+      "ptype": "cleaning",
+      "a_id": 10350,
+      "b_id": 10347
+    },
+    {
+      "sim": 0.844,
+      "a": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+      "b": "pest-control-in-qatar",
+      "ptype": "pest",
+      "a_id": 10361,
+      "b_id": 10261
+    },
+    {
+      "sim": 0.844,
+      "a": "shrkh-mkafhh-srasyr-fy-qtr",
+      "b": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+      "ptype": "pest",
+      "a_id": 10357,
+      "b_id": 10361
+    }
+  ],
+  "similar_pair_count": 441,
+  "mismatches": [
+    {
+      "id": 11140,
+      "slug": "gas-leak-detection-doha",
+      "title": "شركة كشف تسربات الغاز في الدوحة",
+      "why": "العنوان=gasleak والمحتوى يميل إلى garden (17 مقابل 4)"
+    },
+    {
+      "id": 11148,
+      "slug": "ac-leak-detection-doha",
+      "title": "شركة كشف تسربات التكييف في الدوحة",
+      "why": "العنوان=acleak والمحتوى يميل إلى ac (40 مقابل 8)"
+    },
+    {
+      "id": 10456,
+      "slug": "shrkh-trkyb-jlsat-kharjyh-fy-qtr",
+      "title": "شركة تركيب جلسات خارجية في قطر",
+      "why": "العنوان=outdoor والمحتوى يميل إلى garden (18 مقابل 3)"
+    },
+    {
+      "id": 10455,
+      "slug": "shrkh-trkyb-brjwlat-khshbyh-fy-qtr",
+      "title": "شركة تركيب برجولات خشبية في قطر",
+      "why": "العنوان=outdoor والمحتوى يميل إلى garden (18 مقابل 3)"
+    },
+    {
+      "id": 10454,
+      "slug": "shrkh-trkyb-swatr-fy-qtr",
+      "title": "شركة تركيب سواتر في قطر",
+      "why": "العنوان=outdoor والمحتوى يميل إلى garden (18 مقابل 3)"
+    },
+    {
+      "id": 10453,
+      "slug": "shrkh-trkyb-mzlat-syarat-fy-qtr",
+      "title": "شركة تركيب مظلات سيارات في قطر",
+      "why": "العنوان=outdoor والمحتوى يميل إلى garden (18 مقابل 3)"
+    },
+    {
+      "id": 10441,
+      "slug": "shrkh-syanh-msaad-fy-qtr",
+      "title": "شركة صيانة مصاعد في قطر",
+      "why": "العنوان=elevator والمحتوى يميل إلى garden (17 مقابل 4)"
+    },
+    {
+      "id": 10415,
+      "slug": "shrkh-trmym-mtabkh-fy-qtr",
+      "title": "شركة ترميم مطابخ في قطر",
+      "why": "العنوان=kitchen والمحتوى يميل إلى restore (37 مقابل 10)"
+    },
+    {
+      "id": 10395,
+      "slug": "shrkh-syanh-mykrwwyf-fy-qtr",
+      "title": "شركة صيانة ميكروويف في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (18 مقابل 6)"
+    },
+    {
+      "id": 10394,
+      "slug": "shrkh-syanh-tbakhat-fy-qtr",
+      "title": "شركة صيانة طباخات في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (18 مقابل 6)"
+    },
+    {
+      "id": 10393,
+      "slug": "shrkh-syanh-afran-fy-qtr",
+      "title": "شركة صيانة أفران في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (18 مقابل 6)"
+    },
+    {
+      "id": 10392,
+      "slug": "shrkh-syanh-nshafat-fy-qtr",
+      "title": "شركة صيانة نشافات في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (18 مقابل 6)"
+    },
+    {
+      "id": 10391,
+      "slug": "shrkh-syanh-ghsalat-fy-qtr",
+      "title": "شركة صيانة غسالات في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (19 مقابل 6)"
+    },
+    {
+      "id": 10390,
+      "slug": "shrkh-syanh-thlajat-fy-qtr",
+      "title": "شركة صيانة ثلاجات في قطر",
+      "why": "العنوان=appliance والمحتوى يميل إلى garden (19 مقابل 6)"
+    },
+    {
+      "id": 10322,
+      "slug": "shrkh-kshf-tsrbat-alghaz-fy-qtr",
+      "title": "شركة كشف تسربات الغاز في قطر",
+      "why": "العنوان=gasleak والمحتوى يميل إلى garden (17 مقابل 4)"
+    }
+  ],
+  "errors": [],
+  "word_stats": {
+    "min": 830,
+    "max": 3844,
+    "median": 1349,
+    "locked_words": 3844
+  }
+}
