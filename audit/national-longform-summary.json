@@ -1,0 +1,22 @@
+{
+  "updated": 142,
+  "locked": 1,
+  "failed": 0,
+  "short_after": [
+    {
+      "id": 12868,
+      "slug": "ac-maintenance-qatar-en",
+      "words": 92
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en",
+      "words": 100
+    },
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en",
+      "words": 91
+    }
+  ]
+}

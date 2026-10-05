@@ -1,0 +1,432 @@
+{
+  "rewrites": [
+    {
+      "id": 10258,
+      "slug": "house-cleaning-in-qatar",
+      "words": 1194,
+      "kind": "house",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10264,
+      "slug": "villa-cleaning-in-qatar",
+      "words": 1139,
+      "kind": "villa",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10267,
+      "slug": "apartment-cleaning-in-qatar",
+      "words": 1102,
+      "kind": "apartment",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10349,
+      "slug": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+      "words": 1132,
+      "kind": "chimney",
+      "ptype": "chimney",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10350,
+      "slug": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "words": 1122,
+      "kind": "postcon",
+      "ptype": "postcon",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10351,
+      "slug": "shrkh-jly-rkham-fy-qtr",
+      "words": 1111,
+      "kind": "marble",
+      "ptype": "marble",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10352,
+      "slug": "shrkh-tlmya-syramyk-fy-qtr",
+      "words": 1102,
+      "kind": "ceramic",
+      "ptype": "ceramic",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10343,
+      "slug": "shrkh-tnzyf-wajhat-hjryh-fy-qtr",
+      "words": 1103,
+      "kind": "facade",
+      "ptype": "facade",
+      "http": 200,
+      "action": "rewrite"
+    }
+  ],
+  "merges": [
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10338,
+      "slug": "shrkh-tnzyf-mjals-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10345,
+      "slug": "shrkh-tnzyf-knb-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10346,
+      "slug": "shrkh-tnzyf-stayr-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10347,
+      "slug": "shrkh-tnzyf-mratb-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10344,
+      "slug": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10339,
+      "slug": "shrkh-tnzyf-khyam-wbywt-shar-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10353,
+      "slug": "aamlat-tnzyf-balsaah-fy-qtr",
+      "to": "/house-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10337,
+      "slug": "shrkh-tnzyf-qswr-fy-qtr",
+      "to": "/villa-cleaning-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10379,
+      "slug": "shrkh-tnzyf-ghrf-tftysh-fy-qtr",
+      "to": "/shrkh-tslyk-mjary-fy-qtr/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10357,
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "to": "/cockroach-control-in-qatar/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "to": "/services/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    },
+    {
+      "id": 10369,
+      "slug": "shrkh-tkhzyn-bdaya-fy-qtr",
+      "to": "/services/",
+      "draft_http": 200,
+      "redirect_http": 200,
+      "action": "draft-301"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "house-cleaning-in-qatar",
+      "list": {
+        "q": "house-cleaning-in-qatar",
+        "rows": [
+          {
+            "id": "117",
+            "url_to": "/qa/shrkh-tnzyf-mnazl-fy-qtr-2/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:23:\"house-cleaning-in-qatar\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "140",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:26:\"shrkh-tnzyf-mnazl-fy-qtr-2\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "141",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:24:\"shrkh-tnzyf-mjals-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "142",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:22:\"shrkh-tnzyf-knb-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "143",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:24:\"shrkh-tnzyf-stayr-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "144",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:24:\"shrkh-tnzyf-mratb-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "145",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:30:\"shrkh-tnzyf-sjad-wmwkyt-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "146",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:35:\"shrkh-tnzyf-khyam-wbywt-shar-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "147",
+            "url_to": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:27:\"aamlat-tnzyf-balsaah-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          }
+        ],
+        "cache": [
+          {
+            "redirection_id": "117",
+            "from_url": "house-cleaning-in-qatar"
+          }
+        ]
+      },
+      "deleted": {
+        "ok": true,
+        "from": "house-cleaning-in-qatar",
+        "deleted": [
+          117
+        ]
+      }
+    },
+    {
+      "slug": "villa-cleaning-in-qatar",
+      "list": {
+        "q": "villa-cleaning-in-qatar",
+        "rows": [
+          {
+            "id": "148",
+            "url_to": "https://www.rukn-eltatawer.com/qa/villa-cleaning-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:23:\"shrkh-tnzyf-qswr-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          }
+        ],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "villa-cleaning-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "apartment-cleaning-in-qatar",
+      "list": {
+        "q": "apartment-cleaning-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "apartment-cleaning-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-mdakhn-mtaam-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-jly-rkham-fy-qtr",
+      "list": {
+        "q": "shrkh-jly-rkham-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-jly-rkham-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tlmya-syramyk-fy-qtr",
+      "list": {
+        "q": "shrkh-tlmya-syramyk-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tlmya-syramyk-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-wajhat-hjryh-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-wajhat-hjryh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-wajhat-hjryh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "cockroach-control-in-qatar",
+      "list": {
+        "q": "cockroach-control-in-qatar",
+        "rows": [
+          {
+            "id": "118",
+            "url_to": "/qa/shrkh-mkafhh-srasyr-fy-qtr/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:26:\"cockroach-control-in-qatar\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "150",
+            "url_to": "https://www.rukn-eltatawer.com/qa/cockroach-control-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:26:\"shrkh-mkafhh-srasyr-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          }
+        ],
+        "cache": [
+          {
+            "redirection_id": "118",
+            "from_url": "cockroach-control-in-qatar"
+          }
+        ]
+      },
+      "deleted": {
+        "ok": true,
+        "from": "cockroach-control-in-qatar",
+        "deleted": [
+          118
+        ]
+      }
+    },
+    {
+      "slug": "shrkh-tslyk-mjary-fy-qtr",
+      "list": {
+        "q": "shrkh-tslyk-mjary-fy-qtr",
+        "rows": [
+          {
+            "id": "119",
+            "url_to": "/qa/shrkh-tslyk-mjary-fy-qtr/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:24:\"sewerage-company-in-doha\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "149",
+            "url_to": "https://www.rukn-eltatawer.com/qa/shrkh-tslyk-mjary-fy-qtr/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:30:\"shrkh-tnzyf-ghrf-tftysh-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          }
+        ],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tslyk-mjary-fy-qtr",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1102
+}
