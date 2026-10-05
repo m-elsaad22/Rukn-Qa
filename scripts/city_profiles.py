@@ -195,6 +195,20 @@ PACK_CITY = {
     },
 }
 
+for _insul_key in (
+    "insul_roof",
+    "insul_tank",
+    "insul_bath",
+    "insul_kitchen",
+    "insul_thermal",
+    "insul_water",
+    "insul_foam",
+    "insul_sound",
+    "insul_moisture",
+    "insul_wallfoam",
+):
+    PACK_CITY[_insul_key] = PACK_CITY["insulation"]
+
 
 def city_from_slug_title(slug: str, title: str) -> str:
     s = (slug or "").lower()
