@@ -1,0 +1,3758 @@
+{
+  "started": "2026-10-21T01:27:00.274775+00:00",
+  "apply": true,
+  "lock_before": {
+    "id": 2973,
+    "slug": "water-leak-detection-company-in-qatar",
+    "status": "publish",
+    "hash": "db546b40c25cee2c",
+    "word_count": 3845
+  },
+  "pages": [
+    {
+      "id": 7463,
+      "kind": "page",
+      "words": 203,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services/"
+    },
+    {
+      "id": 7464,
+      "kind": "page",
+      "words": 185,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/as3ar/"
+    },
+    {
+      "id": 7465,
+      "kind": "page",
+      "words": 111,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/cities/"
+    },
+    {
+      "id": 2453,
+      "kind": "page",
+      "words": 76,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/blog/"
+    },
+    {
+      "id": 7460,
+      "kind": "page",
+      "words": 151,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/about/"
+    },
+    {
+      "id": 7467,
+      "kind": "page",
+      "words": 127,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/faq/"
+    }
+  ],
+  "city_pages": [
+    {
+      "id": 14601,
+      "kind": "page",
+      "words": 69,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-doha-qatar/"
+    },
+    {
+      "id": 14599,
+      "kind": "page",
+      "words": 51,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-lusail-qatar/"
+    },
+    {
+      "id": 14602,
+      "kind": "page",
+      "words": 45,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-rayyan-qatar/"
+    },
+    {
+      "id": 14603,
+      "kind": "page",
+      "words": 36,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-wakrah-qatar/"
+    },
+    {
+      "id": 14604,
+      "kind": "page",
+      "words": 33,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-khor-qatar/"
+    },
+    {
+      "id": 14605,
+      "kind": "page",
+      "words": 35,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-umm-salal-qatar/"
+    },
+    {
+      "id": 14606,
+      "kind": "page",
+      "words": 27,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-daayen-qatar/"
+    },
+    {
+      "id": 14607,
+      "kind": "page",
+      "words": 30,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-shamal-qatar/"
+    },
+    {
+      "id": 14608,
+      "kind": "page",
+      "words": 29,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services-in-al-shahaniya-qatar/"
+    }
+  ],
+  "pillars": [
+    {
+      "id": 10324,
+      "kind": "post",
+      "words": 315,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-azl-asth-fy-qtr/"
+    },
+    {
+      "id": 10254,
+      "kind": "post",
+      "words": 243,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/split-ac-maintenance-in-qatar/"
+    },
+    {
+      "id": 10269,
+      "kind": "post",
+      "words": 192,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/central-air-conditioning-maintenance-in-qatar/"
+    },
+    {
+      "id": 10377,
+      "kind": "post",
+      "words": 205,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-tslyk-mjary-fy-qtr/"
+    },
+    {
+      "id": 10293,
+      "kind": "post",
+      "words": 202,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/home-plumber-in-qatar/"
+    },
+    {
+      "id": 10290,
+      "kind": "post",
+      "words": 143,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/plumbing-maintenance-in-qatar/"
+    },
+    {
+      "id": 10398,
+      "kind": "post",
+      "words": 185,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-syanh-khrba-fy-qtr/"
+    },
+    {
+      "id": 10258,
+      "kind": "post",
+      "words": 192,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/"
+    },
+    {
+      "id": 10261,
+      "kind": "post",
+      "words": 193,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/pest-control-in-qatar/"
+    },
+    {
+      "id": 10442,
+      "kind": "post",
+      "words": 152,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-tnsyq-hdayq-fy-qtr/"
+    },
+    {
+      "id": 10407,
+      "kind": "post",
+      "words": 154,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-syanh-aamh-fy-qtr/"
+    },
+    {
+      "id": 10408,
+      "kind": "post",
+      "words": 127,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-syanh-mbany-fy-qtr/"
+    },
+    {
+      "id": 10419,
+      "kind": "post",
+      "words": 156,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-dhanat-dakhlyh-fy-qtr/"
+    },
+    {
+      "id": 10406,
+      "kind": "post",
+      "words": 161,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/shrkh-trkyb-taqh-shmsyh-fy-qtr/"
+    }
+  ],
+  "en": [
+    {
+      "id": 12866,
+      "kind": "post",
+      "words": 202,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/"
+    },
+    {
+      "id": 12867,
+      "kind": "post",
+      "words": 110,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/"
+    },
+    {
+      "id": 12868,
+      "kind": "post",
+      "words": 117,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/en/ac-maintenance-qatar-en/"
+    }
+  ],
+  "cpt": [
+    {
+      "id": 1877,
+      "kind": "services",
+      "words": 52,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services/water-leak-detection/"
+    },
+    {
+      "id": 1876,
+      "kind": "services",
+      "words": 67,
+      "apply": true,
+      "validate": "ok",
+      "http": 200,
+      "result": "ok",
+      "link": "https://www.rukn-eltatawer.com/qa/services/sound-insulation-installation/"
+    }
+  ],
+  "new_posts": [
+    {
+      "slug": "how-to-choose-home-services-company-qatar",
+      "title": "كيف تختار شركة خدمات منزلية في قطر",
+      "words": 132,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21280,
+      "link": "https://www.rukn-eltatawer.com/qa/how-to-choose-home-services-company-qatar/",
+      "result": "ok"
+    },
+    {
+      "slug": "qatar-home-periodic-maintenance-guide",
+      "title": "دليل الصيانة الدورية للمنازل في قطر",
+      "words": 109,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21281,
+      "link": "https://www.rukn-eltatawer.com/qa/qatar-home-periodic-maintenance-guide/",
+      "result": "ok"
+    },
+    {
+      "slug": "how-quotes-are-calculated-qatar",
+      "title": "كيف تُحسب التكلفة بعد المعاينة في قطر",
+      "words": 91,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21282,
+      "link": "https://www.rukn-eltatawer.com/qa/how-quotes-are-calculated-qatar/",
+      "result": "ok"
+    },
+    {
+      "slug": "photo-report-before-repair-qatar",
+      "title": "ماذا يتضمن التقرير المصوّر قبل الإصلاح في قطر",
+      "words": 86,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21283,
+      "link": "https://www.rukn-eltatawer.com/qa/photo-report-before-repair-qatar/",
+      "result": "ok"
+    },
+    {
+      "slug": "doha-lusail-rayyan-neighborhoods-guide",
+      "title": "دليل أحياء الدوحة ولوسيل والريان",
+      "words": 101,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21284,
+      "link": "https://www.rukn-eltatawer.com/qa/doha-lusail-rayyan-neighborhoods-guide/",
+      "result": "ok"
+    },
+    {
+      "slug": "ac-maintenance-before-summer-qatar",
+      "title": "صيانة التكييف قبل صيف قطر",
+      "words": 55,
+      "apply": true,
+      "validate": "ok",
+      "http": 201,
+      "id": 21285,
+      "link": "https://www.rukn-eltatawer.com/qa/ac-maintenance-before-summer-qatar/",
+      "result": "ok"
+    }
+  ],
+  "redirects": [
+    {
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 166,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش في قطر"
+    },
+    {
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 167,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث في قطر"
+    },
+    {
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 168,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث في قطر"
+    },
+    {
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 169,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة فك وتركيب أثاث في قطر"
+    },
+    {
+      "slug": "interior-furniture-moving-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 170,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في قطر"
+    },
+    {
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 171,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في قطر"
+    },
+    {
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 172,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في قطر"
+    },
+    {
+      "slug": "furniture-storage-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 173,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الريان"
+    },
+    {
+      "slug": "outdoor-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 174,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الريان"
+    },
+    {
+      "slug": "indoor-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 175,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الريان"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 176,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الريان"
+    },
+    {
+      "slug": "piano-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 177,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الظعاين"
+    },
+    {
+      "slug": "furniture-storage-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 178,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 179,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الظعاين"
+    },
+    {
+      "slug": "cargo-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 180,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الظعاين"
+    },
+    {
+      "slug": "shipping-offices-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 181,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الظعاين"
+    },
+    {
+      "slug": "furniture-storage-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 182,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الخور"
+    },
+    {
+      "slug": "furniture-storage-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 183,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الشحانية"
+    },
+    {
+      "slug": "furniture-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 184,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الشحانية"
+    },
+    {
+      "slug": "piano-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 185,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 186,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الظعاين"
+    },
+    {
+      "slug": "sea-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 187,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الظعاين"
+    },
+    {
+      "slug": "land-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 188,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الظعاين"
+    },
+    {
+      "slug": "shipping-offices-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 189,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الخور"
+    },
+    {
+      "slug": "furniture-storage-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 190,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الوكرة"
+    },
+    {
+      "slug": "furniture-packaging-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 191,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الظعاين"
+    },
+    {
+      "slug": "domestic-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 192,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الظعاين"
+    },
+    {
+      "slug": "outdoor-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 193,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الظعاين"
+    },
+    {
+      "slug": "indoor-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 194,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 195,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الشمال"
+    },
+    {
+      "slug": "furniture-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 196,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 197,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 198,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الخور"
+    },
+    {
+      "slug": "piano-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 199,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الخور"
+    },
+    {
+      "slug": "shipping-offices-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 200,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الوكرة"
+    },
+    {
+      "slug": "piano-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 201,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الريان"
+    },
+    {
+      "slug": "furniture-storage-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 202,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الشمال"
+    },
+    {
+      "slug": "piano-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 203,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الشمال"
+    },
+    {
+      "slug": "air-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 204,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الظعاين"
+    },
+    {
+      "slug": "express-parcel-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 205,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 206,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الريان"
+    },
+    {
+      "slug": "furniture-packaging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 207,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الخور"
+    },
+    {
+      "slug": "furniture-packaging-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 208,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الشحانية"
+    },
+    {
+      "slug": "shipping-offices-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 209,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الشمال"
+    },
+    {
+      "slug": "indoor-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 210,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 211,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الوكرة"
+    },
+    {
+      "slug": "furniture-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 212,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الوكرة"
+    },
+    {
+      "slug": "car-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 213,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الشحانية"
+    },
+    {
+      "slug": "shipping-offices-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 214,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الشحانية"
+    },
+    {
+      "slug": "outdoor-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 215,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 216,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الشمال"
+    },
+    {
+      "slug": "car-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 217,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الشمال"
+    },
+    {
+      "slug": "outdoor-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 218,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الشحانية"
+    },
+    {
+      "slug": "cargo-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 219,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الخور"
+    },
+    {
+      "slug": "piano-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 220,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الوكرة"
+    },
+    {
+      "slug": "indoor-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 221,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الخور"
+    },
+    {
+      "slug": "domestic-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 222,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الشحانية"
+    },
+    {
+      "slug": "air-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 223,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 224,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الريان"
+    },
+    {
+      "slug": "sea-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 225,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الوكرة"
+    },
+    {
+      "slug": "shipping-offices-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 226,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الريان"
+    },
+    {
+      "slug": "outdoor-moving-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 227,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في لوسيل"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 228,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الظعاين"
+    },
+    {
+      "slug": "furniture-packaging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 229,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الشمال"
+    },
+    {
+      "slug": "outdoor-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 230,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الشمال"
+    },
+    {
+      "slug": "furniture-storage-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 231,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 232,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الخور"
+    },
+    {
+      "slug": "express-parcel-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 233,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الخور"
+    },
+    {
+      "slug": "express-parcel-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 234,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الشمال"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 235,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الخور"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 236,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الوكرة"
+    },
+    {
+      "slug": "sea-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 237,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الخور"
+    },
+    {
+      "slug": "land-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 238,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الخور"
+    },
+    {
+      "slug": "indoor-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 239,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الشمال"
+    },
+    {
+      "slug": "furniture-packaging-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 240,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الوكرة"
+    },
+    {
+      "slug": "cargo-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 241,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الوكرة"
+    },
+    {
+      "slug": "sea-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 242,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الريان"
+    },
+    {
+      "slug": "sea-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 243,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الشحانية"
+    },
+    {
+      "slug": "land-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 244,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الشحانية"
+    },
+    {
+      "slug": "air-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 245,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 246,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الريان"
+    },
+    {
+      "slug": "express-parcel-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 247,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الشحانية"
+    },
+    {
+      "slug": "domestic-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 248,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الشمال"
+    },
+    {
+      "slug": "air-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 249,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الشمال"
+    },
+    {
+      "slug": "furniture-packaging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 250,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الريان"
+    },
+    {
+      "slug": "outdoor-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 251,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الوكرة"
+    },
+    {
+      "slug": "land-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 252,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الريان"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 253,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الشمال"
+    },
+    {
+      "slug": "sea-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 254,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الشمال"
+    },
+    {
+      "slug": "land-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 255,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الشمال"
+    },
+    {
+      "slug": "express-parcel-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 256,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الريان"
+    },
+    {
+      "slug": "indoor-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 257,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الوكرة"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 258,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الشحانية"
+    },
+    {
+      "slug": "furniture-packaging-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 259,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 260,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الريان"
+    },
+    {
+      "slug": "air-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 261,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الوكرة"
+    },
+    {
+      "slug": "express-parcel-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 262,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الوكرة"
+    },
+    {
+      "slug": "indoor-moving-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 263,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 264,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الوكرة"
+    },
+    {
+      "slug": "land-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 265,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الوكرة"
+    },
+    {
+      "slug": "furniture-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 266,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في الدوحة"
+    },
+    {
+      "slug": "air-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 267,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الريان"
+    },
+    {
+      "slug": "furniture-storage-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 268,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في الدوحة"
+    },
+    {
+      "slug": "furniture-moving-packaging-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 269,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في لوسيل"
+    },
+    {
+      "slug": "furniture-packaging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 270,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في الدوحة"
+    },
+    {
+      "slug": "indoor-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 271,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في الدوحة"
+    },
+    {
+      "slug": "piano-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 272,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في الدوحة"
+    },
+    {
+      "slug": "furniture-storage-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 273,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تخزين أثاث في أم صلال"
+    },
+    {
+      "slug": "furniture-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 274,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن أثاث في أم صلال"
+    },
+    {
+      "slug": "piano-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 275,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل بيانو في أم صلال"
+    },
+    {
+      "slug": "sea-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 276,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في الدوحة"
+    },
+    {
+      "slug": "car-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 277,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في أم صلال"
+    },
+    {
+      "slug": "express-parcel-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 278,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في الدوحة"
+    },
+    {
+      "slug": "cargo-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 279,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في الدوحة"
+    },
+    {
+      "slug": "shipping-offices-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 280,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في الدوحة"
+    },
+    {
+      "slug": "furniture-packaging-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 281,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تغليف أثاث احترافي في أم صلال"
+    },
+    {
+      "slug": "shipping-offices-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 282,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة مكاتب الشحن في أم صلال"
+    },
+    {
+      "slug": "car-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 283,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن سيارات في الدوحة"
+    },
+    {
+      "slug": "domestic-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 284,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في الدوحة"
+    },
+    {
+      "slug": "indoor-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 285,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث داخلي في أم صلال"
+    },
+    {
+      "slug": "cargo-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 286,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن بضائع في أم صلال"
+    },
+    {
+      "slug": "sea-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 287,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بحري في أم صلال"
+    },
+    {
+      "slug": "outdoor-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 288,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في الدوحة"
+    },
+    {
+      "slug": "domestic-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 289,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن داخلي داخل في أم صلال"
+    },
+    {
+      "slug": "air-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 290,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في أم صلال"
+    },
+    {
+      "slug": "land-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 291,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في الدوحة"
+    },
+    {
+      "slug": "air-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 292,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي جوي في الدوحة"
+    },
+    {
+      "slug": "outdoor-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 293,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل أثاث خارجي في أم صلال"
+    },
+    {
+      "slug": "land-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 294,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن دولي بري في أم صلال"
+    },
+    {
+      "slug": "express-parcel-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 295,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة شحن طرود سريعة في أم صلال"
+    },
+    {
+      "slug": "furniture-moving-packaging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 296,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في الدوحة"
+    },
+    {
+      "slug": "furniture-moving-packaging-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 297,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة نقل عفش مع التغليف في أم صلال"
+    },
+    {
+      "slug": "grass-wall-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/wall-grass-al-rayyan/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 298,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الريان",
+      "keep": 12086
+    },
+    {
+      "slug": "artificial-grass-grdn-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-doha/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 299,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الدوحة",
+      "keep": 11925
+    },
+    {
+      "slug": "sewerage-company-in-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-daayen/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 300,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الظعاين",
+      "keep": 11755
+    },
+    {
+      "slug": "wall-grass-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-daayen/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 301,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الظعاين",
+      "keep": 11939
+    },
+    {
+      "slug": "artificial-grass-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-daayen/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 302,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الظعاين",
+      "keep": 12083
+    },
+    {
+      "slug": "drain-unclogging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-khor/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 303,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الخور",
+      "keep": 17407
+    },
+    {
+      "slug": "wall-grass-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-khor/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 304,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الخور",
+      "keep": 11936
+    },
+    {
+      "slug": "artificial-grass-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-khor/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 305,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الخور",
+      "keep": 12080
+    },
+    {
+      "slug": "sewerage-company-in-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-shahaniya/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 306,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الشحانية",
+      "keep": 11756
+    },
+    {
+      "slug": "wall-grass-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-shahaniya/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 307,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الشحانية",
+      "keep": 11940
+    },
+    {
+      "slug": "artificial-grass-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-shahaniya/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 308,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الشحانية",
+      "keep": 12084
+    },
+    {
+      "slug": "sewerage-company-in-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-lusail/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 309,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في لوسيل",
+      "keep": 17278
+    },
+    {
+      "slug": "wall-grass-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-wakrah/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 310,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الوكرة",
+      "keep": 11935
+    },
+    {
+      "slug": "artificial-grass-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-wakrah/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 311,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الوكرة",
+      "keep": 12079
+    },
+    {
+      "slug": "wall-grass-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-lusail/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 312,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في لوسيل",
+      "keep": 17301
+    },
+    {
+      "slug": "wall-grass-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-shamal/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 313,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الشمال",
+      "keep": 11938
+    },
+    {
+      "slug": "artificial-grass-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-shamal/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 314,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الشمال",
+      "keep": 12082
+    },
+    {
+      "slug": "sewerage-company-in-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-wakrah/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 315,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الوكرة",
+      "keep": 11751
+    },
+    {
+      "slug": "artificial-grass-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-rayyan/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 316,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في الريان",
+      "keep": 12078
+    },
+    {
+      "slug": "drain-unclogging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-rayyan/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 317,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الريان",
+      "keep": 17405
+    },
+    {
+      "slug": "drain-unclogging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-shamal/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 318,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الشمال",
+      "keep": 17410
+    },
+    {
+      "slug": "artificial-grass-grdn-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-lusail/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 319,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في لوسيل",
+      "keep": 17300
+    },
+    {
+      "slug": "drain-unclogging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-doha/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 320,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تسليك مجاري في الدوحة",
+      "keep": 3182
+    },
+    {
+      "slug": "wall-grass-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-doha/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 321,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في الدوحة",
+      "keep": 11933
+    },
+    {
+      "slug": "wall-grass-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-umm-salal/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 322,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب جداري في أم صلال",
+      "keep": 11937
+    },
+    {
+      "slug": "artificial-grass-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-umm-salal/",
+      "http": 200,
+      "body": {
+        "ok": true,
+        "id": 323,
+        "engine": "rankmath"
+      },
+      "result": "ok",
+      "title": "شركة تركيب عشب صناعي في أم صلال",
+      "keep": 12081
+    }
+  ],
+  "drafts": [
+    {
+      "id": 10364,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10366,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10365,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10367,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10298,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "interior-furniture-moving-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10300,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10295,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12190,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12150,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12142,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12158,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12171,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12195,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12483,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12475,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12467,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12192,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12196,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12484,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12172,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12491,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12523,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12515,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12464,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12191,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12179,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12507,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12155,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12147,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12482,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12480,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12476,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12488,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12168,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12463,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12166,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12194,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12170,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12531,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12499,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12478,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12176,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12180,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12466,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12148,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12487,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12479,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12492,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12468,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12152,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12474,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12490,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12156,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12472,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12167,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12144,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12508,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12528,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12470,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12519,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12462,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17328,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12163,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12178,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12154,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17332,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12504,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12496,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12498,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12160,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12159,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12520,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12512,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12146,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12175,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12471,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12518,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12524,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12516,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12532,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12486,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12500,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12506,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12530,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12174,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12151,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12510,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12162,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12522,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12514,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12494,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12143,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12164,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17330,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12502,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12527,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12495,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17327,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12503,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12511,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12477,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12526,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12189,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17329,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12173,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12141,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12165,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12193,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-storage-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12481,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12169,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "piano-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12517,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12489,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12493,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12469,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12461,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12177,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-packaging-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12465,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "shipping-offices-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12485,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "car-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12501,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12145,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "indoor-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12473,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "cargo-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12521,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sea-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12149,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12505,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "domestic-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12529,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12509,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12525,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "air-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12153,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "outdoor-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12513,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "land-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12497,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "express-parcel-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12157,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12161,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "furniture-moving-packaging-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 11934,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "grass-wall-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12077,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-grdn-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17409,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sewerage-company-in-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12091,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11931,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11752,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "drain-unclogging-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12088,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11928,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17411,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sewerage-company-in-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12092,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11932,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17209,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sewerage-company-in-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12087,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11927,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17320,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12090,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11930,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17406,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "sewerage-company-in-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11926,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11750,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "drain-unclogging-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11754,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "drain-unclogging-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17319,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-grdn-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11749,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "drain-unclogging-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12085,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12089,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "wall-grass-umm-salal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11929,
+      "http": 200,
+      "result": "ok",
+      "error": null,
+      "slug": "artificial-grass-umm-salal",
+      "reason": "duplicate"
+    }
+  ],
+  "verify": [
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/as3ar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/cities/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/about/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/faq/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/blog/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/shrkh-azl-asth-fy-qtr/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/split-ac-maintenance-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/pest-control-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/water-leak-detection/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/sound-insulation-installation/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/how-to-choose-home-services-company-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    }
+  ],
+  "lock_after": {
+    "id": 2973,
+    "slug": "water-leak-detection-company-in-qatar",
+    "status": "publish",
+    "hash": "db546b40c25cee2c",
+    "word_count": 3845
+  },
+  "lock_mismatch": false,
+  "finished": "2026-10-21T01:34:33.070678+00:00"
+}

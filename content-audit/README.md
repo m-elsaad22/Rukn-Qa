@@ -4,7 +4,8 @@
 
 | الملف | المحتوى |
 | --- | --- |
-| [qatar-content-audit-2026-10.md](qatar-content-audit-2026-10.md) | **التقييم الحالي (20 أكتوبر 2026):** المقالات المنشورة والمسودات وما يحتاج تحديثاً أو إعادة كتابة أو استبدالاً |
+| [live-apply-2026-10.md](live-apply-2026-10.md) | **تنفيذ 21 أكتوبر 2026:** ركائز، صفحات أساس، أدلة جديدة، و301 لخارج التخصص |
+| [qatar-content-audit-2026-10.md](qatar-content-audit-2026-10.md) | تقييم 20 أكتوبر: المقالات وما يحتاج تحديثاً أو إعادة كتابة أو استبدالاً |
 | [articles-actions-2026-10.csv](articles-actions-2026-10.csv) | إجراء لكل عنصر حي (مقال/صفحة/خدمة/مسودة) |
 | [published-articles-actions-2026-10.csv](published-articles-actions-2026-10.csv) | نفس الجدول للمنشور فقط |
 | [missing-articles.md](missing-articles.md) | المقالات والصفحات الناقصة تحريريًا (محدّث أكتوبر 2026) |
