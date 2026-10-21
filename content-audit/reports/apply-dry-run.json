@@ -1,0 +1,2404 @@
+{
+  "started": "2026-10-21T01:25:15.938998+00:00",
+  "apply": false,
+  "lock_before": {
+    "id": 2973,
+    "slug": "water-leak-detection-company-in-qatar",
+    "status": "publish",
+    "hash": "db546b40c25cee2c",
+    "word_count": 3845
+  },
+  "pages": [
+    {
+      "id": 7463,
+      "kind": "page",
+      "words": 203,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 7464,
+      "kind": "page",
+      "words": 185,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 7465,
+      "kind": "page",
+      "words": 111,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 2453,
+      "kind": "page",
+      "words": 76,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 7460,
+      "kind": "page",
+      "words": 151,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 7467,
+      "kind": "page",
+      "words": 127,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    }
+  ],
+  "city_pages": [
+    {
+      "id": 14601,
+      "kind": "page",
+      "words": 69,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14599,
+      "kind": "page",
+      "words": 51,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14602,
+      "kind": "page",
+      "words": 45,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14603,
+      "kind": "page",
+      "words": 36,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14604,
+      "kind": "page",
+      "words": 33,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14605,
+      "kind": "page",
+      "words": 35,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14606,
+      "kind": "page",
+      "words": 27,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14607,
+      "kind": "page",
+      "words": 30,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 14608,
+      "kind": "page",
+      "words": 29,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    }
+  ],
+  "pillars": [
+    {
+      "id": 10324,
+      "kind": "post",
+      "words": 234,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10254,
+      "kind": "post",
+      "words": 176,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10269,
+      "kind": "post",
+      "words": 133,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10377,
+      "kind": "post",
+      "words": 151,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10293,
+      "kind": "post",
+      "words": 142,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10290,
+      "kind": "post",
+      "words": 98,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10398,
+      "kind": "post",
+      "words": 122,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10258,
+      "kind": "post",
+      "words": 137,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10261,
+      "kind": "post",
+      "words": 136,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10442,
+      "kind": "post",
+      "words": 108,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10407,
+      "kind": "post",
+      "words": 115,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10408,
+      "kind": "post",
+      "words": 81,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10419,
+      "kind": "post",
+      "words": 115,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 10406,
+      "kind": "post",
+      "words": 122,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    }
+  ],
+  "en": [
+    {
+      "id": 12866,
+      "kind": "post",
+      "words": 202,
+      "apply": false,
+      "validate": [
+        "possible fake stat"
+      ],
+      "result": "VALIDATE_FAIL"
+    },
+    {
+      "id": 12867,
+      "kind": "post",
+      "words": 110,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 12868,
+      "kind": "post",
+      "words": 117,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    }
+  ],
+  "cpt": [
+    {
+      "id": 1877,
+      "kind": "services",
+      "words": 52,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    },
+    {
+      "id": 1876,
+      "kind": "services",
+      "words": 67,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN"
+    }
+  ],
+  "new_posts": [
+    {
+      "slug": "how-to-choose-home-services-company-qatar",
+      "title": "كيف تختار شركة خدمات منزلية في قطر",
+      "words": 132,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    },
+    {
+      "slug": "qatar-home-periodic-maintenance-guide",
+      "title": "دليل الصيانة الدورية للمنازل في قطر",
+      "words": 109,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    },
+    {
+      "slug": "how-quotes-are-calculated-qatar",
+      "title": "كيف تُحسب التكلفة بعد المعاينة في قطر",
+      "words": 91,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    },
+    {
+      "slug": "photo-report-before-repair-qatar",
+      "title": "ماذا يتضمن التقرير المصوّر قبل الإصلاح في قطر",
+      "words": 86,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    },
+    {
+      "slug": "doha-lusail-rayyan-neighborhoods-guide",
+      "title": "دليل أحياء الدوحة ولوسيل والريان",
+      "words": 101,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    },
+    {
+      "slug": "ac-maintenance-before-summer-qatar",
+      "title": "صيانة التكييف قبل صيف قطر",
+      "words": 55,
+      "apply": false,
+      "validate": "ok",
+      "result": "DRY_RUN_CREATE"
+    }
+  ],
+  "redirects": [
+    {
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش في قطر"
+    },
+    {
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث في قطر"
+    },
+    {
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث في قطر"
+    },
+    {
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة فك وتركيب أثاث في قطر"
+    },
+    {
+      "slug": "interior-furniture-moving-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في قطر"
+    },
+    {
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في قطر"
+    },
+    {
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في قطر"
+    },
+    {
+      "slug": "furniture-storage-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الريان"
+    },
+    {
+      "slug": "outdoor-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الريان"
+    },
+    {
+      "slug": "indoor-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الريان"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الريان"
+    },
+    {
+      "slug": "piano-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الظعاين"
+    },
+    {
+      "slug": "furniture-storage-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الظعاين"
+    },
+    {
+      "slug": "cargo-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الظعاين"
+    },
+    {
+      "slug": "shipping-offices-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الظعاين"
+    },
+    {
+      "slug": "furniture-storage-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الخور"
+    },
+    {
+      "slug": "furniture-storage-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الشحانية"
+    },
+    {
+      "slug": "furniture-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الشحانية"
+    },
+    {
+      "slug": "piano-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الظعاين"
+    },
+    {
+      "slug": "sea-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الظعاين"
+    },
+    {
+      "slug": "land-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الظعاين"
+    },
+    {
+      "slug": "shipping-offices-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الخور"
+    },
+    {
+      "slug": "furniture-storage-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الوكرة"
+    },
+    {
+      "slug": "furniture-packaging-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الظعاين"
+    },
+    {
+      "slug": "domestic-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الظعاين"
+    },
+    {
+      "slug": "outdoor-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الظعاين"
+    },
+    {
+      "slug": "indoor-moving-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الشمال"
+    },
+    {
+      "slug": "furniture-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الخور"
+    },
+    {
+      "slug": "piano-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الخور"
+    },
+    {
+      "slug": "shipping-offices-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الوكرة"
+    },
+    {
+      "slug": "piano-moving-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الريان"
+    },
+    {
+      "slug": "furniture-storage-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الشمال"
+    },
+    {
+      "slug": "piano-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الشمال"
+    },
+    {
+      "slug": "air-freight-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الظعاين"
+    },
+    {
+      "slug": "express-parcel-shipping-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الظعاين"
+    },
+    {
+      "slug": "furniture-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الريان"
+    },
+    {
+      "slug": "furniture-packaging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الخور"
+    },
+    {
+      "slug": "furniture-packaging-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الشحانية"
+    },
+    {
+      "slug": "shipping-offices-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الشمال"
+    },
+    {
+      "slug": "indoor-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الوكرة"
+    },
+    {
+      "slug": "furniture-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الوكرة"
+    },
+    {
+      "slug": "car-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الشحانية"
+    },
+    {
+      "slug": "shipping-offices-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الشحانية"
+    },
+    {
+      "slug": "outdoor-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الشمال"
+    },
+    {
+      "slug": "car-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الشمال"
+    },
+    {
+      "slug": "outdoor-moving-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الشحانية"
+    },
+    {
+      "slug": "cargo-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الخور"
+    },
+    {
+      "slug": "piano-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الوكرة"
+    },
+    {
+      "slug": "indoor-moving-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الخور"
+    },
+    {
+      "slug": "domestic-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الشحانية"
+    },
+    {
+      "slug": "air-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الخور"
+    },
+    {
+      "slug": "cargo-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الريان"
+    },
+    {
+      "slug": "sea-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الوكرة"
+    },
+    {
+      "slug": "shipping-offices-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الريان"
+    },
+    {
+      "slug": "outdoor-moving-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في لوسيل"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الظعاين"
+    },
+    {
+      "slug": "furniture-packaging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الشمال"
+    },
+    {
+      "slug": "outdoor-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الشمال"
+    },
+    {
+      "slug": "furniture-storage-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الخور"
+    },
+    {
+      "slug": "express-parcel-shipping-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الخور"
+    },
+    {
+      "slug": "express-parcel-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الشمال"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الخور"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الوكرة"
+    },
+    {
+      "slug": "sea-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الخور"
+    },
+    {
+      "slug": "land-freight-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الخور"
+    },
+    {
+      "slug": "indoor-moving-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الشمال"
+    },
+    {
+      "slug": "furniture-packaging-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الوكرة"
+    },
+    {
+      "slug": "cargo-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الوكرة"
+    },
+    {
+      "slug": "sea-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الريان"
+    },
+    {
+      "slug": "sea-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الشحانية"
+    },
+    {
+      "slug": "land-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الشحانية"
+    },
+    {
+      "slug": "air-freight-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الشحانية"
+    },
+    {
+      "slug": "car-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الريان"
+    },
+    {
+      "slug": "express-parcel-shipping-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الشحانية"
+    },
+    {
+      "slug": "domestic-shipping-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الشمال"
+    },
+    {
+      "slug": "air-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الشمال"
+    },
+    {
+      "slug": "furniture-packaging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الريان"
+    },
+    {
+      "slug": "outdoor-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الوكرة"
+    },
+    {
+      "slug": "land-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الريان"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الشمال"
+    },
+    {
+      "slug": "sea-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الشمال"
+    },
+    {
+      "slug": "land-freight-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الشمال"
+    },
+    {
+      "slug": "express-parcel-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الريان"
+    },
+    {
+      "slug": "indoor-moving-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الوكرة"
+    },
+    {
+      "slug": "furniture-moving-packaging-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الشحانية"
+    },
+    {
+      "slug": "furniture-packaging-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الريان"
+    },
+    {
+      "slug": "air-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الوكرة"
+    },
+    {
+      "slug": "express-parcel-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الوكرة"
+    },
+    {
+      "slug": "indoor-moving-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في لوسيل"
+    },
+    {
+      "slug": "domestic-shipping-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الوكرة"
+    },
+    {
+      "slug": "land-freight-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الوكرة"
+    },
+    {
+      "slug": "furniture-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في الدوحة"
+    },
+    {
+      "slug": "air-freight-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الريان"
+    },
+    {
+      "slug": "furniture-storage-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في الدوحة"
+    },
+    {
+      "slug": "furniture-moving-packaging-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في لوسيل"
+    },
+    {
+      "slug": "furniture-packaging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في الدوحة"
+    },
+    {
+      "slug": "indoor-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في الدوحة"
+    },
+    {
+      "slug": "piano-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في الدوحة"
+    },
+    {
+      "slug": "furniture-storage-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تخزين أثاث في أم صلال"
+    },
+    {
+      "slug": "furniture-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن أثاث في أم صلال"
+    },
+    {
+      "slug": "piano-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل بيانو في أم صلال"
+    },
+    {
+      "slug": "sea-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في الدوحة"
+    },
+    {
+      "slug": "car-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في أم صلال"
+    },
+    {
+      "slug": "express-parcel-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في الدوحة"
+    },
+    {
+      "slug": "cargo-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في الدوحة"
+    },
+    {
+      "slug": "shipping-offices-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في الدوحة"
+    },
+    {
+      "slug": "furniture-packaging-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة تغليف أثاث احترافي في أم صلال"
+    },
+    {
+      "slug": "shipping-offices-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة مكاتب الشحن في أم صلال"
+    },
+    {
+      "slug": "car-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن سيارات في الدوحة"
+    },
+    {
+      "slug": "domestic-shipping-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في الدوحة"
+    },
+    {
+      "slug": "indoor-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث داخلي في أم صلال"
+    },
+    {
+      "slug": "cargo-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن بضائع في أم صلال"
+    },
+    {
+      "slug": "sea-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بحري في أم صلال"
+    },
+    {
+      "slug": "outdoor-moving-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في الدوحة"
+    },
+    {
+      "slug": "domestic-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن داخلي داخل في أم صلال"
+    },
+    {
+      "slug": "air-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في أم صلال"
+    },
+    {
+      "slug": "land-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في الدوحة"
+    },
+    {
+      "slug": "air-freight-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي جوي في الدوحة"
+    },
+    {
+      "slug": "outdoor-moving-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل أثاث خارجي في أم صلال"
+    },
+    {
+      "slug": "land-freight-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن دولي بري في أم صلال"
+    },
+    {
+      "slug": "express-parcel-shipping-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة شحن طرود سريعة في أم صلال"
+    },
+    {
+      "slug": "furniture-moving-packaging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في الدوحة"
+    },
+    {
+      "slug": "furniture-moving-packaging-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/services/",
+      "result": "DRY_RUN",
+      "title": "شركة نقل عفش مع التغليف في أم صلال"
+    },
+    {
+      "slug": "grass-wall-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/wall-grass-al-rayyan/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الريان",
+      "keep": 12086
+    },
+    {
+      "slug": "artificial-grass-grdn-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-doha/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الدوحة",
+      "keep": 11925
+    },
+    {
+      "slug": "sewerage-company-in-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-daayen/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الظعاين",
+      "keep": 11755
+    },
+    {
+      "slug": "wall-grass-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-daayen/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الظعاين",
+      "keep": 11939
+    },
+    {
+      "slug": "artificial-grass-al-daayen",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-daayen/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الظعاين",
+      "keep": 12083
+    },
+    {
+      "slug": "drain-unclogging-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-khor/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الخور",
+      "keep": 17407
+    },
+    {
+      "slug": "wall-grass-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-khor/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الخور",
+      "keep": 11936
+    },
+    {
+      "slug": "artificial-grass-al-khor",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-khor/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الخور",
+      "keep": 12080
+    },
+    {
+      "slug": "sewerage-company-in-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-shahaniya/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الشحانية",
+      "keep": 11756
+    },
+    {
+      "slug": "wall-grass-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-shahaniya/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الشحانية",
+      "keep": 11940
+    },
+    {
+      "slug": "artificial-grass-al-shahaniya",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-shahaniya/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الشحانية",
+      "keep": 12084
+    },
+    {
+      "slug": "sewerage-company-in-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-lusail/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في لوسيل",
+      "keep": 17278
+    },
+    {
+      "slug": "wall-grass-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-wakrah/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الوكرة",
+      "keep": 11935
+    },
+    {
+      "slug": "artificial-grass-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-wakrah/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الوكرة",
+      "keep": 12079
+    },
+    {
+      "slug": "wall-grass-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-lusail/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في لوسيل",
+      "keep": 17301
+    },
+    {
+      "slug": "wall-grass-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-al-shamal/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الشمال",
+      "keep": 11938
+    },
+    {
+      "slug": "artificial-grass-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-shamal/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الشمال",
+      "keep": 12082
+    },
+    {
+      "slug": "sewerage-company-in-al-wakrah",
+      "to": "https://www.rukn-eltatawer.com/qa/drain-unclogging-al-wakrah/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الوكرة",
+      "keep": 11751
+    },
+    {
+      "slug": "artificial-grass-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-al-rayyan/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في الريان",
+      "keep": 12078
+    },
+    {
+      "slug": "drain-unclogging-al-rayyan",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-rayyan/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الريان",
+      "keep": 17405
+    },
+    {
+      "slug": "drain-unclogging-al-shamal",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-al-shamal/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الشمال",
+      "keep": 17410
+    },
+    {
+      "slug": "artificial-grass-grdn-lusail",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-lusail/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في لوسيل",
+      "keep": 17300
+    },
+    {
+      "slug": "drain-unclogging-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/sewerage-company-in-doha/",
+      "result": "DRY_RUN",
+      "title": "شركة تسليك مجاري في الدوحة",
+      "keep": 3182
+    },
+    {
+      "slug": "wall-grass-doha",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-doha/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في الدوحة",
+      "keep": 11933
+    },
+    {
+      "slug": "wall-grass-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/grass-wall-umm-salal/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب جداري في أم صلال",
+      "keep": 11937
+    },
+    {
+      "slug": "artificial-grass-umm-salal",
+      "to": "https://www.rukn-eltatawer.com/qa/artificial-grass-grdn-umm-salal/",
+      "result": "DRY_RUN",
+      "title": "شركة تركيب عشب صناعي في أم صلال",
+      "keep": 12081
+    }
+  ],
+  "drafts": [
+    {
+      "id": 10364,
+      "result": "DRY_RUN",
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10366,
+      "result": "DRY_RUN",
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10365,
+      "result": "DRY_RUN",
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10367,
+      "result": "DRY_RUN",
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10298,
+      "result": "DRY_RUN",
+      "slug": "interior-furniture-moving-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10300,
+      "result": "DRY_RUN",
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 10295,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12190,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12150,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12142,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12158,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12171,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12195,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12483,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12475,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12467,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12192,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12196,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12484,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12172,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12491,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12523,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12515,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12464,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12191,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12179,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12507,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12155,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12147,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12482,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12480,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12476,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12488,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12168,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12463,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12166,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12194,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12170,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12531,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12499,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12478,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12176,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12180,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12466,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12148,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12487,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12479,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12492,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12468,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12152,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12474,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12490,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12156,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12472,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12167,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12144,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12508,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12528,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12470,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12519,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12462,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17328,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12163,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-daayen",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12178,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12154,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17332,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12504,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12496,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12498,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12160,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12159,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12520,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12512,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-khor",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12146,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12175,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12471,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12518,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12524,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12516,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12532,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12486,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12500,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12506,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12530,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12174,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12151,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12510,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12162,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12522,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12514,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-shamal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12494,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12143,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12164,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-al-shahaniya",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17330,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12502,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12527,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12495,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17327,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12503,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12511,
+      "result": "DRY_RUN",
+      "slug": "land-freight-al-wakrah",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12477,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12526,
+      "result": "DRY_RUN",
+      "slug": "air-freight-al-rayyan",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12189,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 17329,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-lusail",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12173,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12141,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12165,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12193,
+      "result": "DRY_RUN",
+      "slug": "furniture-storage-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12481,
+      "result": "DRY_RUN",
+      "slug": "furniture-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12169,
+      "result": "DRY_RUN",
+      "slug": "piano-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12517,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12489,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12493,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12469,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12461,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12177,
+      "result": "DRY_RUN",
+      "slug": "furniture-packaging-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12465,
+      "result": "DRY_RUN",
+      "slug": "shipping-offices-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12485,
+      "result": "DRY_RUN",
+      "slug": "car-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12501,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12145,
+      "result": "DRY_RUN",
+      "slug": "indoor-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12473,
+      "result": "DRY_RUN",
+      "slug": "cargo-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12521,
+      "result": "DRY_RUN",
+      "slug": "sea-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12149,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12505,
+      "result": "DRY_RUN",
+      "slug": "domestic-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12529,
+      "result": "DRY_RUN",
+      "slug": "air-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12509,
+      "result": "DRY_RUN",
+      "slug": "land-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12525,
+      "result": "DRY_RUN",
+      "slug": "air-freight-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12153,
+      "result": "DRY_RUN",
+      "slug": "outdoor-moving-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12513,
+      "result": "DRY_RUN",
+      "slug": "land-freight-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12497,
+      "result": "DRY_RUN",
+      "slug": "express-parcel-shipping-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12157,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-doha",
+      "reason": "offtopic"
+    },
+    {
+      "id": 12161,
+      "result": "DRY_RUN",
+      "slug": "furniture-moving-packaging-umm-salal",
+      "reason": "offtopic"
+    },
+    {
+      "id": 11934,
+      "result": "DRY_RUN",
+      "slug": "grass-wall-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12077,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-grdn-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17409,
+      "result": "DRY_RUN",
+      "slug": "sewerage-company-in-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12091,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11931,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-daayen",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11752,
+      "result": "DRY_RUN",
+      "slug": "drain-unclogging-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12088,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11928,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-khor",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17411,
+      "result": "DRY_RUN",
+      "slug": "sewerage-company-in-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12092,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11932,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-shahaniya",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17209,
+      "result": "DRY_RUN",
+      "slug": "sewerage-company-in-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12087,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11927,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17320,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12090,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11930,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17406,
+      "result": "DRY_RUN",
+      "slug": "sewerage-company-in-al-wakrah",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11926,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11750,
+      "result": "DRY_RUN",
+      "slug": "drain-unclogging-al-rayyan",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11754,
+      "result": "DRY_RUN",
+      "slug": "drain-unclogging-al-shamal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 17319,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-grdn-lusail",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11749,
+      "result": "DRY_RUN",
+      "slug": "drain-unclogging-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12085,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-doha",
+      "reason": "duplicate"
+    },
+    {
+      "id": 12089,
+      "result": "DRY_RUN",
+      "slug": "wall-grass-umm-salal",
+      "reason": "duplicate"
+    },
+    {
+      "id": 11929,
+      "result": "DRY_RUN",
+      "slug": "artificial-grass-umm-salal",
+      "reason": "duplicate"
+    }
+  ],
+  "verify": [
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/as3ar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/cities/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/about/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/faq/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/blog/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/shrkh-azl-asth-fy-qtr/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/split-ac-maintenance-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/pest-control-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/en/water-leak-detection-qatar-en/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/en/roof-insulation-qatar-en/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/water-leak-detection/",
+      "http": 404,
+      "flags": "ok",
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/services/sound-insulation-installation/",
+      "http": 404,
+      "flags": "ok",
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/how-to-choose-home-services-company-qatar/",
+      "http": 404,
+      "flags": "ok",
+      "has_wa": false
+    },
+    {
+      "url": "https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/",
+      "http": 200,
+      "flags": [
+        "tel"
+      ],
+      "has_wa": false
+    }
+  ],
+  "lock_after": {
+    "id": 2973,
+    "slug": "water-leak-detection-company-in-qatar",
+    "status": "publish",
+    "hash": "db546b40c25cee2c",
+    "word_count": 3845
+  },
+  "lock_mismatch": false,
+  "finished": "2026-10-21T01:25:46.516372+00:00"
+}
