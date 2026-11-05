@@ -209,6 +209,16 @@ for _insul_key in (
 ):
     PACK_CITY[_insul_key] = PACK_CITY["insulation"]
 
+for _pest_key in (
+    "pest_cockroach",
+    "pest_termite",
+    "pest_bedbug",
+    "pest_rodent",
+    "pest_scorpion",
+    "pest_agri",
+):
+    PACK_CITY[_pest_key] = PACK_CITY["pest"]
+
 
 def city_from_slug_title(slug: str, title: str) -> str:
     s = (slug or "").lower()
