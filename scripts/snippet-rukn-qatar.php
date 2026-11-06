@@ -413,7 +413,7 @@ function rukn_qa_render_city_article($title, $slug) {
         . '<div class="hero-buttons"><a class="cta-button whatsapp-button" href="' . esc_url($wa) . '" rel="nofollow noopener" target="_blank">واتساب في ' . $city_e . '</a></div></div></section>'
         . '<h2>كيف نعمل في ' . $city_e . '؟</h2><p>' . esc_html($schedule) . '</p>'
         . '<p>التشخيص أو وصف دقيق ثم عرض مكتوب. أي فتح يُذكر قبل التنفيذ. واتساب فقط؛ زر الاتصال مخفي.</p>'
-        . '<h2>ما لا نعد به</h2><p>لا تقييمات مخترعة ولا قائمة أسعار ثابتة لكل فيلا في ' . $city_e . '. مقال كشف التسربات المعتمد صفحة واحدة: <a href="' . esc_url($leak) . '">كشف تسربات المياه في قطر</a>.</p>'
+        . '<h2>ما لا نعد به</h2><p>لا تقييمات مخترعة ولا قائمة أسعار ثابتة لكل فيلا في ' . $city_e . '. المنهج الوطني لكشف التسربات: <a href="' . esc_url($leak) . '">كشف تسربات المياه في قطر</a>، وصفحات المدن تبقى صفحات مستقلة مفهرسة.</p>'
         . '<h2>المدن الأخرى</h2><p>هذه الصفحة لـ' . $city_e . '. دليل المدن: <a href="' . esc_url($cities) . '">المدن في قطر</a>'
         . ($hub ? ' · <a href="' . esc_url(home_url($hub)) . '">خدمات ' . $city_e . '</a>' : '')
         . '.</p>[post_call]</div>';
@@ -701,35 +701,13 @@ function rukn_qa_request_slug() {
 }
 
 function rukn_qa_cluster_redirects() {
-    return [
-        'shrkh-tnzyf-mnazl-fy-qtr-2' => '/house-cleaning-in-qatar/',
-        'shrkh-mkafhh-srasyr-fy-qtr' => '/cockroach-control-in-qatar/',
-        'shrkh-tkhzyn-athath-fy-qtr' => '/services/',
-        'shrkh-tkhzyn-bdaya-fy-qtr' => '/services/',
-    ];
+    // No article→article redirects: every post keeps its own URL and can be indexed.
+    return [];
 }
 
 function rukn_qa_maybe_redirect_city_or_leak() {
-    if (is_admin() || wp_doing_ajax() || (function_exists('wp_is_json_request') && wp_is_json_request())) {
-        return;
-    }
-    $id = is_singular('post') ? (int) get_queried_object_id() : 0;
-    $slug = $id ? (string) get_post_field('post_name', $id) : '';
-    if (!$slug) {
-        $slug = rukn_qa_request_slug();
-    }
-    if ($id === 2973 || !$slug || $slug === 'water-leak-detection-company-in-qatar' || $slug === 'water-leak-detection-qatar-en') {
-        return;
-    }
-    if (preg_match('/^(water-leak-detection|water-pipe-leak-detection)-/', $slug)) {
-        wp_safe_redirect(home_url(RUKN_QA_LEAK), 301);
-        exit;
-    }
-    $cluster = rukn_qa_cluster_redirects();
-    if (isset($cluster[$slug])) {
-        wp_safe_redirect(home_url($cluster[$slug]), 301);
-        exit;
-    }
+    // Intentionally empty: city and leak posts stay on their own URLs.
+    return;
 }
 
 add_action('template_redirect', 'rukn_qa_maybe_redirect_city_or_leak', 0);
@@ -959,6 +937,64 @@ add_action('rest_api_init', function () {
             return ['ok' => true, 'from' => $from, 'deleted' => $deleted];
         },
     ]);
+    register_rest_route('rukn-qa/v1', '/redirects-all', [
+        'methods' => 'GET',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function () {
+            global $wpdb;
+            $table = $wpdb->prefix . 'rank_math_redirections';
+            $cache = $wpdb->prefix . 'rank_math_redirections_cache';
+            $rows = $wpdb->get_results(
+                "SELECT c.redirection_id AS id, c.from_url, r.url_to, r.status, r.header_code
+                 FROM {$cache} c
+                 LEFT JOIN {$table} r ON r.id = c.redirection_id
+                 ORDER BY c.redirection_id DESC
+                 LIMIT 500",
+                ARRAY_A
+            );
+            return ['ok' => true, 'count' => is_array($rows) ? count($rows) : 0, 'rows' => $rows ?: []];
+        },
+    ]);
+    register_rest_route('rukn-qa/v1', '/delete-post-redirects', [
+        'methods' => 'POST',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => function () {
+            global $wpdb;
+            $table = $wpdb->prefix . 'rank_math_redirections';
+            $cache = $wpdb->prefix . 'rank_math_redirections_cache';
+            $keep = rukn_qa_keep_slugs();
+            $rows = $wpdb->get_results(
+                "SELECT c.redirection_id, c.from_url, r.url_to
+                 FROM {$cache} c
+                 LEFT JOIN {$table} r ON r.id = c.redirection_id",
+                ARRAY_A
+            );
+            $deleted = [];
+            $skipped = [];
+            foreach ($rows as $row) {
+                $from = ltrim((string) ($row['from_url'] ?? ''), '/');
+                $from = preg_replace('#^qa/#', '', $from);
+                $from = trim($from, '/');
+                if ($from === '' || in_array($from, $keep, true) || $from === 'pricing' || $from === 'as3ar') {
+                    $skipped[] = $from;
+                    continue;
+                }
+                $id = (int) $row['redirection_id'];
+                if ($id <= 0) {
+                    continue;
+                }
+                if (class_exists('\RankMath\Redirections\DB') && method_exists('\RankMath\Redirections\DB', 'delete')) {
+                    \RankMath\Redirections\DB::delete($id);
+                } else {
+                    $wpdb->delete($table, ['id' => $id]);
+                    $wpdb->delete($cache, ['redirection_id' => $id]);
+                }
+                $deleted[] = ['id' => $id, 'from' => $from, 'to' => $row['url_to'] ?? ''];
+            }
+            rukn_qa_purge_caches();
+            return ['ok' => true, 'deleted' => count($deleted), 'skipped' => array_values(array_unique($skipped)), 'items' => array_slice($deleted, 0, 120)];
+        },
+    ]);
     register_rest_route('rukn-qa/v1', '/purge-cache', [
         'methods' => 'POST',
         'permission_callback' => function () { return current_user_can('manage_options'); },
@@ -989,9 +1025,7 @@ add_action('rest_api_init', function () {
             $deleted = [];
             foreach ($rows as $row) {
                 $from = (string) ($row['from_url'] ?? '');
-                if (strpos($from, 'water-leak-detection') !== false || strpos($from, 'water-pipe-leak') !== false) {
-                    continue;
-                }
+                // Delete city hub redirects including former leak-city 301s.
                 $id = (int) $row['redirection_id'];
                 if ($id <= 0) {
                     continue;
@@ -1017,13 +1051,10 @@ add_action('rest_api_init', function () {
             $like = $wpdb->prepare(
                 "SELECT ID FROM {$wpdb->posts}
                  WHERE post_type = 'post' AND post_status = 'draft' AND ID <> 2973
-                   AND post_name NOT LIKE %s AND post_name NOT LIKE %s
                    AND (post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
                      OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
                      OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s)
                  ORDER BY ID DESC LIMIT %d",
-                'water-leak-detection-%',
-                'water-pipe-leak-detection-%',
                 '%-doha',
                 '%-lusail',
                 '%-al-rayyan',
@@ -1045,7 +1076,7 @@ add_action('rest_api_init', function () {
                 }
                 $slug = (string) $p->post_name;
                 $title = (string) $p->post_title;
-                if ($id === 2973 || strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
+                if ($id === 2973) {
                     $skipped[] = $slug;
                     continue;
                 }
@@ -1083,10 +1114,6 @@ add_action('rest_api_init', function () {
                 $slug = (string) ($it['slug'] ?? get_post_field('post_name', $id));
                 if ($id <= 0 || $id === 2973) {
                     $skip[] = ['id' => $id, 'reason' => 'locked-or-bad'];
-                    continue;
-                }
-                if (strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
-                    $skip[] = ['id' => $id, 'slug' => $slug, 'reason' => 'leak-clone'];
                     continue;
                 }
                 $content = (string) ($it['content'] ?? '');
@@ -1135,29 +1162,6 @@ add_filter('wp_insert_post_data', function ($data, $postarr) {
             $data['post_status'] = 'publish';
         }
         return $data;
-    }
-    $blob = ($data['post_title'] ?? '') . ' ' . ($data['post_name'] ?? '');
-    $status = $data['post_status'] ?? '';
-    $type = $data['post_type'] ?? 'post';
-    if (
-        $type === 'post'
-        && in_array($status, ['publish', 'future'], true)
-        && $id !== 12866
-        && strpos($blob, 'qatar-en') === false
-        && strpos($blob, 'الغاز') === false
-        && strpos($blob, 'التكييف') === false
-        && strpos($blob, 'المسبح') === false
-        && strpos($blob, 'gas-leak') === false
-        && strpos($blob, 'ac-leak') === false
-        && strpos($blob, 'pool') === false
-        && (
-            strpos($blob, 'كشف تسربات المياه في') !== false
-            || strpos($blob, 'كشف تسريبات مواسير') !== false
-            || strpos($blob, 'water-leak-detection-') !== false
-            || strpos($blob, 'water-pipe-leak-detection-') !== false
-        )
-    ) {
-        $data['post_status'] = 'draft';
     }
     return $data;
 }, 99, 2);
@@ -1307,86 +1311,13 @@ add_action('init', function () {
 }, 25);
 
 function rukn_unpublish_city_templates() {
-    global $wpdb;
-    $keep = [
-        'water-leak-detection-company-in-qatar',
-        'water-leak-detection-qatar-en',
-        'roof-insulation-qatar-en',
-        'ac-maintenance-qatar-en',
-        'gas-leak-detection-doha',
-        'ac-leak-detection-doha',
-        'sewerage-company-in-doha',
-    ];
-    $in = implode(',', array_fill(0, count($keep), '%s'));
-    $like = "
-        post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
-        OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s OR post_name LIKE %s
-        OR post_name LIKE %s
-        OR post_name LIKE %s OR post_name LIKE %s
-    ";
-    $args = array_merge($keep, [
-        '%-doha', '%-al-rayyan', '%-al-wakrah', '%-al-khor', '%-umm-salal',
-        '%-al-daayen', '%-al-shamal', '%-al-shahaniya', '%-lusail',
-        'water-leak-detection-%', 'water-pipe-leak-detection-%',
-    ]);
-    $select = $wpdb->prepare(
-        "SELECT ID, post_name FROM {$wpdb->posts}
-         WHERE post_type = 'post' AND ID <> 2973
-         AND post_status IN ('publish','future')
-         AND post_name NOT IN ($in)
-         AND ($like)",
-        $args
-    );
-    $rows = $wpdb->get_results($select);
-    $ids = [];
-    $leak_ids = [];
-    foreach ($rows as $row) {
-        $id = (int) $row->ID;
-        $ids[] = $id;
-        $slug = (string) $row->post_name;
-        if (strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
-            $leak_ids[] = $id;
-        }
-    }
-    $n = 0;
-    if ($ids) {
-        $id_list = implode(',', array_map('intval', $ids));
-        $n = $wpdb->query("UPDATE {$wpdb->posts} SET post_status = 'draft' WHERE ID IN ($id_list)");
-        $robots = maybe_serialize(['noindex', 'nofollow']);
-        foreach ($ids as $id) {
-            update_post_meta($id, 'rank_math_robots', ['noindex', 'nofollow']);
-        }
-        foreach ($leak_ids as $id) {
-            update_post_meta($id, 'rank_math_canonical_url', home_url('/water-leak-detection-company-in-qatar/'));
-        }
-        unset($robots);
-        if (class_exists('\RankMath\Redirections\DB')) {
-            foreach ($rows as $row) {
-                $slug = (string) $row->post_name;
-                $to = home_url(RUKN_QA_LEAK);
-                if (strpos($slug, 'water-leak-detection-') === 0 || strpos($slug, 'water-pipe-leak-detection-') === 0) {
-                    \RankMath\Redirections\DB::add([
-                        'sources' => [['pattern' => $slug, 'comparison' => 'exact']],
-                        'url_to' => $to,
-                        'header_code' => 301,
-                        'status' => 'active',
-                    ]);
-                }
-            }
-        }
-    }
-    if (function_exists('wp_cache_flush')) {
-        wp_cache_flush();
-    }
-    if (function_exists('do_action')) {
-        do_action('litespeed_purge_all');
-    }
     return [
-        'updated' => (int) $n,
-        'ids' => count($ids),
-        'leak_clones' => count($leak_ids),
-        'kept' => $keep,
+        'updated' => 0,
+        'ids' => 0,
+        'leak_clones' => 0,
+        'kept' => [],
         'locked' => 2973,
+        'disabled' => 'city and leak posts stay published and indexed; no article redirects',
     ];
 }
 

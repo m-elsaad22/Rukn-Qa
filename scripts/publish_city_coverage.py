@@ -12,7 +12,7 @@ import urllib.request
 from html import unescape
 from pathlib import Path
 
-from city_profiles import SUF_ORDER, is_leak_city_slug, slug_suffix
+from city_profiles import slug_suffix
 from city_service_articles import build_city_article
 from cleaning_variant_articles import VARIANTS, payload_for as variant_payload
 
@@ -128,8 +128,8 @@ def publish_cities(drafts):
         pid = int(p["id"])
         slug = p.get("slug") or ""
         title = unescape((p.get("title") or {}).get("raw") or "")
-        if pid == LOCKED or is_leak_city_slug(slug):
-            skipped.append({"id": pid, "slug": slug, "reason": "leak-or-lock"})
+        if pid == LOCKED:
+            skipped.append({"id": pid, "slug": slug, "reason": "lock"})
             continue
         if not slug_suffix(slug):
             continue

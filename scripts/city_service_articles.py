@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import re
 
-from city_profiles import PACK_CITY, PROFILES, city_from_slug_title
+from city_profiles import PACK_CITY, PROFILES, city_from_slug_title, is_leak_city_slug
 from kayan_article_builder import (
     ALL_CITIES,
     CITIES_HUB,
@@ -44,18 +44,23 @@ def _faq(items):
     return "\n".join(out)
 
 
-def _siblings(city: str, slug: str) -> str:
+def _siblings(city: str, slug: str, ptype: str = "") -> str:
     parts = []
     for name, prof in PROFILES.items():
         if name == city:
             continue
         parts.append(f'<li><a href="{prof["hub"]}">{name}</a>: {prof["buildings"]}</li>')
+    leak_line = (
+        f'منهج الكشف على مستوى قطر: <a href="{LEAK}">شركة كشف تسربات المياه في قطر</a>. '
+        f"هذه الصفحة تبقى صفحة {city} المفهرسة، ليست تحويلاً."
+        if (ptype.startswith("leak") or is_leak_city_slug(slug))
+        else f'كشف تسربات المياه للدولة: <a href="{LEAK}">شركة كشف تسربات المياه في قطر</a>، ولكل مدينة صفحتها إن وُجدت.'
+    )
     return (
         "<h2>باقي مدن قطر</h2>"
         f"<p>هذه الصفحة لـ{city} فقط. الخدمة نفسها تُقدَّم في المدن التالية بمحتوى مباني مختلف، لا بنسخ الجملة نفسها.</p>"
         f"<ul>{''.join(parts)}</ul>"
-        f'<p>دليل المدن: <a href="{CITIES_HUB}">المدن في قطر</a>. '
-        f'كشف تسربات المياه للدولة في مقال واحد: <a href="{LEAK}">شركة كشف تسربات المياه في قطر</a>.</p>'
+        f'<p>دليل المدن: <a href="{CITIES_HUB}">المدن في قطر</a>. {leak_line}</p>'
     )
 
 
@@ -117,7 +122,13 @@ def build_city_article(title: str, slug: str) -> tuple[str, str, int]:
         ("هل تضمنون النتيجة؟", "ما يُكتب في العرض حسب نوع العمل. لا ضمان عام في المقال."),
         (f"هل الوصول صعب في {city}؟", prof["access"]),
         ("هل هذه نسخة من صفحة قطر؟", f"لا. المباني والوصول في {city} مكتوبان هنا. صفحة قطر نية وطنية."),
-        ("هل تكشفون تسرب المياه من هنا؟", f'التسرب المخفي له مقال الدولة: <a href="{LEAK}">كشف تسربات المياه في قطر</a>.'),
+        (
+            "هل تكشفون تسرب المياه من هنا؟",
+            f"نعم إن كانت هذه صفحة كشف في {city}. المنهج الوطني: "
+            f'<a href="{LEAK}">كشف تسربات المياه في قطر</a>. ليست تحويلاً صامتاً.'
+            if (ptype.startswith("leak") or is_leak_city_slug(slug))
+            else f'التسرب المخفي يُفحص في صفحة المدينة أو في <a href="{LEAK}">كشف تسربات المياه في قطر</a>.',
+        ),
     ]
     more = f"""
 <h2>مثال نطاق في {city}</h2>
@@ -131,7 +142,7 @@ def build_city_article(title: str, slug: str) -> tuple[str, str, int]:
 <p>{pack.get('related') or ''}</p>
 <h2>ما الذي نطلبه قبل الخروج من الدوحة؟</h2>
 <p>حي واضح داخل {city}، نوع المبنى (شقة، فيلا، ملحق)، وصور. إن لزم تصريح نطلبه قبل تحرك الفريق. في المدن الأبعد نثبّت اليوم لا «خلال ساعة». واتساب يكفي؛ لا نسعّر الحالة النهائية من جملة واحدة.</p>
-<p>إن كانت الشكوى تسرباً مخفياً نحوّلك لمقال الكشف الوطني بدل تكرار مسح تجميلي. إن كانت شفاطاً تجارياً لا نفتحها كتنظيف غرف.</p>
+<p>إن كانت الشكوى تسرباً مخفياً وهذه ليست صفحة كشف، نوجّه لصفحة الكشف في {city} أو للمنهج الوطني دون حذف هذه الصفحة. إن كانت شفاطاً تجارياً لا نفتحها كتنظيف غرف.</p>
 """
     desc = f"{title}: تنفيذ «{core}» في {city} بعد معاينة. واتساب لتحديد الموعد. لا سعر ثابت لكل فيلا."
     html = f"""<div class="rukn-article">
@@ -170,10 +181,10 @@ def build_city_article(title: str, slug: str) -> tuple[str, str, int]:
 <ul>{cost_html}</ul>
 <p>لا قائمة أسعار ثابتة لكل فيلا في {city}. الرقم بعد فهم الموقع.</p>
 <h2>ما لا نعد به في هذه الصفحة</h2>
-<p>لا نختلق تقييماً بالنجوم، ولا نطلب اتصالاً هاتفياً. واتساب يكفي. لا ننشر قالب {core} بالحرف في كل مدينة. مقال كشف التسربات المعتمد يبقى صفحة واحدة ولا يُستبدل من هنا.</p>
+<p>لا نختلق تقييماً بالنجوم، ولا نطلب اتصالاً هاتفياً. واتساب يكفي. لا ننشر قالب {core} بالحرف في كل مدينة. صفحات المدن تبقى مفهرسة على روابطها، ومقال قطر الوطني يبقى منهجاً لا تحويلاً يبتلع صفحة {city}.</p>
 <p>{extras[4] if len(extras) > 4 else ''}</p>
 {more}
-{_siblings(city, slug)}
+{_siblings(city, slug, ptype)}
 {_faq(faqs)}
 <h2>خلاصة {title}</h2>
 <p>{desc} {prof['schedule']} التواصل واتساب.</p>

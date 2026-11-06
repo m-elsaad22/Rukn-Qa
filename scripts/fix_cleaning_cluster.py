@@ -41,13 +41,8 @@ PILLARS = {
     10343: ("shrkh-tnzyf-wajhat-hjryh-fy-qtr", "شركة تنظيف واجهات حجرية في قطر"),
 }
 
-# Duplicate URLs → keep URL (path on /qa)
-MERGES = {
-    10334: ("shrkh-tnzyf-mnazl-fy-qtr-2", "/house-cleaning-in-qatar/"),
-    10357: ("shrkh-mkafhh-srasyr-fy-qtr", "/cockroach-control-in-qatar/"),
-    10368: ("shrkh-tkhzyn-athath-fy-qtr", "/services/"),
-    10369: ("shrkh-tkhzyn-bdaya-fy-qtr", "/services/"),
-}
+# Duplicate URLs stay published and indexed. Do not 301 articles to other articles.
+MERGES = {}
 
 
 def api(path, method="GET", data=None, timeout=180):

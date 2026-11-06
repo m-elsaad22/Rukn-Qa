@@ -448,36 +448,7 @@ def main():
     )
     note(f"flagship roof {code}")
 
-    # Duplicate handling
-    duplicates = [
-        (10334, 10258),  # cleaning keep 10258
-        (10357, 10272),  # cockroach keep older
-        (10377, 3182),   # sewer: keep doha unique-ish 3182? keep qatar 10377 as national, redirect doha stays but cleaned
-    ]
-    # Trash off-brand
-    trash_ids = [7391, 10370, 10371, 10372, 10373, 10374, 10368, 10369]
-    for pid in trash_ids:
-        code, data, _ = api(f"/wp/v2/posts/{pid}", "DELETE", {"force": False})
-        note(f"trash {pid}: {code}")
-        rm_meta(pid, robots=["noindex", "nofollow"])
-
-    # Redirects
-    redirects = [
-        ("recruitment-in-qatar", "https://www.rukn-eltatawer.com/qa/"),
-        ("roof-insulation", "https://www.rukn-eltatawer.com/qa/shrkh-azl-asth-fy-qtr/"),
-        ("shrkh-tnzyf-mnazl-fy-qtr-2", "https://www.rukn-eltatawer.com/qa/house-cleaning-in-qatar/"),
-        ("shrkh-mkafhh-srasyr-fy-qtr", "https://www.rukn-eltatawer.com/qa/cockroach-control-in-qatar/"),
-        ("shra-skrab-fy-qtr", "https://www.rukn-eltatawer.com/qa/"),
-    ]
-    for frm, to in redirects:
-        code, data, _ = api("/rukn-qa/v1/redirect", "POST", {"from": frm, "to": to})
-        note(f"redirect {frm}: {code} {data}")
-
-    # Merge cleaning: noindex duplicate if not trashed
-    code, data, _ = update_post(10334, status="draft")
-    note(f"unpublish dup cleaning {code}")
-    code, data, _ = update_post(10357, status="draft")
-    note(f"unpublish dup cockroach {code}")
+    # Articles stay published and indexed. Do not 301 or trash posts.
 
     # Fix remaining sewer doha typo via sanitize later
 

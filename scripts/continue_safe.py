@@ -241,18 +241,7 @@ def main():
         raise SystemExit("snippet update failed")
     assert_2973_untouched()
 
-    # Keep city leak clones draft + noindex + canonical to ranking URL
-    for pid, slug in LEAK_CLONES:
-        st, data = api(f"/wp/v2/posts/{pid}", "POST", {"status": "draft"})
-        rm_meta(
-            pid,
-            robots=["noindex", "nofollow"],
-            canonical=LEAK_URL,
-            keyword="شركة كشف تسربات المياه في قطر",
-        )
-        st2, r = api("/rukn-qa/v1/redirect", "POST", {"from": slug, "to": LEAK_URL})
-        note(f"clone {pid} {slug} draft={st} redirect={st2} {r if isinstance(r, dict) else ''}")
-        time.sleep(0.05)
+    # Leak city posts stay published and indexed on their own URLs.
     assert_2973_untouched()
 
     # Service CPT: canonical to ranking article (do not edit 2973)

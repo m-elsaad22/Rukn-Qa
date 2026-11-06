@@ -189,8 +189,9 @@ def rm_meta(post_id, **kwargs):
 
 def main():
     lockcheck()
-    update_snippet()
+    note("disabled: city and leak posts stay published and indexed; no article redirects")
     lockcheck()
+    return
 
     st, result, _ = api("/rukn-qa/v1/unpublish-city-templates", "POST", {}, timeout=180)
     note(f"bulk unpublish {st} {result}")
