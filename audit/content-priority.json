@@ -1,0 +1,942 @@
+{
+  "published": 2021,
+  "kinds": {
+    "national": 148,
+    "city": 1851,
+    "leak-city": 18,
+    "english": 3,
+    "locked": 1
+  },
+  "national_ptypes": {
+    "ac": 7,
+    "general": 10,
+    "move": 9,
+    "cleaning": 12,
+    "pest_cockroach": 2,
+    "outdoor": 4,
+    "pool": 2,
+    "garden": 8,
+    "trees": 1,
+    "elevator": 1,
+    "doors": 3,
+    "carpentry": 1,
+    "kitchen": 3,
+    "aluminum": 1,
+    "glass": 1,
+    "insul_wallfoam": 1,
+    "floor": 7,
+    "woodalt": 1,
+    "paint": 6,
+    "build": 9,
+    "restore": 1,
+    "solar": 1,
+    "elec": 7,
+    "fire": 1,
+    "appliance": 6,
+    "coldroom": 1,
+    "plumbing": 8,
+    "chamber": 1,
+    "sewer": 2,
+    "birds": 2,
+    "pest_agri": 1,
+    "pest_scorpion": 1,
+    "pest_rodent": 1,
+    "disinfect": 1,
+    "ceramic": 1,
+    "marble": 1,
+    "postcon": 1,
+    "chimney": 1,
+    "duct": 2,
+    "facade": 2,
+    "poolclean": 1,
+    "inspect": 1,
+    "insul_moisture": 1,
+    "insul_sound": 1,
+    "insul_foam": 1,
+    "insul_water": 1,
+    "insul_thermal": 1,
+    "insul_kitchen": 1,
+    "insul_bath": 1,
+    "insul_tank": 1,
+    "insul_roof": 1,
+    "poolleak": 1,
+    "gasleak": 1,
+    "tankclean": 1,
+    "pest_termite": 1,
+    "pest_bedbug": 1,
+    "pest": 1
+  },
+  "national_forms": {
+    "other": 28,
+    "city-template": 18,
+    "honest-out-of-scope": 6,
+    "kayan-generic": 11,
+    "unique-cluster": 8,
+    "longform-shared": 98
+  },
+  "city_sample_forms": {
+    "city-template": 46
+  },
+  "short_national": [
+    {
+      "id": 21285,
+      "slug": "ac-maintenance-before-summer-qatar",
+      "title": "صيانة التكييف قبل صيف قطر",
+      "words": 55,
+      "form": "other",
+      "ptype": "ac"
+    },
+    {
+      "id": 21283,
+      "slug": "photo-report-before-repair-qatar",
+      "title": "ماذا يتضمن التقرير المصوّر قبل الإصلاح في قطر",
+      "words": 86,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 21282,
+      "slug": "how-quotes-are-calculated-qatar",
+      "title": "كيف تُحسب التكلفة بعد المعاينة في قطر",
+      "words": 91,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 21284,
+      "slug": "doha-lusail-rayyan-neighborhoods-guide",
+      "title": "دليل أحياء الدوحة ولوسيل والريان",
+      "words": 101,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 21281,
+      "slug": "qatar-home-periodic-maintenance-guide",
+      "title": "دليل الصيانة الدورية للمنازل في قطر",
+      "words": 109,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en",
+      "title": "Roof insulation in Qatar",
+      "words": 110,
+      "form": "other",
+      "ptype": "insul_roof"
+    },
+    {
+      "id": 12868,
+      "slug": "ac-maintenance-qatar-en",
+      "title": "AC maintenance in Doha and Qatar",
+      "words": 117,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 10408,
+      "slug": "shrkh-syanh-mbany-fy-qtr",
+      "title": "شركة صيانة مباني في قطر",
+      "words": 127,
+      "form": "other",
+      "ptype": "build"
+    },
+    {
+      "id": 21280,
+      "slug": "how-to-choose-home-services-company-qatar",
+      "title": "كيف تختار شركة خدمات منزلية في قطر",
+      "words": 132,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 10290,
+      "slug": "plumbing-maintenance-in-qatar",
+      "title": "شركة صيانة سباكة في قطر",
+      "words": 143,
+      "form": "other",
+      "ptype": "plumbing"
+    },
+    {
+      "id": 10442,
+      "slug": "shrkh-tnsyq-hdayq-fy-qtr",
+      "title": "شركة تنسيق حدائق في قطر",
+      "words": 152,
+      "form": "other",
+      "ptype": "garden"
+    },
+    {
+      "id": 10407,
+      "slug": "shrkh-syanh-aamh-fy-qtr",
+      "title": "شركة صيانة عامة في قطر",
+      "words": 154,
+      "form": "other",
+      "ptype": "build"
+    },
+    {
+      "id": 10419,
+      "slug": "shrkh-dhanat-dakhlyh-fy-qtr",
+      "title": "شركة دهانات داخلية في قطر",
+      "words": 156,
+      "form": "other",
+      "ptype": "paint"
+    },
+    {
+      "id": 10406,
+      "slug": "shrkh-trkyb-taqh-shmsyh-fy-qtr",
+      "title": "شركة تركيب طاقة شمسية في قطر",
+      "words": 161,
+      "form": "other",
+      "ptype": "solar"
+    },
+    {
+      "id": 10398,
+      "slug": "shrkh-syanh-khrba-fy-qtr",
+      "title": "شركة صيانة كهرباء في قطر",
+      "words": 185,
+      "form": "other",
+      "ptype": "elec"
+    },
+    {
+      "id": 10258,
+      "slug": "house-cleaning-in-qatar",
+      "title": "شركة تنظيف منازل في قطر",
+      "words": 192,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10269,
+      "slug": "central-air-conditioning-maintenance-in-qatar",
+      "title": "شركة صيانة تكييف مركزي في قطر",
+      "words": 192,
+      "form": "other",
+      "ptype": "ac"
+    },
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en",
+      "title": "Water leak detection in Qatar without breaking",
+      "words": 202,
+      "form": "other",
+      "ptype": "general"
+    },
+    {
+      "id": 10293,
+      "slug": "home-plumber-in-qatar",
+      "title": "سباك منازل في قطر",
+      "words": 202,
+      "form": "other",
+      "ptype": "plumbing"
+    },
+    {
+      "id": 10377,
+      "slug": "shrkh-tslyk-mjary-fy-qtr",
+      "title": "شركة تسليك مجاري في قطر",
+      "words": 205,
+      "form": "other",
+      "ptype": "sewer"
+    },
+    {
+      "id": 10254,
+      "slug": "split-ac-maintenance-in-qatar",
+      "title": "شركة صيانة مكيفات سبليت في قطر",
+      "words": 243,
+      "form": "other",
+      "ptype": "ac"
+    },
+    {
+      "id": 10324,
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "title": "شركة عزل أسطح في قطر",
+      "words": 315,
+      "form": "unique-cluster",
+      "ptype": "insul_roof"
+    },
+    {
+      "id": 10373,
+      "slug": "shra-skrab-fy-qtr",
+      "title": "شراء سكراب في قطر",
+      "words": 353,
+      "form": "honest-out-of-scope",
+      "ptype": "general"
+    },
+    {
+      "id": 10300,
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث خارجي في قطر",
+      "words": 355,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10369,
+      "slug": "shrkh-tkhzyn-bdaya-fy-qtr",
+      "title": "شركة تخزين بضائع في قطر",
+      "words": 359,
+      "form": "kayan-generic",
+      "ptype": "general"
+    },
+    {
+      "id": 10370,
+      "slug": "shra-athath-mstaml-fy-qtr",
+      "title": "شراء أثاث مستعمل في قطر",
+      "words": 360,
+      "form": "honest-out-of-scope",
+      "ptype": "move"
+    },
+    {
+      "id": 10298,
+      "slug": "interior-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث داخلي في قطر",
+      "words": 361,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10366,
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "title": "شركة تغليف أثاث في قطر",
+      "words": 365,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10372,
+      "slug": "shra-ajhzh-khrbayyh-mstamlh-fy-qtr",
+      "title": "شراء أجهزة كهربائية مستعملة في قطر",
+      "words": 368,
+      "form": "honest-out-of-scope",
+      "ptype": "general"
+    },
+    {
+      "id": 10364,
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "title": "شركة نقل عفش في قطر",
+      "words": 370,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "title": "شركة تخزين أثاث في قطر",
+      "words": 371,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10295,
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "title": "شركة نقل عفش مع التغليف في قطر",
+      "words": 372,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10374,
+      "slug": "shra-madat-mtaam-mstamlh-fy-qtr",
+      "title": "شراء معدات مطاعم مستعملة في قطر",
+      "words": 373,
+      "form": "honest-out-of-scope",
+      "ptype": "general"
+    },
+    {
+      "id": 10367,
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "title": "شركة فك وتركيب أثاث في قطر",
+      "words": 373,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 7391,
+      "slug": "recruitment-in-qatar",
+      "title": "مكتب استقدام في قطر",
+      "words": 381,
+      "form": "honest-out-of-scope",
+      "ptype": "general"
+    },
+    {
+      "id": 10365,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "title": "شركة نقل أثاث في قطر",
+      "words": 392,
+      "form": "kayan-generic",
+      "ptype": "move"
+    },
+    {
+      "id": 10371,
+      "slug": "shra-mkyfat-mstamlh-fy-qtr",
+      "title": "شراء مكيفات مستعملة في قطر",
+      "words": 401,
+      "form": "honest-out-of-scope",
+      "ptype": "ac"
+    },
+    {
+      "id": 10379,
+      "slug": "shrkh-tnzyf-ghrf-tftysh-fy-qtr",
+      "title": "شركة تنظيف غرف تفتيش في قطر",
+      "words": 416,
+      "form": "other",
+      "ptype": "chamber"
+    },
+    {
+      "id": 10346,
+      "slug": "shrkh-tnzyf-stayr-fy-qtr",
+      "title": "شركة تنظيف ستائر في قطر",
+      "words": 422,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10347,
+      "slug": "shrkh-tnzyf-mratb-fy-qtr",
+      "title": "شركة تنظيف مراتب في قطر",
+      "words": 428,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10337,
+      "slug": "shrkh-tnzyf-qswr-fy-qtr",
+      "title": "شركة تنظيف قصور في قطر",
+      "words": 430,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10353,
+      "slug": "aamlat-tnzyf-balsaah-fy-qtr",
+      "title": "عاملات تنظيف بالساعة في قطر",
+      "words": 436,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10344,
+      "slug": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "title": "شركة تنظيف سجاد وموكيت في قطر",
+      "words": 436,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10339,
+      "slug": "shrkh-tnzyf-khyam-wbywt-shar-fy-qtr",
+      "title": "شركة تنظيف خيام وبيوت شعر في قطر",
+      "words": 440,
+      "form": "other",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10357,
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "title": "شركة مكافحة صراصير في قطر",
+      "words": 452,
+      "form": "kayan-generic",
+      "ptype": "pest_cockroach"
+    },
+    {
+      "id": 10345,
+      "slug": "shrkh-tnzyf-knb-fy-qtr",
+      "title": "شركة تنظيف كنب في قطر",
+      "words": 454,
+      "form": "longform-shared",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "title": "شركة تنظيف منازل في قطر",
+      "words": 467,
+      "form": "kayan-generic",
+      "ptype": "cleaning"
+    },
+    {
+      "id": 10338,
+      "slug": "shrkh-tnzyf-mjals-fy-qtr",
+      "title": "شركة تنظيف مجالس في قطر",
+      "words": 491,
+      "form": "longform-shared",
+      "ptype": "cleaning"
+    }
+  ],
+  "mismatches": [
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "title": "شركة تخزين أثاث في قطر",
+      "ptype": "move",
+      "issues": [
+        "قصير جداً",
+        "خلط خدمة: شراء مستعمل",
+        "قالب كيان عام"
+      ],
+      "hero": "شركة تخزين أثاث في قطر — تشخيص ثم تنفيذ مكتوب",
+      "words": 371
+    },
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "title": "شركة تنظيف منازل في قطر",
+      "ptype": "cleaning",
+      "issues": [
+        "قصير جداً",
+        "خلط خدمة: شفاط مطعم",
+        "قالب كيان عام"
+      ],
+      "hero": "شركة تنظيف منازل في قطر — تشخيص ثم تنفيذ مكتوب",
+      "words": 467
+    },
+    {
+      "id": 10365,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "title": "شركة نقل أثاث في قطر",
+      "ptype": "move",
+      "issues": [
+        "قصير جداً",
+        "خلط خدمة: شراء مستعمل",
+        "قالب كيان عام"
+      ],
+      "hero": "شركة نقل أثاث في قطر — تشخيص ثم تنفيذ مكتوب",
+      "words": 392
+    },
+    {
+      "id": 10338,
+      "slug": "shrkh-tnzyf-mjals-fy-qtr",
+      "title": "شركة تنظيف مجالس في قطر",
+      "ptype": "cleaning",
+      "issues": [
+        "قصير جداً",
+        "خلط خدمة: شفاط مطعم"
+      ],
+      "hero": "ماذا ننظف؟",
+      "words": 491
+    },
+    {
+      "id": 10267,
+      "slug": "apartment-cleaning-in-qatar",
+      "title": "شركة تنظيف شقق في قطر",
+      "ptype": "cleaning",
+      "issues": [
+        "خلط خدمة: شفاط مطعم"
+      ],
+      "hero": "تنسيق المبنى ثم الغرف — ليس حوش فيلا",
+      "words": 1102
+    }
+  ],
+  "kayan_generic_national": [
+    {
+      "id": 10300,
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث خارجي في قطر",
+      "ptype": "move",
+      "words": 355,
+      "hero": "شركة نقل أثاث خارجي في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10298,
+      "slug": "interior-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث داخلي في قطر",
+      "ptype": "move",
+      "words": 361,
+      "hero": "شركة نقل أثاث داخلي في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10366,
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "title": "شركة تغليف أثاث في قطر",
+      "ptype": "move",
+      "words": 365,
+      "hero": "شركة تغليف أثاث في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10364,
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "title": "شركة نقل عفش في قطر",
+      "ptype": "move",
+      "words": 370,
+      "hero": "شركة نقل عفش في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "title": "شركة تخزين أثاث في قطر",
+      "ptype": "move",
+      "words": 371,
+      "hero": "شركة تخزين أثاث في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10295,
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "title": "شركة نقل عفش مع التغليف في قطر",
+      "ptype": "move",
+      "words": 372,
+      "hero": "شركة نقل عفش مع التغليف في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10367,
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "title": "شركة فك وتركيب أثاث في قطر",
+      "ptype": "move",
+      "words": 373,
+      "hero": "شركة فك وتركيب أثاث في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10365,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "title": "شركة نقل أثاث في قطر",
+      "ptype": "move",
+      "words": 392,
+      "hero": "شركة نقل أثاث في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10357,
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "title": "شركة مكافحة صراصير في قطر",
+      "ptype": "pest_cockroach",
+      "words": 452,
+      "hero": "شركة مكافحة صراصير في قطر — تشخيص ثم تنفيذ مكتوب"
+    },
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "title": "شركة تنظيف منازل في قطر",
+      "ptype": "cleaning",
+      "words": 467,
+      "hero": "شركة تنظيف منازل في قطر — تشخيص ثم تنفيذ مكتوب"
+    }
+  ],
+  "unique_cluster": [
+    {
+      "id": 10272,
+      "slug": "cockroach-control-in-qatar",
+      "ptype": "pest_cockroach",
+      "words": 1146
+    },
+    {
+      "id": 10352,
+      "slug": "shrkh-tlmya-syramyk-fy-qtr",
+      "ptype": "ceramic",
+      "words": 1102
+    },
+    {
+      "id": 10350,
+      "slug": "shrkh-tnzyf-bad-altshtyb-fy-qtr",
+      "ptype": "postcon",
+      "words": 1122
+    },
+    {
+      "id": 10329,
+      "slug": "shrkh-azl-mayy-fy-qtr",
+      "ptype": "insul_water",
+      "words": 1100
+    },
+    {
+      "id": 10324,
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "ptype": "insul_roof",
+      "words": 315
+    },
+    {
+      "id": 10277,
+      "slug": "termite-control-in-qatar",
+      "ptype": "pest_termite",
+      "words": 1168
+    },
+    {
+      "id": 10274,
+      "slug": "bed-bug-control-in-qatar",
+      "ptype": "pest_bedbug",
+      "words": 1126
+    },
+    {
+      "id": 10261,
+      "slug": "pest-control-in-qatar",
+      "ptype": "pest",
+      "words": 1112
+    }
+  ],
+  "out_of_scope": [
+    {
+      "id": 10374,
+      "slug": "shra-madat-mtaam-mstamlh-fy-qtr",
+      "title": "شراء معدات مطاعم مستعملة في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    },
+    {
+      "id": 10373,
+      "slug": "shra-skrab-fy-qtr",
+      "title": "شراء سكراب في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    },
+    {
+      "id": 10372,
+      "slug": "shra-ajhzh-khrbayyh-mstamlh-fy-qtr",
+      "title": "شراء أجهزة كهربائية مستعملة في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    },
+    {
+      "id": 10371,
+      "slug": "shra-mkyfat-mstamlh-fy-qtr",
+      "title": "شراء مكيفات مستعملة في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    },
+    {
+      "id": 10370,
+      "slug": "shra-athath-mstaml-fy-qtr",
+      "title": "شراء أثاث مستعمل في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    },
+    {
+      "id": 7391,
+      "slug": "recruitment-in-qatar",
+      "title": "مكتب استقدام في قطر",
+      "form": "honest-out-of-scope",
+      "issues": [
+        "قصير جداً",
+        "قالب كيان عام"
+      ]
+    }
+  ],
+  "leak_city": [
+    {
+      "id": 17386,
+      "slug": "water-pipe-leak-detection-lusail",
+      "words": 1088,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 17260,
+      "slug": "water-leak-detection-lusail",
+      "words": 1087,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12698,
+      "slug": "water-pipe-leak-detection-al-shamal",
+      "words": 1095,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 12700,
+      "slug": "water-pipe-leak-detection-al-shahaniya",
+      "words": 1080,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11137,
+      "slug": "water-leak-detection-al-shamal",
+      "words": 1097,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 11139,
+      "slug": "water-leak-detection-al-shahaniya",
+      "words": 1081,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12699,
+      "slug": "water-pipe-leak-detection-al-daayen",
+      "words": 1060,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11138,
+      "slug": "water-leak-detection-al-daayen",
+      "words": 1064,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12696,
+      "slug": "water-pipe-leak-detection-al-khor",
+      "words": 1078,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 12697,
+      "slug": "water-pipe-leak-detection-umm-salal",
+      "words": 1133,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11135,
+      "slug": "water-leak-detection-al-khor",
+      "words": 1072,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 11136,
+      "slug": "water-leak-detection-umm-salal",
+      "words": 1134,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12695,
+      "slug": "water-pipe-leak-detection-al-wakrah",
+      "words": 1074,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11134,
+      "slug": "water-leak-detection-al-wakrah",
+      "words": 1085,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12694,
+      "slug": "water-pipe-leak-detection-al-rayyan",
+      "words": 1081,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11133,
+      "slug": "water-leak-detection-al-rayyan",
+      "words": 1099,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12693,
+      "slug": "water-pipe-leak-detection-doha",
+      "words": 1126,
+      "form": "city-template",
+      "ptype": "leak_pipe"
+    },
+    {
+      "id": 11132,
+      "slug": "water-leak-detection-doha",
+      "words": 1135,
+      "form": "city-template",
+      "ptype": "leak_water"
+    },
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en",
+      "words": 202,
+      "form": "other",
+      "ptype": "general"
+    }
+  ],
+  "priority_rewrite": [
+    {
+      "id": 10300,
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث خارجي في قطر",
+      "ptype": "move",
+      "words": 355,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10298,
+      "slug": "interior-furniture-moving-in-qatar",
+      "title": "شركة نقل أثاث داخلي في قطر",
+      "ptype": "move",
+      "words": 361,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10366,
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "title": "شركة تغليف أثاث في قطر",
+      "ptype": "move",
+      "words": 365,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10364,
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "title": "شركة نقل عفش في قطر",
+      "ptype": "move",
+      "words": 370,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "title": "شركة تخزين أثاث في قطر",
+      "ptype": "move",
+      "words": 371,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10295,
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "title": "شركة نقل عفش مع التغليف في قطر",
+      "ptype": "move",
+      "words": 372,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10367,
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "title": "شركة فك وتركيب أثاث في قطر",
+      "ptype": "move",
+      "words": 373,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10365,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "title": "شركة نقل أثاث في قطر",
+      "ptype": "move",
+      "words": 392,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10357,
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "title": "شركة مكافحة صراصير في قطر",
+      "ptype": "pest_cockroach",
+      "words": 452,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    },
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "title": "شركة تنظيف منازل في قطر",
+      "ptype": "cleaning",
+      "words": 467,
+      "why": "قالب كيان عام لا يخص الخدمة"
+    }
+  ],
+  "locked": 2973
+}

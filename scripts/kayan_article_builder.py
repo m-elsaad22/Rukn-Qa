@@ -95,7 +95,7 @@ def classify(title: str, slug: str) -> str:
         ("insul_sound", ["عزل صوتي", "azl-swty", "sound-insulation"]),
         ("insul_moisture", ["معالجة الرطوبة", "معالجة رطوبة", "maaljh-alrtwbh", "moisture"]),
         ("insulation", ["عزل", "insulation", "azl", "فوم", "رطوبة"]),
-        ("ac", ["تكييف", "مكيف", "ac-", "air-condition", "فريون", "سبليت"]),
+        ("ac", ["تكييف", "مكيف", "ac-maintenance", "ac-", "air-condition", "فريون", "سبليت"]),
         ("sewer", ["مجاري", "بيارات", "تسليك", "sewer", "شفط"]),
         ("plumbing", ["سباك", "سباكة", "مضخات", "سخان", "فلاتر", "تحلية", "plumbing", "dynamo", "دينامو"]),
         ("pest_cockroach", ["صراصير", "srasyr", "cockroach"]),
