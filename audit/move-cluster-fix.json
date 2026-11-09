@@ -1,0 +1,217 @@
+{
+  "rewrites": [
+    {
+      "id": 10365,
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "words": 1105,
+      "kind": "move",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "عنوانان وجرد غرف"
+    },
+    {
+      "id": 10364,
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "words": 1121,
+      "kind": "afsh",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "جرد العفش اليومي"
+    },
+    {
+      "id": 10298,
+      "slug": "interior-furniture-moving-in-qatar",
+      "words": 1106,
+      "kind": "interior",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "من غرفة إلى غرفة"
+    },
+    {
+      "id": 10300,
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "words": 1100,
+      "kind": "outdoor",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "جلسات شمس ورمل"
+    },
+    {
+      "id": 10295,
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "words": 1111,
+      "kind": "packmove",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "التغليف في العرض قبل التحميل"
+    },
+    {
+      "id": 10366,
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "words": 1109,
+      "kind": "pack",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "كرتون وبطانية في البيت"
+    },
+    {
+      "id": 10367,
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "words": 1114,
+      "kind": "dismantle",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "فك غرف النوم بمساميرها"
+    },
+    {
+      "id": 10368,
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "words": 1109,
+      "kind": "storage",
+      "ptype": "move",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "حفظ بقطع مكتوبة ومدة مكتوبة"
+    },
+    {
+      "id": 10369,
+      "slug": "shrkh-tkhzyn-bdaya-fy-qtr",
+      "words": 1100,
+      "kind": "goods",
+      "ptype": "general",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "عدد ومدة"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "shrkh-nql-athath-fy-qtr",
+      "list": {
+        "q": "shrkh-nql-athath-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-nql-athath-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-nql-afsh-fy-qtr",
+      "list": {
+        "q": "shrkh-nql-afsh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-nql-afsh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "interior-furniture-moving-in-qatar",
+      "list": {
+        "q": "interior-furniture-moving-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "interior-furniture-moving-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "outdoor-furniture-moving-in-qatar",
+      "list": {
+        "q": "outdoor-furniture-moving-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "outdoor-furniture-moving-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "furniture-moving-with-packing-in-qatar",
+      "list": {
+        "q": "furniture-moving-with-packing-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "furniture-moving-with-packing-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tghlyf-athath-fy-qtr",
+      "list": {
+        "q": "shrkh-tghlyf-athath-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tghlyf-athath-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-fk-wtrkyb-athath-fy-qtr",
+      "list": {
+        "q": "shrkh-fk-wtrkyb-athath-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-fk-wtrkyb-athath-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tkhzyn-athath-fy-qtr",
+      "list": {
+        "q": "shrkh-tkhzyn-athath-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tkhzyn-athath-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tkhzyn-bdaya-fy-qtr",
+      "list": {
+        "q": "shrkh-tkhzyn-bdaya-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tkhzyn-bdaya-fy-qtr",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1100,
+  "count": 9,
+  "merges": []
+}

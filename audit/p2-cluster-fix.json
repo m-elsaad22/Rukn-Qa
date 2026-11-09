@@ -1,0 +1,217 @@
+{
+  "rewrites": [
+    {
+      "id": 10387,
+      "slug": "shrkh-ghsyl-mkyfat-fy-qtr",
+      "words": 1181,
+      "kind": "wash_ac",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "الكويل والغلاف لا شحن فريون من أول رسالة"
+    },
+    {
+      "id": 10388,
+      "slug": "shrkh-tabyh-ghaz-mkyfat-fy-qtr",
+      "words": 1151,
+      "kind": "ac_gas",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "عداد الضغط بعد التسرب لا علبة فوق وسخ"
+    },
+    {
+      "id": 10285,
+      "slug": "ac-duct-cleaning-and-maintenance-in-qatar",
+      "words": 1131,
+      "kind": "duct",
+      "ptype": "duct",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "المخارج والراجع قبل غسيل الجداري"
+    },
+    {
+      "id": 10384,
+      "slug": "shrkh-syanh-skhanat-myah-fy-qtr",
+      "words": 1127,
+      "kind": "heater",
+      "ptype": "plumbing",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "عنصر وتيرموستات لا مكيف ولا شبكة البيت كلها"
+    },
+    {
+      "id": 10380,
+      "slug": "shrkh-trkyb-mdkhat-myah-fy-qtr",
+      "words": 1106,
+      "kind": "pump",
+      "ptype": "plumbing",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "خزان وضغط متقطع لا ري حديقة افتراضي"
+    },
+    {
+      "id": 10378,
+      "slug": "shrkh-shft-byarat-fy-qtr",
+      "words": 1105,
+      "kind": "septic",
+      "ptype": "sewer",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "منسوب البيارة وفتحة الوصول لا سيفون مطبخ"
+    },
+    {
+      "id": 10338,
+      "slug": "shrkh-tnzyf-mjals-fy-qtr",
+      "words": 1110,
+      "kind": "majlis",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "قماش المجلس والجفاف لا كنب غرف النوم"
+    },
+    {
+      "id": 10345,
+      "slug": "shrkh-tnzyf-knb-fy-qtr",
+      "words": 1107,
+      "kind": "sofa",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "وسائد الكنب والبخار لا سجاد الممر"
+    },
+    {
+      "id": 10344,
+      "slug": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "words": 1111,
+      "kind": "carpet",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite",
+      "marker": "القطعة والغرفة والجفاف لا كنب ولا مجلس وسائد"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "shrkh-ghsyl-mkyfat-fy-qtr",
+      "list": {
+        "q": "shrkh-ghsyl-mkyfat-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-ghsyl-mkyfat-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tabyh-ghaz-mkyfat-fy-qtr",
+      "list": {
+        "q": "shrkh-tabyh-ghaz-mkyfat-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tabyh-ghaz-mkyfat-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "ac-duct-cleaning-and-maintenance-in-qatar",
+      "list": {
+        "q": "ac-duct-cleaning-and-maintenance-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "ac-duct-cleaning-and-maintenance-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-syanh-skhanat-myah-fy-qtr",
+      "list": {
+        "q": "shrkh-syanh-skhanat-myah-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-syanh-skhanat-myah-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-trkyb-mdkhat-myah-fy-qtr",
+      "list": {
+        "q": "shrkh-trkyb-mdkhat-myah-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-trkyb-mdkhat-myah-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-shft-byarat-fy-qtr",
+      "list": {
+        "q": "shrkh-shft-byarat-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-shft-byarat-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-mjals-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-mjals-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-mjals-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-knb-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-knb-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-knb-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+      "list": {
+        "q": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-sjad-wmwkyt-fy-qtr",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1105,
+  "count": 9,
+  "merges": []
+}
