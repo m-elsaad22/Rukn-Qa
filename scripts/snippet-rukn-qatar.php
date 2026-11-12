@@ -581,6 +581,9 @@ add_filter('rank_math/json_ld', function ($data, $jsonld) {
 }, 99, 2);
 
 add_filter('rank_math/frontend/canonical', function ($canonical) {
+    if (is_singular() && (int) get_queried_object_id() === 2973) {
+        return 'https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/';
+    }
     if (!is_string($canonical)) {
         return $canonical;
     }
@@ -710,7 +713,52 @@ function rukn_qa_maybe_redirect_city_or_leak() {
     return;
 }
 
-add_action('template_redirect', 'rukn_qa_maybe_redirect_city_or_leak', 0);
+function rukn_qa_gsc_path_fixes() {
+    if (is_admin() || wp_doing_ajax() || wp_is_json_request()) {
+        return;
+    }
+    $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
+    $path = (string) parse_url($uri, PHP_URL_PATH);
+    $query = parse_url($uri, PHP_URL_QUERY);
+    $suffix = $query ? ('?' . $query) : '';
+
+    // Same article, broken double-/qa/ path from Rank Math canonical. Not article→article.
+    if (strpos($path, '/qa/qa/') !== false) {
+        $dest = 'https://www.rukn-eltatawer.com' . preg_replace('#/qa/qa/#', '/qa/', $path, 1) . $suffix;
+        wp_safe_redirect($dest, 301);
+        exit;
+    }
+
+    if (!is_404()) {
+        return;
+    }
+    $slug = trim((string) preg_replace('#^/qa/#', '', $path), '/');
+    $map = [
+        'water-leak-detection' => 'https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/',
+        'roof-insulation' => 'https://www.rukn-eltatawer.com/qa/shrkh-azl-asth-fy-qtr/',
+        'pricing' => 'https://www.rukn-eltatawer.com/qa/as3ar/',
+    ];
+    if (isset($map[$slug])) {
+        wp_safe_redirect($map[$slug], 301);
+        exit;
+    }
+}
+
+add_action('template_redirect', 'rukn_qa_gsc_path_fixes', 0);
+add_action('template_redirect', 'rukn_qa_maybe_redirect_city_or_leak', 1);
+
+add_filter('rank_math/sitemap/entry', function ($url, $type = '', $object = null) {
+    $loc = '';
+    if (is_array($url) && !empty($url['loc'])) {
+        $loc = (string) $url['loc'];
+    } elseif (is_string($url)) {
+        $loc = $url;
+    }
+    if ($loc && preg_match('#/qa/(water-leak-detection|roof-insulation)/?$#', $loc)) {
+        return false;
+    }
+    return $url;
+}, 10, 3);
 
 add_action('template_redirect', function () {
     if (is_admin() || wp_doing_ajax() || wp_is_json_request()) {
@@ -744,6 +792,21 @@ add_action('template_redirect', function () {
         $html = str_replace('بعد الضغط سيتم تحويلك لصفحة الدفع الآمنة لإتمام الطلب.', '', $html);
         $html = str_replace('اختر الباقة المناسبة ثم أدخل بياناتك لإتمام الدفع.', '', $html);
         $html = str_replace('ادفع الآن', '', $html);
+        $html = str_replace(
+            [
+                'https://www.rukn-eltatawer.com/qa/qa/',
+                'https://rukn-eltatawer.com/qa/qa/',
+                'http://www.rukn-eltatawer.com/qa/qa/',
+                '/qa/qa/',
+            ],
+            [
+                'https://www.rukn-eltatawer.com/qa/',
+                'https://www.rukn-eltatawer.com/qa/',
+                'https://www.rukn-eltatawer.com/qa/',
+                '/qa/',
+            ],
+            $html
+        );
         if ($is_locked) {
             return $html;
         }
@@ -804,7 +867,21 @@ add_action('template_redirect', function () {
         $html = str_replace('في الإمارات', 'في قطر', $html);
         $html = str_replace('الإمارات', 'قطر', $html);
         $html = str_replace('المجموعه المتحده للخدمات المتكاملة', 'شركة ركن التطور', $html);
-        $html = str_replace('https://www.rukn-eltatawer.com/qa/qa/', 'https://www.rukn-eltatawer.com/qa/', $html);
+        $html = str_replace(
+            [
+                'https://www.rukn-eltatawer.com/qa/qa/',
+                'https://rukn-eltatawer.com/qa/qa/',
+                'http://www.rukn-eltatawer.com/qa/qa/',
+                '/qa/qa/',
+            ],
+            [
+                'https://www.rukn-eltatawer.com/qa/',
+                'https://www.rukn-eltatawer.com/qa/',
+                'https://www.rukn-eltatawer.com/qa/',
+                '/qa/',
+            ],
+            $html
+        );
         $is_en = rukn_qa_is_english();
         if ($is_en) {
             $pairs = rukn_qa_en_pairs();
@@ -849,6 +926,12 @@ function rukn_qa_purge_caches() {
     }
     if (function_exists('do_action')) {
         do_action('litespeed_purge_all');
+        do_action('litespeed_purge_post', 2973);
+        do_action('litespeed_purge_url', 'https://www.rukn-eltatawer.com/qa/water-leak-detection-company-in-qatar/');
+        do_action('rank_math/sitemap/invalidate_storage');
+    }
+    if (function_exists('delete_transient')) {
+        delete_transient('rank_math_sitemap_cache');
     }
 }
 
