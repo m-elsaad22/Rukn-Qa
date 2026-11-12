@@ -1,0 +1,17 @@
+{
+  "locked": 2973,
+  "drafts_seen": 186,
+  "jobs": 186,
+  "updated": 186,
+  "fails": [],
+  "skipped": [],
+  "drafts_left": 0,
+  "kinds": {
+    "city": 151,
+    "leak-city": 18,
+    "national": 17
+  },
+  "redirects_deleted": 183,
+  "duplicate_redirects_deleted_after": 4,
+  "rank_math_redirects_left": 0
+}

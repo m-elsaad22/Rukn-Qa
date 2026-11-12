@@ -1,0 +1,251 @@
+{
+  "rewrites": [
+    {
+      "id": 10324,
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "words": 1159,
+      "kind": "roof",
+      "ptype": "insul_roof",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10325,
+      "slug": "shrkh-azl-khzanat-fy-qtr",
+      "words": 1132,
+      "kind": "tank",
+      "ptype": "insul_tank",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10326,
+      "slug": "shrkh-azl-hmamat-fy-qtr",
+      "words": 1137,
+      "kind": "bath",
+      "ptype": "insul_bath",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10327,
+      "slug": "shrkh-azl-mtabkh-fy-qtr",
+      "words": 1116,
+      "kind": "kitchen",
+      "ptype": "insul_kitchen",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10328,
+      "slug": "shrkh-azl-hrary-fy-qtr",
+      "words": 1118,
+      "kind": "thermal",
+      "ptype": "insul_thermal",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10329,
+      "slug": "shrkh-azl-mayy-fy-qtr",
+      "words": 1100,
+      "kind": "water",
+      "ptype": "insul_water",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10330,
+      "slug": "shrkh-azl-fwm-fy-qtr",
+      "words": 1107,
+      "kind": "foam",
+      "ptype": "insul_foam",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10331,
+      "slug": "shrkh-azl-swty-fy-qtr",
+      "words": 1111,
+      "kind": "sound",
+      "ptype": "insul_sound",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10332,
+      "slug": "shrkh-maaljh-alrtwbh-fy-qtr",
+      "words": 1138,
+      "kind": "moisture",
+      "ptype": "insul_moisture",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10433,
+      "slug": "shrkh-trkyb-fwm-jdran-fy-qtr",
+      "words": 1100,
+      "kind": "wallfoam",
+      "ptype": "insul_wallfoam",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en",
+      "words": 1266,
+      "kind": "roof_en",
+      "ptype": "insul_roof",
+      "http": 200,
+      "action": "rewrite"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-asth-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-asth-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-khzanat-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-khzanat-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-khzanat-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-hmamat-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-hmamat-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-hmamat-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-mtabkh-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-mtabkh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-mtabkh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-hrary-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-hrary-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-hrary-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-mayy-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-mayy-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-mayy-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-fwm-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-fwm-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-fwm-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-swty-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-swty-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-swty-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-maaljh-alrtwbh-fy-qtr",
+      "list": {
+        "q": "shrkh-maaljh-alrtwbh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-maaljh-alrtwbh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-trkyb-fwm-jdran-fy-qtr",
+      "list": {
+        "q": "shrkh-trkyb-fwm-jdran-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-trkyb-fwm-jdran-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "roof-insulation-qatar-en",
+      "list": {
+        "q": "roof-insulation-qatar-en",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "roof-insulation-qatar-en",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1100,
+  "merges": []
+}

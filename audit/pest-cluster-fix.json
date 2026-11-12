@@ -1,0 +1,183 @@
+{
+  "rewrites": [
+    {
+      "id": 10261,
+      "slug": "pest-control-in-qatar",
+      "words": 1112,
+      "kind": "general",
+      "ptype": "pest",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10272,
+      "slug": "cockroach-control-in-qatar",
+      "words": 1146,
+      "kind": "cockroach",
+      "ptype": "pest_cockroach",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10277,
+      "slug": "termite-control-in-qatar",
+      "words": 1168,
+      "kind": "termite",
+      "ptype": "pest_termite",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10274,
+      "slug": "bed-bug-control-in-qatar",
+      "words": 1126,
+      "kind": "bedbug",
+      "ptype": "pest_bedbug",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10358,
+      "slug": "shrkh-mkafhh-fyran-wqward-fy-qtr",
+      "words": 1101,
+      "kind": "rodent",
+      "ptype": "pest_rodent",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10360,
+      "slug": "shrkh-mkafhh-aqarb-wthaabyn-fy-qtr",
+      "words": 1107,
+      "kind": "scorpion",
+      "ptype": "pest_scorpion",
+      "http": 200,
+      "action": "rewrite"
+    },
+    {
+      "id": 10361,
+      "slug": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+      "words": 1102,
+      "kind": "agri",
+      "ptype": "pest_agri",
+      "http": 200,
+      "action": "rewrite"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "pest-control-in-qatar",
+      "list": {
+        "q": "pest-control-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "pest-control-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "cockroach-control-in-qatar",
+      "list": {
+        "q": "cockroach-control-in-qatar",
+        "rows": [
+          {
+            "id": "150",
+            "url_to": "https://www.rukn-eltatawer.com/qa/cockroach-control-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:26:\"shrkh-mkafhh-srasyr-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          },
+          {
+            "id": "163",
+            "url_to": "https://www.rukn-eltatawer.com/qa/cockroach-control-in-qatar/",
+            "status": "active",
+            "header_code": "301",
+            "sources": "a:1:{i:0;a:2:{s:7:\"pattern\";s:26:\"shrkh-mkafhh-srasyr-fy-qtr\";s:10:\"comparison\";s:5:\"exact\";}}"
+          }
+        ],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "cockroach-control-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "termite-control-in-qatar",
+      "list": {
+        "q": "termite-control-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "termite-control-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "bed-bug-control-in-qatar",
+      "list": {
+        "q": "bed-bug-control-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "bed-bug-control-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-mkafhh-fyran-wqward-fy-qtr",
+      "list": {
+        "q": "shrkh-mkafhh-fyran-wqward-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-mkafhh-fyran-wqward-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-mkafhh-aqarb-wthaabyn-fy-qtr",
+      "list": {
+        "q": "shrkh-mkafhh-aqarb-wthaabyn-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-mkafhh-aqarb-wthaabyn-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+      "list": {
+        "q": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-mkafhh-hshrat-zraayh-fy-qtr",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1101,
+  "merges": [
+    {
+      "id": 10357,
+      "note": "already 301 to /cockroach-control-in-qatar/ from cleaning cluster"
+    }
+  ]
+}

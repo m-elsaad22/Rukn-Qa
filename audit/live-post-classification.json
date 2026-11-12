@@ -1,0 +1,22 @@
+{
+  "publish_total": 1913,
+  "draft_total": 102,
+  "future_total": 0,
+  "counts": {
+    "publish:city-template": 1752,
+    "publish:leak-city-clone": 18,
+    "publish:national": 136,
+    "publish:allowlisted": 6,
+    "publish:locked-leak": 1,
+    "draft:city-template": 96,
+    "draft:national": 6
+  },
+  "publish_by_kind": {
+    "city-template": 1752,
+    "leak-city-clone": 18,
+    "national": 136,
+    "allowlisted": 6,
+    "locked-leak": 1
+  },
+  "locked_ok": true
+}

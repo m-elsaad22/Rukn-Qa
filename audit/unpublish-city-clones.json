@@ -1,0 +1,36 @@
+{
+  "publish": 143,
+  "draft": 1872,
+  "published_clones_left": [],
+  "keep_published": [
+    {
+      "id": 11140,
+      "slug": "gas-leak-detection-doha"
+    },
+    {
+      "id": 3182,
+      "slug": "sewerage-company-in-doha"
+    },
+    {
+      "id": 11148,
+      "slug": "ac-leak-detection-doha"
+    },
+    {
+      "id": 12868,
+      "slug": "ac-maintenance-qatar-en"
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en"
+    },
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en"
+    },
+    {
+      "id": 2973,
+      "slug": "water-leak-detection-company-in-qatar"
+    }
+  ],
+  "locked_ok": true
+}

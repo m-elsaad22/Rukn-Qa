@@ -1,0 +1,447 @@
+{
+  "rewrites": [
+    {
+      "id": 10258,
+      "slug": "house-cleaning-in-qatar",
+      "words": 1194,
+      "kind": "house",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite",
+      "source": "cleaning"
+    },
+    {
+      "id": 10324,
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "words": 1159,
+      "kind": "roof",
+      "ptype": "insul_roof",
+      "http": 200,
+      "action": "rewrite",
+      "source": "insulation"
+    },
+    {
+      "id": 12867,
+      "slug": "roof-insulation-qatar-en",
+      "words": 1266,
+      "kind": "roof_en",
+      "ptype": "insul_roof",
+      "http": 200,
+      "action": "rewrite",
+      "source": "insulation"
+    },
+    {
+      "id": 10254,
+      "slug": "split-ac-maintenance-in-qatar",
+      "words": 1180,
+      "kind": "split_ac",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10269,
+      "slug": "central-air-conditioning-maintenance-in-qatar",
+      "words": 1145,
+      "kind": "central_ac",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 21285,
+      "slug": "ac-maintenance-before-summer-qatar",
+      "words": 1170,
+      "kind": "ac_summer",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10290,
+      "slug": "plumbing-maintenance-in-qatar",
+      "words": 1169,
+      "kind": "plumbing",
+      "ptype": "plumbing",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10293,
+      "slug": "home-plumber-in-qatar",
+      "words": 1143,
+      "kind": "plumber",
+      "ptype": "plumbing",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10377,
+      "slug": "shrkh-tslyk-mjary-fy-qtr",
+      "words": 1135,
+      "kind": "sewer",
+      "ptype": "sewer",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10442,
+      "slug": "shrkh-tnsyq-hdayq-fy-qtr",
+      "words": 1116,
+      "kind": "garden",
+      "ptype": "garden",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10408,
+      "slug": "shrkh-syanh-mbany-fy-qtr",
+      "words": 1121,
+      "kind": "build",
+      "ptype": "build",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10407,
+      "slug": "shrkh-syanh-aamh-fy-qtr",
+      "words": 1115,
+      "kind": "general_maint",
+      "ptype": "build",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10419,
+      "slug": "shrkh-dhanat-dakhlyh-fy-qtr",
+      "words": 1100,
+      "kind": "paint",
+      "ptype": "paint",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10406,
+      "slug": "shrkh-trkyb-taqh-shmsyh-fy-qtr",
+      "words": 1147,
+      "kind": "solar",
+      "ptype": "solar",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10398,
+      "slug": "shrkh-syanh-khrba-fy-qtr",
+      "words": 1109,
+      "kind": "elec",
+      "ptype": "elec",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10334,
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "words": 1104,
+      "kind": "house_ar",
+      "ptype": "cleaning",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 10357,
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "words": 1108,
+      "kind": "cockroach_ar",
+      "ptype": "pest_cockroach",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 12868,
+      "slug": "ac-maintenance-qatar-en",
+      "words": 1166,
+      "kind": "ac_en",
+      "ptype": "ac",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    },
+    {
+      "id": 12866,
+      "slug": "water-leak-detection-qatar-en",
+      "words": 1246,
+      "kind": "leak_en",
+      "ptype": "general",
+      "http": 200,
+      "action": "rewrite",
+      "source": "core"
+    }
+  ],
+  "cleared_keep_redirects": [
+    {
+      "slug": "house-cleaning-in-qatar",
+      "list": {
+        "q": "house-cleaning-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "house-cleaning-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-azl-asth-fy-qtr",
+      "list": {
+        "q": "shrkh-azl-asth-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-azl-asth-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "roof-insulation-qatar-en",
+      "list": {
+        "q": "roof-insulation-qatar-en",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "roof-insulation-qatar-en",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "split-ac-maintenance-in-qatar",
+      "list": {
+        "q": "split-ac-maintenance-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "split-ac-maintenance-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "central-air-conditioning-maintenance-in-qatar",
+      "list": {
+        "q": "central-air-conditioning-maintenance-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "central-air-conditioning-maintenance-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "ac-maintenance-before-summer-qatar",
+      "list": {
+        "q": "ac-maintenance-before-summer-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "ac-maintenance-before-summer-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "plumbing-maintenance-in-qatar",
+      "list": {
+        "q": "plumbing-maintenance-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "plumbing-maintenance-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "home-plumber-in-qatar",
+      "list": {
+        "q": "home-plumber-in-qatar",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "home-plumber-in-qatar",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tslyk-mjary-fy-qtr",
+      "list": {
+        "q": "shrkh-tslyk-mjary-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tslyk-mjary-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnsyq-hdayq-fy-qtr",
+      "list": {
+        "q": "shrkh-tnsyq-hdayq-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnsyq-hdayq-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-syanh-mbany-fy-qtr",
+      "list": {
+        "q": "shrkh-syanh-mbany-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-syanh-mbany-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-syanh-aamh-fy-qtr",
+      "list": {
+        "q": "shrkh-syanh-aamh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-syanh-aamh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-dhanat-dakhlyh-fy-qtr",
+      "list": {
+        "q": "shrkh-dhanat-dakhlyh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-dhanat-dakhlyh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-trkyb-taqh-shmsyh-fy-qtr",
+      "list": {
+        "q": "shrkh-trkyb-taqh-shmsyh-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-trkyb-taqh-shmsyh-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-syanh-khrba-fy-qtr",
+      "list": {
+        "q": "shrkh-syanh-khrba-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-syanh-khrba-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-tnzyf-mnazl-fy-qtr-2",
+      "list": {
+        "q": "shrkh-tnzyf-mnazl-fy-qtr-2",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-tnzyf-mnazl-fy-qtr-2",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "shrkh-mkafhh-srasyr-fy-qtr",
+      "list": {
+        "q": "shrkh-mkafhh-srasyr-fy-qtr",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "shrkh-mkafhh-srasyr-fy-qtr",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "ac-maintenance-qatar-en",
+      "list": {
+        "q": "ac-maintenance-qatar-en",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "ac-maintenance-qatar-en",
+        "deleted": []
+      }
+    },
+    {
+      "slug": "water-leak-detection-qatar-en",
+      "list": {
+        "q": "water-leak-detection-qatar-en",
+        "rows": [],
+        "cache": []
+      },
+      "deleted": {
+        "ok": true,
+        "from": "water-leak-detection-qatar-en",
+        "deleted": []
+      }
+    }
+  ],
+  "locked": 2973,
+  "min_words": 1100,
+  "count": 19,
+  "merges": []
+}
